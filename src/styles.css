@@ -9,8 +9,17 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     margin-bottom: 60px; /* Margin bottom by footer height */
+}
+
+.font-size-gt {
+    font-size: 16px;
+}
+
+.font-size-lr {
+    font-size: 12px;
 }
 
 .container {
