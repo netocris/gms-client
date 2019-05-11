@@ -22,9 +22,8 @@ A system for monitoring blood glucose levels
 
 ## Configure Bootstrap
 
-    add the folowing lines to angular.json
+Add the folowing lines to angular.json
 
-    ...
     "styles": [
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
         "node_modules/font-awesome/css/font-awesome.min.css",
@@ -35,5 +34,4 @@ A system for monitoring blood glucose levels
         "node_modules/popper.js/dist/umd/popper.min.js",
         "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
-    ...
 
