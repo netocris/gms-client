@@ -1,27 +1,39 @@
-# GmsClient
+# Glicose Monitoring System Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+A system for monitoring blood glucose levels
 
-## Development server
+## Project dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Bootstrap 4
 
-## Code scaffolding
+    npm install bootstrap jquery popper.js font-awesome --save
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    npm install @ng-bootstrap/ng-bootstrap --save
 
-## Build
+#### Firebase 6
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    npm install @angular/fire firebase --save
 
-## Running unit tests
+#### Charts.js
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    npm install chart.js --save
 
-## Running end-to-end tests
+    npm install ng2-charts --save
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Configure Bootstrap
 
-## Further help
+    add the folowing lines to angular.json
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    ...
+    "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "node_modules/font-awesome/css/font-awesome.min.css",
+        "src/styles.css"
+    ],
+    "scripts": [
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/popper.js/dist/umd/popper.min.js",
+        "node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ]
+    ...
+
