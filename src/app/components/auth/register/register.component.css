@@ -1,0 +1,43 @@
+.box {
+    width: 450px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    text-align: center;
+}
+
+.box h1 {
+    color: #5b5e5c;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type="text"], 
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #989b99;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type="text"]:focus, 
+.box input[type="password"]:focus {
+    width: 380px;
+    border-color: black;    
+}
+
+.btn-outline-primary {    
+    padding: 14px 40px; 
+    border-radius: 24px;    
+}

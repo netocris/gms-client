@@ -1,0 +1,66 @@
+<div class="container">
+  <!--<div class="px-3 py-3 pt-md-5 pb-md-5 mx-auto">-->
+
+
+  <div class="row">
+
+    <div class="col-md-12 order-md-2 mb-4">
+
+      <h4 class="mb-3">Novo registo</h4>
+
+      <form [formGroup]="rForm" (ngSubmit)="onSubmit()" novalidate class="needs-validation"
+        [ngClass]="{'was-validated': submitted}">
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">
+          <h6 class="alert-heading">Registo inserido com sucesso</h6>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+            <label for="value">Leitura</label>
+            <input type="text" class="form-control" formControlName="value" id="value" aria-describedby="valueHelp"
+              placeholder="leitura glicémia" required />
+            <small id="valueHelp" class="form-text text-muted">
+              Para um bom controlo os valores de leitura da glicémia deverão situar-se dentro do intervalo [70 - 120]
+              mg/dl em jejum e abaixo dos 150 mg/dl.
+            </small>
+
+            <div *ngIf="rForm.controls.value.errors" class="invalid-feedback">
+              <div *ngIf="rForm.controls.value.errors.required">
+                O valor da leitura é obrigatório
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="date">Data da leitura</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="date" id="date" placeholder="yyyy-mm-dd"
+                ngbDatepicker #d="ngbDatepicker" required />
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+
+            <div *ngIf="submitted && rForm.controls.date.errors" class="invalid-feedback">
+              <div *ngIf="rForm.controls.date.errors.required">
+                Valor da leitura é obrigatório
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">Inserir</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!--</div>-->
+</div>

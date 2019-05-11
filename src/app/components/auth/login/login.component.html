@@ -1,0 +1,12 @@
+<a routerLink="/">Home</a>
+<br/>
+<a routerLink="/register">Register</a>
+
+<span class="error" *ngIf="error">{{error}}</span>
+
+<form class="box" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+  <h1>Login</h1>
+  <input type="text" name="email" (ngModel)="email" placeholder="email address" required>
+  <input type="password" name="password" (ngModel)="password" placeholder="password" required>
+  <input type="submit" class="btn" [disabled]="!formData.valid" value="Login">
+</form>

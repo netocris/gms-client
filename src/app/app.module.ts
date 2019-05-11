@@ -1,18 +1,62 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { NgbModule, NgbDatepickerModule, NgbAlertModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+
 import { AppComponent } from './app.component';
+
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RecordComponent } from './components/record/record.component';
+import { HistoryComponent } from './components/history/history.component';
+import { ReportComponent } from './components/report/report.component';
+//import { LoginComponent } from './components/auth/login/login.component';
+//import { RegisterComponent } from './components/auth/register/register.component';
+
+import { AuthService } from './services/auth.service';
+import { RecordService } from './services/record.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent,
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent,
+    RecordComponent,
+    HistoryComponent,
+    ReportComponent
+    //LoginComponent,
+    //RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    NgbModule,
+    NgbDatepickerModule,
+    NgbAlertModule,
+    NgbPaginationModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    RecordService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

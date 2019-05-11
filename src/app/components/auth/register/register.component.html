@@ -1,0 +1,14 @@
+<div class="px-3 py-3 pt-md-5 pb-md-5 mx-auto text-center">
+  <div class="form-container">      
+    <span class="error" *ngIf="error">{{error}}</span>  
+    <form class="box" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+      <h1>Register</h1>
+      <input type="text" name="email" (ngModel)="email" placeholder="email address" required>
+      <input type="password" name="password" (ngModel)="password" placeholder="password" required>
+      <!--<input type="submit" class="btn btn-outline-primary" [disabled]="!formData.valid" value="Register">-->
+      <button class="btn btn-outline-primary submit-btn" href="#" [disabled]="!formData.valid">Register</button>
+    </form>
+  </div>
+</div>
+
+  
