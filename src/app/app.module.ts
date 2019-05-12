@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { NgbModule, NgbDatepickerModule, NgbAlertModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AppComponent } from './app.component';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -51,7 +53,8 @@ import { RecordService } from './services/record.service';
     NgbModule,
     NgbDatepickerModule,
     NgbAlertModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    ChartsModule
   ],
   providers: [
     AuthService,

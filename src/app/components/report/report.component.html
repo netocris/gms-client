@@ -1,3 +1,7 @@
-<div class="px-3 py-3 pt-md-5 pb-md-5 mx-auto text-center">
-  consultar relatórios
+<div class="container">
+  <div class="col-md-12 order-md-2 mb-4">
+    <h4 class="mb-3">Relatório por dia</h4>
+    <canvas baseChart [chartType]="type" [legend]="legend" [labels]="labels" [datasets]="datasets" [options]="options"
+      [colors]="colors"></canvas>
+  </div>
 </div>
