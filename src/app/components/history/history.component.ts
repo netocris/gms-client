@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Record } from 'src/app/models/record';
+import { RecordService } from 'src/app/services/record.service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  records: Record[] = [];
+
+  constructor(private recordService: RecordService) { }
 
   ngOnInit() {
+    this.recordService.getRecords().subscribe((data: Record[]) => {
+      if (data)
+        this.records = data;
+    });
   }
 
 }

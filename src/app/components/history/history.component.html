@@ -1,3 +1,30 @@
-<div class="px-3 py-3 pt-md-5 pb-md-5 mx-auto text-center">
-  consultar histórico
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 order-md-2 mb-4">
+      <h4 class="mb-3">Histórico</h4>
+      <div *ngIf="records.length === 0; else listRecords">
+        <span>nenhum registo encontrado</span>
+      </div>
+      <ng-template #listRecords>
+        <table class="table table-striped table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Data</th>
+              <th scope="col">Glicémia</th>
+              <th scope="col">Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of records; index as idx">
+              <th scope="row">{{ idx }}</th>
+              <td>{{ record._timestamp | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+              <td>{{ record.value }}</td>
+              <td>{{ record.notes }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </div>
+  </div>
 </div>
