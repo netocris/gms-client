@@ -1,4 +1,5 @@
 export interface Record {
-  date: number;
+  _timestamp: number;
   value: number;
+  notes?: string;
 }

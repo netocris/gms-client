@@ -11,7 +11,7 @@
           </button>
         </div>
         <div class="row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="value">Leitura</label>
             <input type="text" class="form-control" formControlName="value" id="value" aria-describedby="valueHelp"
               placeholder="leitura glicémia" required />
@@ -25,21 +25,29 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="date">Data da leitura</label>
+          <div class="col-md-3 mb-3">
+            <label for="_timestamp">Data da leitura</label>
             <div class="input-group">
-              <input type="text" class="form-control" formControlName="date" id="date" placeholder="yyyy-mm-dd"
-                ngbDatepicker #d="ngbDatepicker" required />
+              <input type="text" class="form-control" formControlName="_timestamp" id="_timestamp"
+                placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
               </div>
             </div>
-            <div *ngIf="submitted && rForm.controls.date.errors" class="invalid-feedback">
-              <div *ngIf="rForm.controls.date.errors.required">
-                Valor da leitura é obrigatório
+            <div *ngIf="rForm.controls._timestamp.errors" class="invalid-feedback">
+              <div *ngIf="rForm.controls._timestamp.errors.required">
+                Data da leitura é obrigatório
               </div>
             </div>
           </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="notes">Notas</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="notes" id="notes" placeholder="notas" />
+            </div>
+          </div>
+
         </div>
         <button type="submit" class="btn btn-primary mb-2">Inserir</button>
       </form>
