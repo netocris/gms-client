@@ -29,22 +29,23 @@
         <div class="col-md-6 mb-3">
           <label for="_date">Data da leitura</label>
           <div class="input-group">
-            <input type="text" class="form-control" formControlName="_date" id="_date" placeholder="yyyy-mm-dd"
-              ngbDatepicker #d="ngbDatepicker" required />
+            <input type="text" class="form-control" formControlName="_date" [(ngModel)]="_date" id="_date"
+              placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
             <div class="input-group-append">
               <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
             </div>
-          </div>
-          <div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
-            <div *ngIf="recordForm.controls._date.errors.required">
-              Data da leitura é obrigatório
+            <div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
+              <div *ngIf="recordForm.controls._date.errors.required">
+                Data da leitura é obrigatório
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-6 mb-3">
           <label for="_hour">Hora da leitura</label>
           <div class="input-group">
-            <ngb-timepicker formControlName="_hour" [seconds]="true" [spinners]="false" required></ngb-timepicker>
+            <ngb-timepicker formControlName="_hour" [(ngModel)]="_hour" [seconds]="true" [spinners]="false" required>
+            </ngb-timepicker>
           </div>
           <div *ngIf="recordForm.controls._hour.errors" class="invalid-feedback">
             <div *ngIf="recordForm.controls._hour.errors.required">
@@ -56,9 +57,12 @@
       <div class="row">
         <div class="col-md-12 mb-3">
           <label for="notes">Notas</label>
-          <div class="input-group">
-            <textarea class="form-control" formControlName="notes" id="notes" placeholder="notas" rows="5"
-              required></textarea>
+          <textarea class="form-control" formControlName="notes" id="notes" placeholder="notas" rows="5"
+            required></textarea>
+          <div *ngIf="recordForm.controls.notes.errors" class="invalid-feedback">
+            <div *ngIf="recordForm.controls.notes.errors.required">
+              Notas é obrigatório
+            </div>
           </div>
         </div>
       </div>

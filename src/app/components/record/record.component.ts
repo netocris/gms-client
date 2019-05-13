@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
 import { Observable } from 'rxjs';
+import { NgbTimeStruct, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-record',
@@ -15,11 +16,30 @@ export class RecordComponent implements OnInit {
   submitted: boolean = false;
   success: boolean = false;
 
+  valueStr: string = '';
+  _date: NgbDateStruct;
+  _hour: NgbTimeStruct;
+  notesStr: string = '';
+
   constructor(private fb: FormBuilder, private recordService: RecordService) {
 
   }
 
   ngOnInit() {
+
+    let dt = new Date();
+    this._date = {
+      year: dt.getFullYear(),
+      month: dt.getMonth() + 2,
+      day: dt.getDay(),
+    }
+
+    this._hour = {
+      hour: dt.getHours(),
+      minute: dt.getMinutes(),
+      second: dt.getSeconds(),
+    }
+
     this.recordForm = this.fb.group({
       value: ['', Validators.required],
       _date: ['', Validators.required],
