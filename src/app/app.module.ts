@@ -21,8 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RecordComponent } from './components/record/record.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ReportComponent } from './components/report/report.component';
-//import { LoginComponent } from './components/auth/login/login.component';
-//import { RegisterComponent } from './components/auth/register/register.component';
+// TODO: commented
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 import { AuthService } from './services/auth.service';
 import { RecordService } from './services/record.service';
@@ -36,9 +37,9 @@ import { RecordService } from './services/record.service';
     FooterComponent,
     RecordComponent,
     HistoryComponent,
-    ReportComponent
-    //LoginComponent,
-    //RegisterComponent
+    ReportComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

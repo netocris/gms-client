@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
-import { Record } from 'src/app/models/record.1';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { Record } from 'src/app/models/record';
 
 @Component({
   selector: 'app-record',
@@ -15,17 +15,15 @@ export class RecordComponent implements OnInit {
   submitted: boolean = false;
   success: boolean = false;
 
-
-
-  constructor(private fBuilder: FormBuilder, private recordService: RecordService, private dtParserFormater: NgbDateParserFormatter) {
-
+  constructor(private fBuilder: FormBuilder, private recordService: RecordService,
+    private dtParserFormater: NgbDateParserFormatter) {
   }
 
   ngOnInit() {
     this.rForm = this.fBuilder.group({
-      value: [null, Validators.required],
-      _timestamp: [null, Validators.required],
-      notes: [null, '']
+      value: ['', Validators.required],
+      _timestamp: ['', Validators.required],
+      notes: ['', '']
     });
   }
 
