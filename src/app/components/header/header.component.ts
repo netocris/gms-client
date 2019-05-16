@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/user';
@@ -13,7 +13,13 @@ export class HeaderComponent implements OnInit {
   private currentUser: User;
   isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {
+  langList = [
+    { code: 'en', label: 'En' },
+    { code: 'pt', label: 'Pt' }
+  ];
+
+  constructor(private authService: AuthService, private router: Router,
+    @Inject(LOCALE_ID) protected lang: string) {
   }
 
   ngOnInit() {

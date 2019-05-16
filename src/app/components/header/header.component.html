@@ -7,6 +7,9 @@
       <a class="p-2 text-dark" href="#" routerLink="/record" i18n="@@header.create">New record</a>
       <a class="p-2 text-dark" href="#" routerLink="/history" i18n="@@header.history">History</a>
       <a class="p-2 text-dark" href="#" routerLink="/report" i18n="@@header.report">Reports</a>
+      <ng-container *ngFor="let lang of langList">
+        <a class="p-2 text-dark" href="#" routerLink="/{{lang.code}}/">{{ lang.label }}</a>
+      </ng-container>
     </nav>
     <span *ngIf="isLoggedIn" class="my-2 my-md-0 mr-md-3 login-info">
       <img src="{{getUserPhoto()}}" title="{{getUserDisplayName()}}" i18n-alt="@@header.user.photo" alt="User photo">
