@@ -303,7 +303,7 @@
         <target>User photo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.signout" datatype="html">
@@ -311,7 +311,7 @@
         <target>Sign out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.signin" datatype="html">
@@ -319,7 +319,7 @@
         <target>Sign in</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="footer.mailTo" datatype="html">
@@ -447,15 +447,7 @@
           <context context-type="sourcefile">app/components/record/record.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="record.component.form.notes.required" datatype="html">
-        <source>Mandatory field</source>
-        <target>Mandatory field</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
+      </trans-unit>      
       <trans-unit id="btn.save" datatype="html">
         <source>Save</source>
         <target>Save</target>

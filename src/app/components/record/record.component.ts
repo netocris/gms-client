@@ -43,7 +43,7 @@ export class RecordComponent implements OnInit {
       value: ['', Validators.required],
       _date: ['', Validators.required],
       _hour: ['', Validators.required],
-      notes: ['', Validators.required]
+      notes: ['']
     });
   }
 

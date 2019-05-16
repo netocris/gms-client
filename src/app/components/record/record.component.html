@@ -59,13 +59,7 @@
         <div class="col-md-12 mb-3">
           <label for="notes" i18n="@@record.component.form.notes.label">Notes</label>
           <textarea class="form-control" formControlName="notes" id="notes"
-            i18n-placeholder="@@record.component.form.notes.placeholder" placeholder="Notes" rows="5"
-            required></textarea>
-          <div *ngIf="recordForm.controls.notes.errors" class="invalid-feedback">
-            <div *ngIf="recordForm.controls.notes.errors.required" i18n="@@record.component.form.notes.required">
-              Mandatory field
-            </div>
-          </div>
+            i18n-placeholder="@@record.component.form.notes.placeholder" placeholder="Notes" rows="5"></textarea>
         </div>
       </div>
       <button type="submit" class="btn btn-primary mb-2" i18n="@@btn.save">Save</button>
