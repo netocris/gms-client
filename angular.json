@@ -80,6 +80,20 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "en": {
+              "aot": true,
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "pt": {
+              "aot": true,
+              "i18nFile": "src/locale/messages.pt.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "pt",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -91,6 +105,12 @@
           "configurations": {
             "production": {
               "browserTarget": "gms-client:build:production"
+            },
+            "en": {
+              "browserTarget": "gms-client:build:en"
+            },
+            "pt": {
+              "browserTarget": "gms-client:build:pt"
             }
           }
         },

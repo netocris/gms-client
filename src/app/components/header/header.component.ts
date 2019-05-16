@@ -14,10 +14,13 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {
+  }
+
+  ngOnInit() {
     this.authService.user.subscribe(user => {
       this.isLoggedIn = false;
       this.currentUser = null;
-      if(user){
+      if (user) {
         this.isLoggedIn = true;
         this.currentUser = user;
         this.router.navigate(['/dashboard']);
@@ -25,11 +28,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
   public login(): void {
-    this.authService.googleSignIn();    
+    this.authService.googleSignIn();
   }
 
   logout(): void {
@@ -37,19 +37,19 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserDisplayName(): string {
-    if(this.currentUser){
+    if (this.currentUser) {
       return this.currentUser.displayName ? this.currentUser.displayName : this.currentUser.email;
     } else {
       return '';
-    }    
+    }
   }
 
   getUserPhoto(): string {
-    if(this.currentUser){
+    if (this.currentUser) {
       return this.currentUser.photoURL ? this.currentUser.photoURL : '/assets/images/neutral-user.png';
     } else {
       return '/assets/images/neutral-user.png';
-    }    
+    }
   }
 
 }

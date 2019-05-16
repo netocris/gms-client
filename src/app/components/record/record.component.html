@@ -1,55 +1,57 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 order-md-2 mb-4">
-      <h4 class="mb-3">Novo registo</h4>
+      <h4 class="mb-3" i18n="@@record.component.title">New record</h4>
       <form [formGroup]="rForm" (ngSubmit)="onSubmit()" novalidate class="needs-validation"
         [ngClass]="{'was-validated': submitted}">
         <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">
-          <h6 class="alert-heading">Registo inserido com sucesso</h6>
+          <h6 class="alert-heading" i18n="@@record.component.success">Record saved successfully</h6>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="row">
           <div class="col-md-3 mb-3">
-            <label for="value">Leitura</label>
+            <label for="value" i18n="@@record.component.form.value.label">Value</label>
             <input type="text" class="form-control" formControlName="value" id="value" aria-describedby="valueHelp"
-              placeholder="leitura glicémia" required />
-            <small id="valueHelp" class="form-text text-muted">
-              Para um bom controlo os valores de leitura da glicémia deverão situar-se dentro do intervalo [70 - 120]
-              mg/dl em jejum e abaixo dos 150 mg/dl.
+              i18n-placeholder="@@record.component.form.value.placeholder" placeholder="Glucose value" required />
+            <small id="valueHelp" class="form-text text-muted" i18n="@@record.component.form.value.help">
+              For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and
+              below 150 mg/dl
             </small>
             <div *ngIf="rForm.controls.value.errors" class="invalid-feedback">
-              <div *ngIf="rForm.controls.value.errors.required">
-                O valor da leitura é obrigatório
+              <div *ngIf="rForm.controls.value.errors.required" i18n="@@record.component.form.value.required">
+                The value is required
               </div>
             </div>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="_timestamp">Data da leitura</label>
+            <label for="_timestamp" i18n="@@record.component.form._timestamp.label">Date</label>
             <div class="input-group">
               <input type="text" class="form-control" formControlName="_timestamp" id="_timestamp"
-                placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
+                i18n-placeholder="@@record.component.form._timestamp.placeholder" placeholder="yyyy-mm-dd" ngbDatepicker
+                #d="ngbDatepicker" required />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
               </div>
             </div>
             <div *ngIf="rForm.controls._timestamp.errors" class="invalid-feedback">
-              <div *ngIf="rForm.controls._timestamp.errors.required">
-                Data da leitura é obrigatório
+              <div *ngIf="rForm.controls._timestamp.errors.required" i18n="@@record.component.form._timestamp.required">
+                The date is required
               </div>
             </div>
           </div>
 
           <div class="col-md-3 mb-3">
-            <label for="notes">Notas</label>
+            <label for="notes" i18n="@@record.component.form.notes.label">Notes</label>
             <div class="input-group">
-              <input type="text" class="form-control" formControlName="notes" id="notes" placeholder="notas" />
+              <input type="text" class="form-control" formControlName="notes" id="notes"
+                i18n-placeholder="@@record.component.form.notes.placeholder" placeholder="Notes" />
             </div>
           </div>
 
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Inserir</button>
+        <button type="submit" class="btn btn-primary mb-2" i18n="@@btn.save">Save</button>
       </form>
     </div>
   </div>

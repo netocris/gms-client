@@ -35,3 +35,19 @@ Add the folowing lines to angular.json
         "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
 
+## Run in a different port
+
+    ng serve --port=4201 
+    
+or 
+    
+    npm run start -- --port=4201
+
+With locale
+
+    ng serve --configuration=pt --port=4201
+
+or
+
+    npm run start:pt -- --port=4201
+
