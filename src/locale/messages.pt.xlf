@@ -258,6 +258,14 @@
           <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="notfound.component.message" datatype="html">
+        <source>Page not found</source>
+        <target>Página não encontrada</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="header.appname" datatype="html">
         <source>Glicose Monitoring System</source>
         <target>Glicose Monitoring System</target>
@@ -290,6 +298,14 @@
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="header.user.photo" datatype="html">
+        <source>User photo</source>
+        <target>Foto do utilizador</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="header.signout" datatype="html">
         <source>Sign out</source>
         <target>Sair</target>
@@ -304,6 +320,172 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
           <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.mailTo" datatype="html">
+        <source>netocris@gmail.com</source>
+        <target>netocris@gmail.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.href" datatype="html">
+        <source>mailto:netocris@gmail.com</source>
+        <target>mailto:netocris@gmail.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.title" datatype="html">
+        <source>New record</source>
+        <target>Novo registo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.success" datatype="html">
+        <source>Record saved successfully</source>
+        <target>Registo gravado com sucesso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.value.label" datatype="html">
+        <source>Value</source>
+        <target>Leitura</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.value.placeholder" datatype="html">
+        <source>Glucose value</source>
+        <target>A leitura da glicose</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.value.help" datatype="html">
+        <source>
+          For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and
+          below 150 mg/dl
+        </source>
+        <target>
+          Para um bom controlo os valores de leitura da glicémia deverão situar-se dentro do intervalo [70 - 120]
+          mg/dl em jejum e abaixo dos 150 mg/dl
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.value.required" datatype="html">
+        <source>The value is required</source>
+        <target>O valor é obrigatório</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form._timestamp.label" datatype="html">
+        <source>Date</source>
+        <target>Data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form._timestamp.placeholder" datatype="html">
+        <source>yyyy-mm-dd</source>
+        <target>yyyy-mm-dd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form._timestamp.required" datatype="html">
+        <source>The date is required</source>
+        <target>A data é obrigatória</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.notes.label" datatype="html">
+        <source>Notes</source>
+        <target>Notas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form.notes.placeholder" datatype="html">
+        <source>Notes</source>
+        <target>Notas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="btn.save" datatype="html">
+        <source>Save</source>
+        <target>Gravar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history.component.title" datatype="html">
+        <source>History</source>
+        <target>Histórico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="empty.results" datatype="html">
+        <source>No records found</source>
+        <target>Nenhum registo encontrado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history.component.table.header.idx" datatype="html">
+        <source>#</source>
+        <target>#</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history.component.table.header.date" datatype="html">
+        <source>Date</source>
+        <target>Data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history.component.table.header.glucose" datatype="html">
+        <source>Glucose</source>
+        <target>Glicose</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history.component.table.header.notes" datatype="html">
+        <source>Notes</source>
+        <target>Notas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
     </body>

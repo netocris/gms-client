@@ -9,7 +9,7 @@
       <a class="p-2 text-dark" href="#" routerLink="/report" i18n="@@header.report">Reports</a>
     </nav>
     <span *ngIf="isLoggedIn" class="my-2 my-md-0 mr-md-3 login-info">
-      <img src="{{getUserPhoto()}}" title="{{getUserDisplayName()}}" alt="user photo">
+      <img src="{{getUserPhoto()}}" title="{{getUserDisplayName()}}" i18n-alt="@@header.user.photo" alt="User photo">
     </span>
     <button class="btn btn-outline-primary" href="#" (click)="logout()" *ngIf="isLoggedIn" i18n="@@header.signout">Sign
       out</button>
