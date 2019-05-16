@@ -4,7 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "start:en": "ng serve --configuration=en",
+    "start:pt": "ng serve --configuration=pt",
+    "build": "ng build",
+    "build:en": "ng build --configuration=en",
+    "build:pt": "ng build --configuration=pt",
+    "int:extract": "ng xi18n --output-path locale"
   },
   "private": true,
   "dependencies": {

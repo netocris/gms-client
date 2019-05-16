@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
-import { Observable } from 'rxjs';
 import { NgbTimeStruct, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-record',
