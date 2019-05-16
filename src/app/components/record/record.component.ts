@@ -22,7 +22,6 @@ export class RecordComponent implements OnInit {
   notesStr: string = '';
 
   constructor(private fb: FormBuilder, private recordService: RecordService) {
-
   }
 
   ngOnInit() {
