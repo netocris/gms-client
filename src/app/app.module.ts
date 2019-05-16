@@ -27,8 +27,11 @@ import { ReportComponent } from './components/report/report.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 
+import { NumericDirective } from './directives/numeric.directive';
+
 import { AuthService } from './services/auth.service';
 import { RecordService } from './services/record.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { RecordService } from './services/record.service';
     HistoryComponent,
     ReportComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NumericDirective
   ],
   imports: [
     BrowserModule,
