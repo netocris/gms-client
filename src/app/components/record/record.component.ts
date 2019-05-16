@@ -16,53 +16,52 @@ export class RecordComponent implements OnInit {
   submitted: boolean = false;
   success: boolean = false;
 
-  valueStr: string = '';
-  _date: NgbDateStruct;
-  _hour: NgbTimeStruct;
-  notesStr: string = '';
-
   constructor(private fb: FormBuilder, private recordService: RecordService) {
   }
 
   ngOnInit() {
 
-    let dt = new Date();
-    this._date = {
-      year: dt.getFullYear(),
-      month: dt.getMonth() + 2,
-      day: dt.getDay(),
+    const currentDate = new Date();
+    const _date = {
+      year: currentDate.getFullYear(),
+      month: currentDate.getMonth() + 1,
+      day: currentDate.getDate(),
     }
 
-    this._hour = {
-      hour: dt.getHours(),
-      minute: dt.getMinutes(),
-      second: dt.getSeconds(),
+    const _hour = {
+      hour: currentDate.getHours(),
+      minute: currentDate.getMinutes(),
+      second: currentDate.getSeconds(),
     }
 
     this.recordForm = this.fb.group({
       value: ['', Validators.required],
-      _date: ['', Validators.required],
-      _hour: ['', Validators.required],
+      _date: [_date, Validators.required],
+      _hour: [_hour, Validators.required],
       notes: ['']
     });
+
   }
 
   onSubmit() {
+
     this.submitted = true;
 
     if (this.recordForm.invalid) {
       return;
     }
 
-    const _date = this.recordForm.controls._date.value;
-    const _hour = this.recordForm.controls._hour.value;
+    const val = this.recordForm.controls;
+
+    const _date = val._date.value;
+    const _hour = val._hour.value;
     const dt = new Date(_date.year, _date.month - 1, _date.day,
       _hour.hour, _hour.minute, _hour.second);
 
     const record: Record = {
       _timestamp: dt.getTime(),
-      value: this.recordForm.controls.value.value,
-      notes: this.recordForm.controls.notes.value
+      value: val.value.value,
+      notes: val.notes.value
     };
 
     this.recordService.createRecord(record)

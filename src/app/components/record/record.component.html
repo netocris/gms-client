@@ -12,8 +12,9 @@
       <div class="row">
         <div class="col-md-12 mb-3">
           <label for="value" i18n="@@record.component.form.value.label">Value</label>
-          <input type="text" class="form-control" formControlName="value" id="value" aria-describedby="valueHelp"
-            i18n-placeholder="@@record.component.form.value.placeholder" placeholder="Glucose value" required />
+          <input type="text" class="form-control md-form" formControlName="value" id="value"
+            aria-describedby="valueHelp" i18n-placeholder="@@record.component.form.value.placeholder"
+            placeholder="Glucose value" required />
           <small id="valueHelp" class="form-text text-muted" i18n="@@record.component.form.value.help">
             For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and
             below 150 mg/dl
@@ -29,7 +30,7 @@
         <div class="col-md-6 mb-3">
           <label for="_date" i18n="@@record.component.form._timestamp.label">Date</label>
           <div class="input-group">
-            <input type="text" class="form-control" formControlName="_date" [(ngModel)]="_date" id="_date"
+            <input type="text" class="form-control" formControlName="_date" id="_date"
               i18n-placeholder="@@record.component.form._timestamp.placeholder" placeholder="yyyy-mm-dd" ngbDatepicker
               #d="ngbDatepicker" required />
             <div class="input-group-append">
@@ -45,7 +46,7 @@
         <div class="col-md-6 mb-3">
           <label for="_hour" i18n="@@record.component.form._hour.label">Hour</label>
           <div class="input-group">
-            <ngb-timepicker formControlName="_hour" [(ngModel)]="_hour" [seconds]="true" [spinners]="false" required>
+            <ngb-timepicker formControlName="_hour" [seconds]="true" [spinners]="false" required>
             </ngb-timepicker>
           </div>
           <div *ngIf="recordForm.controls._hour.errors" class="invalid-feedback">
