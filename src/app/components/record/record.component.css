@@ -10,12 +10,15 @@ button.calendar, button.calendar:active {
     font-size: 12px;
 }
 
-.form-control.is-invalid, .was-validated .form-control:invalid {
+/* override boostrap form validation css */
+.was-validated .form-control:invalid {
     padding-right: 0 !important;
     background-image: none;
 }
 
-.form-control.is-valid, .was-validated .form-control:valid {    
+/* override boostrap form validation css */
+.was-validated .form-control:valid {
     padding-right: 0 !important;
     background-image: none;
+    border-color: #ced4da;
 }

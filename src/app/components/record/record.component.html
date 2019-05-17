@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-12 order-md-2 mb-4">
     <h4 class="mb-3" i18n="@@record.component.title">New record</h4>
-    <form [formGroup]="recordForm" (ngSubmit)="onSubmit()" novalidate class="needs-validation"
+    <form [formGroup]="recordForm" (ngSubmit)="onSubmit(recordForm.value)" novalidate class="needs-validation"
       [ngClass]="{'was-validated': submitted}">
       <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">
         <h6 class="alert-heading" i18n="@@record.component.success">Record saved successfully</h6>
@@ -44,13 +44,12 @@
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="_hour" i18n="@@record.component.form._hour.label">Hour</label>
+          <label for="_time" i18n="@@record.component.form._time.label">Hour</label>
           <div class="input-group">
-            <ngb-timepicker formControlName="_hour" [seconds]="true" [spinners]="false" required>
-            </ngb-timepicker>
+            <ngb-timepicker formControlName="_time" [seconds]="true" [spinners]="false" required></ngb-timepicker>
           </div>
-          <div *ngIf="recordForm.controls._hour.errors" class="invalid-feedback">
-            <div *ngIf="recordForm.controls._hour.errors.required" i18n="@@record.component.form._hour.required">
+          <div *ngIf="recordForm.controls._time.errors" class="invalid-feedback">
+            <div *ngIf="recordForm.controls._time.errors.required" i18n="@@record.component.form._time.required">
               Mandatory field
             </div>
           </div>

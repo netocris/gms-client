@@ -10,7 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-import { NgbModule, NgbDatepickerModule, NgbAlertModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbAlertModule, NgbDatepickerModule, NgbTimepickerModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { ChartsModule } from 'ng2-charts';
 
@@ -55,9 +55,9 @@ import { RecordService } from './services/record.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgbModule,
-    NgbDatepickerModule,
     NgbAlertModule,
+    NgbDatepickerModule,
+    NgbTimepickerModule,
     NgbPaginationModule,
     ChartsModule
   ],

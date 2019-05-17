@@ -25,3 +25,11 @@ body {
 .container {
     max-width: 960px;
 }
+
+/* override boostrap form validation css */
+/* workarround to remove form validation check from ngx-bootstrap Timepicker */
+.was-validated .ngb-tp-input {
+    padding-right: 10px !important;
+    background-image: none !important;
+    border-color: #ced4da !important;
+}

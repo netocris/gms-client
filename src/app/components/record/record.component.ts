@@ -21,53 +21,47 @@ export class RecordComponent implements OnInit {
 
   ngOnInit() {
 
-    const currentDate = new Date();
+    const cDate = this.getCurrentDate();
     const _date = {
-      year: currentDate.getFullYear(),
-      month: currentDate.getMonth() + 1,
-      day: currentDate.getDate(),
-    }
-
-    const _hour = {
-      hour: currentDate.getHours(),
-      minute: currentDate.getMinutes(),
-      second: currentDate.getSeconds(),
-    }
+      year: cDate.getFullYear(),
+      month: cDate.getMonth() + 1,
+      day: cDate.getDate()
+    };
+    const _time = {
+      hour: cDate.getHours(),
+      minute: cDate.getMinutes(),
+      second: cDate.getSeconds()
+    };
 
     this.recordForm = this.fb.group({
       value: ['', Validators.required],
       _date: [_date, Validators.required],
-      _hour: [_hour, Validators.required],
+      _time: [_time, Validators.required],
       notes: ['']
     });
 
   }
 
-  onSubmit() {
+  onSubmit(record: any) {
 
     this.submitted = true;
-
     if (this.recordForm.invalid) {
       return;
     }
 
-    const val = this.recordForm.controls;
+    const _timestamp = new Date(record._date.year, record._date.month - 1, record._date.day,
+      record._time.hour, record._time.minute, record._time.second);
 
-    const _date = val._date.value;
-    const _hour = val._hour.value;
-    const dt = new Date(_date.year, _date.month - 1, _date.day,
-      _hour.hour, _hour.minute, _hour.second);
-
-    const record: Record = {
-      _timestamp: dt.getTime(),
-      value: val.value.value,
-      notes: val.notes.value
+    const entity: Record = {
+      value: record.value,
+      notes: record.notes,
+      _timestamp: _timestamp.getTime()
     };
 
-    this.recordService.createRecord(record)
+    this.recordService.createRecord(entity)
       .then(
         resp => {
-          this.recordForm.reset();
+          this.resetForm();
           this.submitted = false;
           this.success = true;
         },
@@ -75,6 +69,29 @@ export class RecordComponent implements OnInit {
           console.log(err);
         });
 
+  }
+
+  private getCurrentDate(): Date {
+    return new Date();
+  }
+
+  private resetForm(): void {
+
+    const cDate = this.getCurrentDate();
+    this.recordForm.reset({
+      value: '',
+      notes: '',
+      _date: {
+        year: cDate.getFullYear(),
+        month: cDate.getMonth() + 1,
+        day: cDate.getDate()
+      },
+      _time: {
+        hour: cDate.getHours(),
+        minute: cDate.getMinutes(),
+        second: cDate.getSeconds()
+      }
+    });
   }
 
 }

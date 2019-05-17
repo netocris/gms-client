@@ -416,7 +416,7 @@
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="record.component.form._hour.label" datatype="html">
+      <trans-unit id="record.component.form._time.label" datatype="html">
         <source>Hour</source>
         <target>Hora</target>
         <context-group purpose="location">
@@ -424,7 +424,7 @@
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="record.component.form._hour.required" datatype="html">
+      <trans-unit id="record.component.form._time.required" datatype="html">
         <source>Mandatory field</source>
         <target>Campo obrigatório</target>
         <context-group purpose="location">
