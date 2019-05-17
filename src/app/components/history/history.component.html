@@ -16,7 +16,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let record of records; index as idx">
+            <tr
+              *ngFor="let record of records | slice: (page - 1) * pageSize : (page - 1) * pageSize + pageSize; index as idx;">
               <th scope="row">{{ idx }}</th>
               <td>{{ record._timestamp | date:'yyyy-MM-dd HH:mm:ss' }}</td>
               <td>{{ record.value }}</td>
@@ -24,6 +25,9 @@
             </tr>
           </tbody>
         </table>
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="records.length" [(page)]="page"
+          [pageSize]="pageSize" aria-label="Default pagination" [boundaryLinks]="true">
+        </ngb-pagination>
       </ng-template>
     </div>
   </div>
