@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
-import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { Record } from 'src/app/models/record';
+import { NgbTimeStruct, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-record',
@@ -11,39 +12,86 @@ import { Record } from 'src/app/models/record';
 })
 export class RecordComponent implements OnInit {
 
-  rForm: FormGroup;
+  recordForm: FormGroup;
   submitted: boolean = false;
   success: boolean = false;
 
-  constructor(private fBuilder: FormBuilder, private recordService: RecordService,
-    private dtParserFormater: NgbDateParserFormatter) {
+  constructor(private fb: FormBuilder, private recordService: RecordService) {
   }
 
   ngOnInit() {
-    this.rForm = this.fBuilder.group({
+
+    const cDate = this.getCurrentDate();
+    const _date = {
+      year: cDate.getFullYear(),
+      month: cDate.getMonth() + 1,
+      day: cDate.getDate()
+    };
+    const _time = {
+      hour: cDate.getHours(),
+      minute: cDate.getMinutes(),
+      second: cDate.getSeconds()
+    };
+
+    this.recordForm = this.fb.group({
       value: ['', Validators.required],
-      _timestamp: ['', Validators.required],
-      notes: ['', '']
+      _date: [_date, Validators.required],
+      _time: [_time, Validators.required],
+      notes: ['']
     });
+
   }
 
-  onSubmit() {
-    this.submitted = true;
+  onSubmit(record: any) {
 
-    if (this.rForm.invalid) {
+    this.submitted = true;
+    if (this.recordForm.invalid) {
       return;
     }
 
-    const record: Record = {
-      _timestamp: new Date(this.dtParserFormater.format(this.rForm.controls._timestamp.value)).getTime(),
-      value: this.rForm.controls.value.value,
-      notes: this.rForm.controls.notes.value
+    const _timestamp = new Date(record._date.year, record._date.month - 1, record._date.day,
+      record._time.hour, record._time.minute, record._time.second);
+
+    const entity: Record = {
+      value: record.value,
+      notes: record.notes,
+      _timestamp: _timestamp.getTime()
     };
 
-    this.recordService.createRecord(record);
+    this.recordService.createRecord(entity)
+      .then(
+        resp => {
+          this.resetForm();
+          this.submitted = false;
+          this.success = true;
+        },
+        err => {
+          console.log(err);
+        });
 
-    this.success = true;
-    console.log('form submitted success');
+  }
+
+  private getCurrentDate(): Date {
+    return new Date();
+  }
+
+  private resetForm(): void {
+
+    const cDate = this.getCurrentDate();
+    this.recordForm.reset({
+      value: '',
+      notes: '',
+      _date: {
+        year: cDate.getFullYear(),
+        month: cDate.getMonth() + 1,
+        day: cDate.getDate()
+      },
+      _time: {
+        hour: cDate.getHours(),
+        minute: cDate.getMinutes(),
+        second: cDate.getSeconds()
+      }
+    });
   }
 
 }

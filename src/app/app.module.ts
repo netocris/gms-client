@@ -10,7 +10,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-import { NgbModule, NgbDatepickerModule, NgbAlertModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbAlertModule, NgbDatepickerModule, NgbTimepickerModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 
@@ -25,8 +27,11 @@ import { ReportComponent } from './components/report/report.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 
+import { NumericDirective } from './directives/numeric.directive';
+
 import { AuthService } from './services/auth.service';
 import { RecordService } from './services/record.service';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import { RecordService } from './services/record.service';
     HistoryComponent,
     ReportComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NumericDirective
   ],
   imports: [
     BrowserModule,
@@ -49,10 +55,11 @@ import { RecordService } from './services/record.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgbModule,
-    NgbDatepickerModule,
     NgbAlertModule,
-    NgbPaginationModule
+    NgbDatepickerModule,
+    NgbTimepickerModule,
+    NgbPaginationModule,
+    ChartsModule
   ],
   providers: [
     AuthService,

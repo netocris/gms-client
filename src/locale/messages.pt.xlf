@@ -303,7 +303,7 @@
         <target>Foto do utilizador</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.signout" datatype="html">
@@ -311,7 +311,7 @@
         <target>Sair</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.signin" datatype="html">
@@ -319,7 +319,7 @@
         <target>Entrar</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="footer.mailTo" datatype="html">
@@ -385,8 +385,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.required" datatype="html">
-        <source>The value is required</source>
-        <target>O valor é obrigatório</target>
+        <source>Mandatory field</source>
+        <target>Campo obrigatório</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
           <context context-type="linenumber">23</context>
@@ -409,11 +409,27 @@
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.required" datatype="html">
-        <source>The date is required</source>
-        <target>A data é obrigatória</target>
+        <source>Mandatory field</source>
+        <target>Campo obrigatório</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
           <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form._time.label" datatype="html">
+        <source>Hour</source>
+        <target>Hora</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="record.component.form._time.required" datatype="html">
+        <source>Mandatory field</source>
+        <target>Campo obrigatório</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.notes.label" datatype="html">
@@ -431,7 +447,7 @@
           <context context-type="sourcefile">app/components/record/record.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
-      </trans-unit>
+      </trans-unit>      
       <trans-unit id="btn.save" datatype="html">
         <source>Save</source>
         <target>Gravar</target>
