@@ -271,16 +271,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="header.signout" datatype="html">
-        <source>Sign
-      out</source>
+        <source>Sign out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.signin" datatype="html">
-        <source>Sign
-      in</source>
+        <source>Sign in</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/header/header.component.html</context>
           <context context-type="linenumber">19</context>
@@ -304,101 +302,107 @@
         <source>New record</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.success" datatype="html">
         <source>Record saved successfully</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.label" datatype="html">
         <source>Value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.placeholder" datatype="html">
         <source>Glucose value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.help" datatype="html">
         <source>
-            For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and
-            below 150 mg/dl
-          </source>
+          For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and
+          below 150 mg/dl
+        /source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.required" datatype="html">
-        <source>Mandatory field</source>
+        <source>
+          Mandatory field
+          </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.label" datatype="html">
         <source>Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.placeholder" datatype="html">
         <source>yyyy-mm-dd</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.required" datatype="html">
-        <source>Mandatory field</source>
+        <source>
+          Mandatory field
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._time.label" datatype="html">
         <source>Hour</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._time.required" datatype="html">
-        <source>Mandatory field</source>
+        <source>
+          Mandatory field
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.notes.label" datatype="html">
         <source>Notes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.notes.placeholder" datatype="html">
         <source>Notes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="btn.save" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="history.component.title" datatype="html">
@@ -441,6 +445,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/history/history.component.html</context>
           <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="report.reportbyday.title" datatype="html">
+        <source>Report by day</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="report.reportbyweek.title" datatype="html">
+        <source>Report by week</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
     </body>
