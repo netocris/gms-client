@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
+import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
@@ -18,7 +18,6 @@ import {
 import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
-
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -66,6 +65,10 @@ import { RecordService } from './services/record.service';
     ChartsModule
   ],
   providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/gms-client'
+    },
     AuthService,
     ConfigService,
     RecordService
