@@ -67,7 +67,7 @@ import { RecordService } from './services/record.service';
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '/gms-client'
+      useValue: environment.contextPath
     },
     AuthService,
     ConfigService,
