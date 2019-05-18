@@ -25,16 +25,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RecordComponent } from './components/record/record.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ReportComponent } from './components/report/report.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 // TODO: commented
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 import { NumericDirective } from './directives/numeric.directive';
 
 import { AuthService } from './services/auth.service';
 import { ConfigService } from './services/config.service';
 import { RecordService } from './services/record.service';
-
 
 @NgModule({
   declarations: [
@@ -46,9 +46,10 @@ import { RecordService } from './services/record.service';
     RecordComponent,
     HistoryComponent,
     ReportComponent,
+    LineChartComponent,
     LoginComponent,
     RegisterComponent,
-    NumericDirective
+    NumericDirective,
   ],
   imports: [
     BrowserModule,

@@ -367,7 +367,7 @@
         <target>Glucose value</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.help" datatype="html">
@@ -381,7 +381,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.value.required" datatype="html">
@@ -389,7 +389,7 @@
         <target>Mandatory field</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.label" datatype="html">
@@ -397,7 +397,7 @@
         <target>Date</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.placeholder" datatype="html">
@@ -405,7 +405,7 @@
         <target>yyyy-mm-dd</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._timestamp.required" datatype="html">
@@ -413,7 +413,7 @@
         <target>Mandatory field</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._time.label" datatype="html">
@@ -421,7 +421,7 @@
         <target>Hour</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form._time.required" datatype="html">
@@ -429,7 +429,7 @@
         <target>Mandatory field</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.notes.label" datatype="html">
@@ -437,7 +437,7 @@
         <target>Notes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.form.notes.placeholder" datatype="html">
@@ -445,7 +445,7 @@
         <target>Notes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>      
       <trans-unit id="btn.save" datatype="html">
@@ -453,7 +453,7 @@
         <target>Save</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/record/record.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="history.component.title" datatype="html">
@@ -502,6 +502,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/history/history.component.html</context>
           <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>      
+      <trans-unit id="report.reportbyday.title" datatype="html">
+        <source>Report by day</source>
+        <target>Report by day</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="report.reportbyweek.title" datatype="html">
+        <source>Report by week</source>
+        <target>Report by week</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
     </body>
