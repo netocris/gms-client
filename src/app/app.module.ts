@@ -65,7 +65,10 @@ import { RecordService } from './services/record.service';
     ChartsModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/gms-client' },
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/gms-client'
+    },
     AuthService,
     ConfigService,
     RecordService
