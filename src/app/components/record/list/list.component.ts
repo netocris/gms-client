@@ -4,11 +4,11 @@ import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class HistoryComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   records: Record[];
   page: number = 1000;

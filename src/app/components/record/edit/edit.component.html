@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 mt-3 mb-3">
-      <h4 class="mb-4" i18n="@@record.component.title">New record</h4>
+      <h4 class="mb-4" i18n="@@record.component.title">Add record</h4>
       <form [formGroup]="recordForm" (ngSubmit)="onSubmit(recordForm.value)" novalidate class="needs-validation"
         [ngClass]="{'was-validated': submitted}">
         <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">

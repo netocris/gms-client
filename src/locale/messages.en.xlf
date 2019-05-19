@@ -270,23 +270,23 @@
         <source>Glicose Monitoring System</source>
         <target>Glicose Monitoring System</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.create" datatype="html">
-        <source>New record</source>
-        <target>New record</target>
+        <source>Add record</source>
+        <target>Add record</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.history" datatype="html">
-        <source>History</source>
-        <target>History</target>
+        <source>List Records</source>
+        <target>List Records</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
@@ -294,7 +294,7 @@
         <source>Reports</source>
         <target>Reports</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -302,7 +302,7 @@
         <source>User photo</source>
         <target>User photo</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
@@ -310,7 +310,7 @@
         <source>Sign out</source>
         <target>Sign out</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
@@ -318,7 +318,7 @@
         <source>Sign in</source>
         <target>Sign in</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/header/header.component.html</context>
+          <context context-type="sourcefile">app/components/layout/header/header.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
@@ -326,7 +326,7 @@
         <source>netocris@gmail.com</source>
         <target>netocris@gmail.com</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">app/components/layout/footer/footer.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -334,15 +334,15 @@
         <source>mailto:netocris@gmail.com</source>
         <target>mailto:netocris@gmail.com</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">app/components/layout/footer/footer.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="record.component.title" datatype="html">
-        <source>New record</source>
-        <target>New record</target>
+        <source>Add record</source>
+        <target>Add record</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -350,7 +350,7 @@
         <source>Record saved successfully</source>
         <target>Record saved successfully</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
@@ -358,7 +358,7 @@
         <source>Value</source>
         <target>Value</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
@@ -366,7 +366,7 @@
         <source>Glucose value</source>
         <target>Glucose value</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
@@ -380,7 +380,7 @@
           below 150 mg/dl
         </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
@@ -388,7 +388,7 @@
         <source>Mandatory field</source>
         <target>Mandatory field</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
@@ -396,7 +396,7 @@
         <source>Date</source>
         <target>Date</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
@@ -404,7 +404,7 @@
         <source>yyyy-mm-dd</source>
         <target>yyyy-mm-dd</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
@@ -412,7 +412,7 @@
         <source>Mandatory field</source>
         <target>Mandatory field</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
@@ -420,7 +420,7 @@
         <source>Hour</source>
         <target>Hour</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
@@ -428,7 +428,7 @@
         <source>Mandatory field</source>
         <target>Mandatory field</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
@@ -436,7 +436,7 @@
         <source>Notes</source>
         <target>Notes</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
@@ -444,23 +444,23 @@
         <source>Notes</source>
         <target>Notes</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">64</context>
         </context-group>
-      </trans-unit>      
+      </trans-unit>
       <trans-unit id="btn.save" datatype="html">
         <source>Save</source>
         <target>Save</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/record/record.component.html</context>
+          <context context-type="sourcefile">app/components/record/edit/edit.component.html</context>
           <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="history.component.title" datatype="html">
-        <source>History</source>
-        <target>History</target>
+        <source>List records</source>
+        <target>List records</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -468,7 +468,7 @@
         <source>No records found</source>
         <target>No records found</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
@@ -476,7 +476,7 @@
         <source>#</source>
         <target>#</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
@@ -484,7 +484,7 @@
         <source>Date</source>
         <target>Date</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -492,7 +492,7 @@
         <source>Glucose</source>
         <target>Glucose</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
@@ -500,10 +500,10 @@
         <source>Notes</source>
         <target>Notes</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/history/history.component.html</context>
+          <context context-type="sourcefile">app/components/record/list/list.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
-      </trans-unit>      
+      </trans-unit>
       <trans-unit id="report.reportbyday.title" datatype="html">
         <source>Report by day</source>
         <target>Report by day</target>
