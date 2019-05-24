@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
-import { NgbTimeStruct, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
-  selector: 'app-record',
-  templateUrl: './record.component.html',
-  styleUrls: ['./record.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class RecordComponent implements OnInit {
+export class EditComponent implements OnInit {
 
   recordForm: FormGroup;
   submitted: boolean = false;
   success: boolean = false;
+
 
   constructor(private fb: FormBuilder, private recordService: RecordService) {
   }

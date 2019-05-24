@@ -4,11 +4,11 @@
       <a class="p-2 text-dark" href="#" routerLink="/" i18n="@@header.appname">Glicose Monitoring System</a>
     </h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#" routerLink="/record" i18n="@@header.create">New record</a>
-      <a class="p-2 text-dark" href="#" routerLink="/history" i18n="@@header.history">History</a>
-      <a class="p-2 text-dark" href="#" routerLink="/report" i18n="@@header.report">Reports</a>
+      <a class="p-2 text-dark" href="#" routerLink="/edit" i18n="@@header.create">Add record</a>
+      <a class="p-2 text-dark" href="#" routerLink="/list" i18n="@@header.history">List Records</a>
+      <a class="p-2 text-dark" href="#" routerLink="/reports" i18n="@@header.report">Reports</a>
       <ng-container *ngFor="let lang of langList">
-        <a class="p-2 text-dark" href="#" routerLink="/{{lang.code}}/">{{ lang.label }}</a>
+        <a class="p-1 text-dark font-size-sm" href="#" routerLink="/{{lang.code}}/">{{ lang.label }}</a>
       </ng-container>
     </nav>
     <span *ngIf="isLoggedIn" class="my-2 my-md-0 mr-md-3 login-info">

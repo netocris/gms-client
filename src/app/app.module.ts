@@ -6,35 +6,43 @@ import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
 
+/* angularfire */
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+/* ng-bootstrap */
 import {
   NgbAlertModule, NgbDatepickerModule,
   NgbTimepickerModule, NgbPaginationModule
 } from "@ng-bootstrap/ng-bootstrap";
 
+/* charts.js */
 import { ChartsModule } from 'ng2-charts';
 
-import { AppComponent } from './app.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { RecordComponent } from './components/record/record.component';
-import { HistoryComponent } from './components/history/history.component';
-import { ReportComponent } from './components/report/report.component';
-import { LineChartComponent } from './components/line-chart/line-chart.component';
-// TODO: commented
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-
-import { NumericDirective } from './directives/numeric.directive';
-
-import { AuthService } from './services/auth.service';
+/* services */
+import { AuthService } from './services/auth/auth.service';
 import { ConfigService } from './services/config.service';
 import { RecordService } from './services/record.service';
+
+/* directives */
+import { NumericDirective } from './directives/numeric.directive';
+
+/* components */
+import { AppComponent } from './app.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DashboardComponent } from './components/layout/dashboard/dashboard.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { EditComponent } from './components/record/edit/edit.component';
+import { ListComponent } from './components/record/list/list.component';
+import { ReportComponent } from './components/report/report.component';
+import { LineChartComponent } from './components/report/line-chart/line-chart.component';
+
+// TODO: commented
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -43,13 +51,13 @@ import { RecordService } from './services/record.service';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    RecordComponent,
-    HistoryComponent,
+    EditComponent,
+    ListComponent,
     ReportComponent,
     LineChartComponent,
     LoginComponent,
     RegisterComponent,
-    NumericDirective,
+    NumericDirective
   ],
   imports: [
     BrowserModule,

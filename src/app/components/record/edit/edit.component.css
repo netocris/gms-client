@@ -1,6 +1,6 @@
 button.calendar, button.calendar:active {
     width: 2.75rem;    
-    background-image: url('../../../assets/images/calendar.png');
+    background-image: url('../../../../assets/images/calendar.png');
     background-repeat: no-repeat;
     background-size: 23px;
     background-position: center;
