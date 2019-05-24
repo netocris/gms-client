@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
@@ -12,10 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 /* ng-bootstrap */
-import {
-  NgbAlertModule, NgbDatepickerModule,
-  NgbTimepickerModule, NgbPaginationModule
-} from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 /* charts.js */
 import { ChartsModule } from 'ng2-charts';
@@ -38,10 +35,13 @@ import { EditComponent } from './components/record/edit/edit.component';
 import { ListComponent } from './components/record/list/list.component';
 import { ReportComponent } from './components/report/report.component';
 import { LineChartComponent } from './components/report/line-chart/line-chart.component';
+import { FilterComponent } from './components/record/list/filter/filter.component';
+import { PaginationComponent } from './components/record/list/pagination/pagination.component';
 
 // TODO: commented
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+
 
 
 @NgModule({
@@ -53,6 +53,8 @@ import { RegisterComponent } from './components/auth/register/register.component
     FooterComponent,
     EditComponent,
     ListComponent,
+    FilterComponent,
+    PaginationComponent,
     ReportComponent,
     LineChartComponent,
     LoginComponent,
@@ -63,14 +65,12 @@ import { RegisterComponent } from './components/auth/register/register.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgbAlertModule,
-    NgbDatepickerModule,
-    NgbTimepickerModule,
-    NgbPaginationModule,
+    NgbModule,
     ChartsModule
   ],
   providers: [

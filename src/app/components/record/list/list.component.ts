@@ -32,6 +32,16 @@ export class ListComponent implements OnInit {
 
   }
 
+  searchEventEmitter(filter: { 'searchValue': string }) {
+    if (filter) {
+      this.recordService.getRecordsByFilters(filter.searchValue).subscribe((data => {
+        if (data) {
+          this.records = data;
+        }
+      }));
+    }
+  }
+
   private getConfigValue(key: string): string {
     return this.configService.getStringKey(key);
   }
