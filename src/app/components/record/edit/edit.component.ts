@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-edit',
@@ -13,6 +14,7 @@ export class EditComponent implements OnInit {
   recordForm: FormGroup;
   submitted: boolean = false;
   success: boolean = false;
+
 
   constructor(private fb: FormBuilder, private recordService: RecordService) {
   }

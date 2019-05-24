@@ -1,6 +1,4 @@
-import { IBaseEntity } from './i-base-entity';
-
-export interface Record extends IBaseEntity {
+export interface Record {
   _timestamp: number;
   value: number;
   notes?: string;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Record } from 'src/app/models/record';
 import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
+import { Pagination } from 'src/app/enums/e-pagination';
+import { Record } from 'src/app/models/record';
 
 @Component({
   selector: 'app-list',
@@ -11,16 +12,17 @@ import { RecordService } from 'src/app/services/record.service';
 export class ListComponent implements OnInit {
 
   records: Record[];
-  page: number = 1000;
-  pageSize: number = 12222;
+  page: number;
+  pageSize: number;
 
-  constructor(private configService: ConfigService, private recordService: RecordService) { }
+  constructor(private configService: ConfigService, private recordService: RecordService) {
+  }
 
   ngOnInit() {
 
     this.records = [];
-    this.page = Number(this.getConfigValue('page'));
-    this.pageSize = Number(this.getConfigValue('pageSize'));
+    this.page = Number(this.getConfigValue(Pagination.PAGE));
+    this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
 
     this.recordService.getRecords().subscribe((data: Record[]) => {
       if (data) {
