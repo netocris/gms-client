@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Record } from 'src/app/models/record';
+import { IRecord } from 'src/app/models/i-record';
 
 @Component({
   selector: 'app-pagination',
@@ -9,7 +9,7 @@ import { Record } from 'src/app/models/record';
 export class PaginationComponent implements OnInit {
 
   @Input()
-  records: Record[];
+  records: IRecord[];
 
   @Input()
   page: number;

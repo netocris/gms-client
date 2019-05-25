@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
-import { Record } from 'src/app/models/record';
+import { IRecord } from 'src/app/models/i-record';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
     const _timestamp = new Date(record._date.year, record._date.month - 1, record._date.day,
       record._time.hour, record._time.minute, record._time.second);
 
-    const entity: Record = {
+    const entity: IRecord = {
       value: record.value,
       notes: record.notes,
       _timestamp: _timestamp.getTime()

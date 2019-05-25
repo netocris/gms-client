@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { IRecordFilter } from 'src/app/models/i-record-filter';
 
 @Component({
   selector: 'app-filter',
@@ -7,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  private searchValue: string;
+  private filter: IRecordFilter;
 
   @Output()
   private searchEventEmitter; EventEmitter;
@@ -17,13 +18,15 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchValue = '';
+    this.filter = {
+      _timestamp: '',
+      value: '',
+      notes: ''
+    }
   }
 
   search(): void {
-    this.searchEventEmitter.next({
-      'searchValue': this.searchValue
-    });
+    this.searchEventEmitter.next(this.filter);
   }
 
 }

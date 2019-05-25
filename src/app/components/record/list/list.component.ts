@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
 import { Pagination } from 'src/app/enums/e-pagination';
-import { Record } from 'src/app/models/record';
+import { IRecord } from 'src/app/models/i-record';
+import { IRecordFilter } from 'src/app/models/i-record-filter';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,7 @@ import { Record } from 'src/app/models/record';
 })
 export class ListComponent implements OnInit {
 
-  records: Record[];
+  records: IRecord[];
   page: number;
   pageSize: number;
 
@@ -24,7 +25,7 @@ export class ListComponent implements OnInit {
     this.page = Number(this.getConfigValue(Pagination.PAGE));
     this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
 
-    this.recordService.getRecords().subscribe((data: Record[]) => {
+    this.recordService.getRecords().subscribe((data: IRecord[]) => {
       if (data) {
         this.records = data;
       }
@@ -32,9 +33,9 @@ export class ListComponent implements OnInit {
 
   }
 
-  searchEventEmitter(filter: { 'searchValue': string }) {
+  searchEventEmitter(filter: IRecordFilter) {
     if (filter) {
-      this.recordService.getRecordsByFilters(filter.searchValue).subscribe((data => {
+      this.recordService.getRecordsByFilters(filter).subscribe((data => {
         if (data) {
           this.records = data;
         }
