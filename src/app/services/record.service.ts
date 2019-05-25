@@ -31,8 +31,7 @@ export class RecordService extends BaseService {
 
   getRecordsByFilters(filter: IRecordFilter): Observable<IRecord[]> {
 
-    if (this.isEmptyValue(filter._timestamp) &&
-      this.isEmptyValue(filter.value) && this.isEmptyValue(filter.notes)) {
+    if (this.isEmptyValue(filter._timestamp) && this.isEmptyValue(filter.value) && this.isEmptyValue(filter.notes)) {
       return this.getRecords();
     }
 
