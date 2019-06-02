@@ -1,0 +1,69 @@
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
+import { RecordService } from 'src/app/services/record.service';
+import { Pagination } from 'src/app/enums/pagination.enum';
+import { Record } from 'src/app/models/record';
+import { RecordFilter } from 'src/app/models/record-filter';
+import { SortEvent, SortableDirective } from 'src/app/directives/sortable.directive';
+
+@Component({
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
+})
+export class ListComponent implements OnInit {
+
+  records: Record[];
+  page: number;
+  pageSize: number;
+
+  @ViewChildren(SortableDirective) 
+  headers: QueryList<SortableDirective>;
+
+  constructor(private configService: ConfigService, private recordService: RecordService) { }
+
+  ngOnInit() {
+    this.records = [];
+    this.page = Number(this.getConfigValue(Pagination.PAGE));
+    this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
+
+    this.recordService.getRecords().subscribe((data: Record[]) => {
+      if (data) {
+        this.records = data;
+      }
+    });
+  }
+
+  searchEventEmitter(filter: RecordFilter) {
+    if (filter) {
+      this.recordService.getRecordsByFilters(filter._timestamp, filter.value, filter.notes, null).subscribe((data => {
+        if (data) {
+          this.records = data;
+        }
+      }));
+    }
+  }
+
+  onSort({column, direction}: SortEvent) {
+    // resetting other headers
+    this.headers.forEach(header => {
+      if (header.sortable !== column) {
+        header.direction = '';
+      }
+    });
+
+    console.log(JSON.stringify(column));
+
+    this.recordService.getRecordsByFilters(null, null, null, {column, direction}).subscribe((data => {
+      if (data) {
+        this.records = data;
+      }
+    }));
+    
+  }
+
+  private getConfigValue(key: string): string {
+    return this.configService.getStringKey(key);
+  }
+
+}

@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  contextPath: '/gms-client',
+  firebase: {
+    apiKey: "AIzaSyAq55UFkXDCXh3ucECug97dtyZjMVC4ix8",
+    authDomain: "gms-db-2411b.firebaseapp.com",
+    databaseURL: "https://gms-db-2411b.firebaseio.com",
+    projectId: "gms-db-2411b",
+    storageBucket: "gms-db-2411b.appspot.com",
+    messagingSenderId: "542461657230",
+    appId: "1:542461657230:web:524b0ed64233eb9d"
+  }
 };
 
 /*

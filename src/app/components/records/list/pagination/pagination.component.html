@@ -1,0 +1,17 @@
+<div class="row" *ngIf="records.length > pageSize">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12 card-title">
+        <a data-toggle="collapse" href="#pagination-area" class="text-dark float-right" aria-expanded="false"
+          aria-controls="pagination-area" i18n="@@pagination.label">Pagination</a>
+      </div>
+    </div>
+    <div id="pagination-area" class="collapse">
+      <div class="card card-body mb-3">
+        <ngb-pagination class="d-flex justify-content-end" [collectionSize]="records.length" [(page)]="page"
+          [pageSize]="pageSize" aria-label="Default pagination" [boundaryLinks]="true">
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>
