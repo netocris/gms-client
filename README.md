@@ -33,18 +33,8 @@ A system for monitoring blood glucose levels
         "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
 
-## Run in a different port
+## Run in a different port witout or with locale
 
     ng serve --port=4201
 
-or     
-    
-    npm run start -- --port=4201
-
-With locale
-
     ng serve --configuration=pt --port=4201
-
-or
-
-    npm run start:pt -- --port=4201
