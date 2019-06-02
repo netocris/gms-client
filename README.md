@@ -6,19 +6,19 @@ A system for monitoring blood glucose levels
 
 #### Bootstrap 4
 
-npm install jquery popper.js bootstrap font-awesome --save
+    npm install jquery popper.js bootstrap font-awesome --save
 
-npm install @ng-bootstrap/ng-bootstrap --save
+    npm install @ng-bootstrap/ng-bootstrap --save
 
 #### Firebase 6
 
-npm install @angular/fire firebase --save
+    npm install @angular/fire firebase --save
 
 #### Charts.js
 
-npm install chart.js --save
+    npm install chart.js --save
 
-npm install ng2-charts --save
+    npm install ng2-charts --save
 
 ## Configure Bootstrap
 
@@ -36,11 +36,15 @@ npm install ng2-charts --save
 ## Run in a different port
 
     ng serve --port=4201
+
 or     
+    
     npm run start -- --port=4201
 
 With locale
 
     ng serve --configuration=pt --port=4201
+
 or
+
     npm run start:pt -- --port=4201
