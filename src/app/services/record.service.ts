@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AngularFirestoreDocument, AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestoreDocument, AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { BaseService } from './base.service';
 import { Record } from '../models/record';
 import { SortEvent } from '../directives/sortable.directive';
-//import { RecordFilter } from '../models/record-filter';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class RecordService extends BaseService {
   private entityDoc: AngularFirestoreDocument<Record>;
   private entityCol: AngularFirestoreCollection<Record>;
 
-  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
     super();
     this.afAuth.authState.subscribe(user => {
       if (user) {
@@ -29,7 +28,7 @@ export class RecordService extends BaseService {
   getRecords(): Observable<Record[]> {
     return this.entityCol.valueChanges();
   }
-
+  
   getRecordsByFilters(_timestamp: string, value: string, notes: string, sort: SortEvent): Observable<Record[]> {
     
     return this.entityDoc.collection<Record>('items', ref => {
@@ -37,11 +36,11 @@ export class RecordService extends BaseService {
       let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
 
       if (!this.isEmptyValue(_timestamp)) {
-        query = query.where('_timestamp', '==', _timestamp)
+        query = query.where('_timestamp', '==', parseInt(_timestamp))
       };
 
       if (!this.isEmptyValue(value)) {
-        query = query.where('value', '==', value)
+        query = query.where('value', '==', parseInt(value))
       };
 
       if (!this.isEmptyValue(notes)) {
@@ -61,34 +60,6 @@ export class RecordService extends BaseService {
     }).valueChanges();
 
   }
-
-  /*getRecordsByFilter(filter: RecordFilter): Observable<Record[]> {
-
-    if (this.isEmptyValue(filter._timestamp) && this.isEmptyValue(filter.value) && this.isEmptyValue(filter.notes)) {
-      return this.getRecords();
-    }
-
-    return this.entityDoc.collection<Record>('items', ref => {
-
-      let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
-
-      if (!this.isEmptyValue(filter._timestamp)) {
-        query = query.where('_timestamp', '==', filter._timestamp)
-      };
-
-      if (!this.isEmptyValue(filter.value)) {
-        query = query.where('value', '==', filter.value)
-      };
-
-      if (!this.isEmptyValue(filter.notes)) {
-        query = query.where('notes', '==', filter.notes)
-      };
-
-      return query;
-
-    }).valueChanges();
-
-  }*/
 
   createRecord(record: Record) {
     return this.entityCol.add(record);
