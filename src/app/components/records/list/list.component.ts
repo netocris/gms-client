@@ -6,6 +6,8 @@ import { Record } from 'src/app/models/record';
 import { RecordFilter } from 'src/app/models/record-filter';
 import { SortEvent, SortableDirective } from 'src/app/directives/sortable.directive';
 
+export const compare = (v1, v2) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -36,7 +38,7 @@ export class ListComponent implements OnInit {
 
   searchEventEmitter(filter: RecordFilter) {
     if (filter) {
-      this.recordService.getRecordsByFilters(filter._timestamp, filter.value, filter.notes, null).subscribe((data => {
+      this.recordService.getRecordsByFilters(filter._timestamp, filter.value, filter.notes).subscribe((data => {
         if (data) {
           this.records = data;
         }
@@ -54,12 +56,24 @@ export class ListComponent implements OnInit {
 
     console.log(JSON.stringify(column));
 
-    this.recordService.getRecordsByFilters(null, null, null, {column, direction}).subscribe((data => {
+    // sorting countries
+    if(direction !== ''){
+      this.records = this.records.sort((a,b) => {
+        const res = compare(a[column], b[column]);
+        return direction === 'asc' ? res : -res;
+      }); 
+    }
+
+    /*this.recordService.getRecordsSorted(column, direction).subscribe((data => {
       if (data) {
         this.records = data;
       }
-    }));
+    }));*/
     
+  }
+
+  pageEventEmitter(value){
+    this.page = value;
   }
 
   private getConfigValue(key: string): string {

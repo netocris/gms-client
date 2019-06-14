@@ -29,7 +29,7 @@ export class RecordService extends BaseService {
     return this.entityCol.valueChanges();
   }
   
-  getRecordsByFilters(_timestamp: string, value: string, notes: string, sort: SortEvent): Observable<Record[]> {
+  getRecordsByFilters(_timestamp: string, value: string, notes: string): Observable<Record[]> {
     
     return this.entityDoc.collection<Record>('items', ref => {
 
@@ -45,16 +45,28 @@ export class RecordService extends BaseService {
 
       if (!this.isEmptyValue(notes)) {
         query = query.where('notes', '==', notes)
-      };
+      };      
 
-      if(!this.isEmptyObject(sort)){        
-        if(!this.isEmptyValue(sort.column) && !this.isEmptyValue(sort.direction)){          
-          query = query.orderBy(sort.column, <any>sort.direction);
-        } else if(!this.isEmptyValue(sort.column) && this.isEmptyValue(sort.direction)) {
-          query = query.orderBy(sort.column);
+      return query;
+
+    }).valueChanges();
+
+  }
+
+  getRecordsSorted(value: string, direction: string): Observable<Record[]> {
+    
+    return this.entityDoc.collection<Record>('items', ref => {
+
+      let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
+
+      if(!this.isEmptyValue(value)){
+        if(this.isEmptyValue(direction)){
+          query = query.orderBy(value);
+        } else {
+          query = query.orderBy(value, <any>direction);
         }
       }
-
+      
       return query;
 
     }).valueChanges();

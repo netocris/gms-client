@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Record } from 'src/app/models/record';
 
 @Component({
@@ -16,9 +16,19 @@ export class PaginationComponent implements OnInit {
   @Input()
   pageSize: number;
 
-  constructor() { }
+  @Output()
+  private pageOutputEventEmitter;
+
+  constructor() {
+    this.pageOutputEventEmitter = new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+
+  pageEventEmitter(page: number){
+    this.page = page;
+    this.pageOutputEventEmitter.next(this.page);
   }
 
 }

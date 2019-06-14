@@ -9,7 +9,7 @@
     <div id="pagination-area" class="collapse">
       <div class="card card-body mb-3">
         <ngb-pagination class="d-flex justify-content-end" [collectionSize]="records.length" [(page)]="page"
-          [pageSize]="pageSize" aria-label="Default pagination" [boundaryLinks]="true">
+          [pageSize]="pageSize" aria-label="Default pagination" [boundaryLinks]="true" (pageChange)="pageEventEmitter($event)">
         </ngb-pagination>
       </div>
     </div>
