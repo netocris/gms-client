@@ -10,10 +10,10 @@ export class FilterComponent implements OnInit {
   private filter: RecordFilter;
 
   @Output()
-  private searchEventEmitter; EventEmitter;
+  private searchOutputEventEmitter;
 
   constructor() {
-    this.searchEventEmitter = new EventEmitter();
+    this.searchOutputEventEmitter = new EventEmitter();
   }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class FilterComponent implements OnInit {
   }
 
   search(): void {
-    this.searchEventEmitter.next(this.filter);
+    this.searchOutputEventEmitter.next(this.filter);
   }
 
 }
