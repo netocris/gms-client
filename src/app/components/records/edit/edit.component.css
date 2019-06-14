@@ -7,10 +7,6 @@ button.calendar, button.calendar:active {
     background-position: center;
 }
 
-::-webkit-input-placeholder {
-    font-size: 12px;
-}
-
 /* override boostrap form validation css */
 .was-validated .form-control:invalid {
     padding-right: 0 !important;
