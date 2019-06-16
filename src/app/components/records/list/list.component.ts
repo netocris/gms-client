@@ -32,14 +32,14 @@ export class ListComponent implements OnInit {
     this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
     this.stillLoading = true;
 
-    setTimeout(() => {
+    //setTimeout(() => {
       this.recordService.getRecords().subscribe((data: Record[]) => {
         if (data) {
           this.records = data;
           this.stillLoading = false;
         }
       });
-    }, 1000);
+    //}, 1000);
     
   }
 

@@ -40,7 +40,7 @@ export class RecordService extends BaseService {
       };
 
       if (!this.isEmptyValue(value)) {
-        query = query.where('value', '==', parseInt(value))
+        query = query.where('value', '==', value)
       };
 
       if (!this.isEmptyValue(notes)) {
