@@ -60,19 +60,18 @@ export class EditComponent extends BaseComponent {
       _timestamp: _timestamp.getTime()
     };
 
-    setTimeout(() => {
-
-    this.recordService.createRecord(entity)
-      .then(
-        resp => {
-          this.resetForm();
-          this.submitted = false;          
-          this.success = true;          
-        },
-        err => {
-          console.log(err);
-        });
-    }, 500);
+    //setTimeout(() => {
+      this.recordService.createRecord(entity)
+        .then(
+          resp => {
+            this.resetForm();
+            this.submitted = false;          
+            this.success = true;          
+          },
+          err => {
+            console.log(err);
+          });
+    //}, 500);
 
   }
 
