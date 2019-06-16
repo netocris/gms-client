@@ -19,6 +19,8 @@ export class ListComponent implements OnInit {
   page: number;
   pageSize: number;
 
+  stillLoading: boolean = false;
+
   @ViewChildren(SortableDirective) 
   headers: QueryList<SortableDirective>;
 
@@ -28,19 +30,26 @@ export class ListComponent implements OnInit {
     this.records = [];
     this.page = Number(this.getConfigValue(Pagination.PAGE));
     this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
+    this.stillLoading = true;
 
-    this.recordService.getRecords().subscribe((data: Record[]) => {
-      if (data) {
-        this.records = data;
-      }
-    });
+    //setTimeout(() => {
+      this.recordService.getRecords().subscribe((data: Record[]) => {
+        if (data) {
+          this.records = data;
+          this.stillLoading = false;
+        }
+      });
+    //}, 1000);
+    
   }
 
   searchEventEmitter(filter: RecordFilter) {
     if (filter) {
+      this.stillLoading = true;
       this.recordService.getRecordsByFilters(filter._timestamp, filter.value, filter.notes).subscribe((data => {
         if (data) {
           this.records = data;
+          this.stillLoading = false;
         }
       }));
     }

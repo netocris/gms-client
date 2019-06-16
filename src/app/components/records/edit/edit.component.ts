@@ -12,6 +12,7 @@ export class EditComponent implements OnInit {
 
   recordForm: FormGroup;
   submitted: boolean = false;
+  invalid: boolean = false;
   success: boolean = false;
 
   constructor(private fb: FormBuilder, private recordService: RecordService) { }
@@ -40,10 +41,13 @@ export class EditComponent implements OnInit {
   onSubmit(record: any) {
 
     this.submitted = true;
+    this.invalid = false;
     if (this.recordForm.invalid) {
+      this.submitted = false;
+      this.invalid = true;
       return;
     }
-
+    
     const _timestamp = new Date(record._date.year, record._date.month - 1, record._date.day,
       record._time.hour, record._time.minute, record._time.second);
 
@@ -53,16 +57,19 @@ export class EditComponent implements OnInit {
       _timestamp: _timestamp.getTime()
     };
 
+    setTimeout(() => {
+
     this.recordService.createRecord(entity)
       .then(
         resp => {
           this.resetForm();
-          this.submitted = false;
-          this.success = true;
+          this.submitted = false;          
+          this.success = true;          
         },
         err => {
           console.log(err);
         });
+    }, 500);
 
   }
 

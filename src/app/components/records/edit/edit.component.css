@@ -7,10 +7,6 @@ button.calendar, button.calendar:active {
     background-position: center;
 }
 
-::-webkit-input-placeholder {
-    font-size: 12px;
-}
-
 /* override boostrap form validation css */
 .was-validated .form-control:invalid {
     padding-right: 0 !important;
@@ -22,4 +18,11 @@ button.calendar, button.calendar:active {
     padding-right: 0 !important;
     background-image: none;
     border-color: #ced4da;
+}
+
+.spinner-border-sm {
+    border-top-width: .0625em;
+    border-right-width: .0625em;
+    border-bottom-width: .0625em;
+    border-left-width: .0625em;
 }

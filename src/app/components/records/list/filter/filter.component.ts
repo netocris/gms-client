@@ -3,16 +3,20 @@ import { RecordFilter } from 'src/app/models/record-filter';
 
 @Component({
   selector: 'app-filter',
-  templateUrl: './filter.component.html'
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
 
-  private filter: RecordFilter;
+  filter: RecordFilter;
+
+  advancedSearch: boolean;
 
   @Output()
-  private searchOutputEventEmitter;
+  searchOutputEventEmitter;
 
   constructor() {
+    this.advancedSearch = false;
     this.searchOutputEventEmitter = new EventEmitter();
   }
 
@@ -22,6 +26,10 @@ export class FilterComponent implements OnInit {
       value: '',
       notes: ''
     }
+  }
+
+  toggleSearch(){
+    this.advancedSearch = !this.advancedSearch;
   }
 
   search(): void {

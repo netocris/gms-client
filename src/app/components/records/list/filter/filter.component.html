@@ -1,31 +1,62 @@
 <div class="row">
   <div class="col-md-12">
     <div class="row">
-      <div class="col-md-12 card-title">
+      <div class="col-md-12 card-title font-size-sm">
         <a data-toggle="collapse" href="#filter-area" class="text-dark float-right" aria-expanded="false"
-          aria-controls="filter-area" i18n="@@filter.label">Filters</a>
+          aria-controls="filter-area" i18n="@@filter.label">Search</a>
       </div>
     </div>
     <div id="filter-area" class="collapse">
       <div class="card card-body mb-3">
-        <div class="row">
-          <div class="col-md-3">
-            <input type="Fxt" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
+                
+          <div class="row justify-content-end" *ngIf="!advancedSearch; else advancedSearchTpl">            
+            <div class="search-box">
+              <input type="text" class="search-txt" id="filter.value" [(ngModel)]="filter.value" 
+                  i18n-placeholder="@@filter.component.value.placeholder" placeholder="glucose"/>
+              <a class="search-btn" (click)="search()">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>        
+        
+        <!--<div class="row" *ngIf="!advancedSearch; else advancedSearchTpl">
+          <div class="col-md-8">
+            <input type="text" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
               i18n-placeholder="@@filter.component._timestamp.placeholder" placeholder="date" />
-          </div>
-          <div class="col-md-3">
-            <input type="text" class="form-control" id="filter.value" [(ngModel)]="filter.value"
-              i18n-placeholder="@@filter.component.value.placeholder" placeholder="glucose value" />
-          </div>
-          <div class="col-md-4">
-            <input type="text" class="form-control" id="filter.notes" [(ngModel)]="filter.notes"
-              i18n-placeholder="@@filter.component.notes.placeholder" placeholder="notes" />
-          </div>
-          <div class="col-md-2 float-right">
+          </div>          
+          <div class="col-md-2">
             <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()"
               i18n="@@btn.search">Search</button>
           </div>
-        </div>
+          <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
+              <a class="text-dark link" (click)="toggleSearch();" i18n="@@records.list.filter.advancedsearch">Advanced Search</a>  
+          </div>
+        </div>-->
+
+        <ng-template #advancedSearchTpl>
+          <div class="row">
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
+                i18n-placeholder="@@filter.component._timestamp.placeholder" placeholder="date" />
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="filter.value" [(ngModel)]="filter.value"
+                i18n-placeholder="@@filter.component.value.placeholder" placeholder="glucose value" />
+            </div>
+            <div class="col-md-2">
+              <input type="text" class="form-control" id="filter.notes" [(ngModel)]="filter.notes"
+                i18n-placeholder="@@filter.component.notes.placeholder" placeholder="notes" />
+            </div>
+            <div class="col-md-2">
+              <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()"
+                i18n="@@btn.search">Search</button>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
+                <a class="text-dark link" (click)="toggleSearch();" i18n="@@records.list.filter.search">Search</a>  
+            </div>
+          </div>
+        </ng-template>
+        
       </div>
     </div>
   </div>
