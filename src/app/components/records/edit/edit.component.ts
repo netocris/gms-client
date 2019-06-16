@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
+import { BaseComponent } from '../../base/base.component';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit {
-
+export class EditComponent extends BaseComponent {
+  
   recordForm: FormGroup;
   submitted: boolean = false;
   invalid: boolean = false;
   success: boolean = false;
 
-  constructor(private fb: FormBuilder, private recordService: RecordService) { }
+  constructor(private fb: FormBuilder, private recordService: RecordService) {
+    super();
+  }
 
-  ngOnInit() {
+  protected ngOnInitCustom(): void {
     const cDate = this.getCurrentDate();
     const _date = {
       year: cDate.getFullYear(),

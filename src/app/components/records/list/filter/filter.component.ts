@@ -10,15 +10,12 @@ export class FilterComponent implements OnInit {
 
   filter: RecordFilter;
 
-  advancedSearch: boolean;
+  advancedSearch: boolean = false;
 
   @Output()
-  searchOutputEventEmitter;
+  searchOutputEventEmitter = new EventEmitter();
 
-  constructor() {
-    this.advancedSearch = false;
-    this.searchOutputEventEmitter = new EventEmitter();
-  }
+  constructor() { }
 
   ngOnInit() {
     this.filter = {

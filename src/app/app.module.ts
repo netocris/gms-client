@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 
-import { APP_BASE_HREF } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt);
 
 import { environment } from '../environments/environment';
 
@@ -43,6 +45,7 @@ import { LineChartComponent } from './components/reports/line-chart/line-chart.c
 import { BarChartComponent } from './components/reports/bar-chart/bar-chart.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     LineChartComponent,
     BarChartComponent,
     SortableDirective,
-    SpinnerComponent
+    SpinnerComponent   
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     {
       provide: APP_BASE_HREF,
       useValue: environment.contextPath
+    },
+    {
+      provide: LOCALE_ID, useValue: 'pt'
     },
     AuthService,
     ConfigService,
