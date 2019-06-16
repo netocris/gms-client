@@ -41,6 +41,7 @@ import { PaginationComponent } from './components/records/list/pagination/pagina
 import { ReportsComponent } from './components/reports/reports.component';
 import { LineChartComponent } from './components/reports/line-chart/line-chart.component';
 import { BarChartComponent } from './components/reports/bar-chart/bar-chart.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { BarChartComponent } from './components/reports/bar-chart/bar-chart.comp
     ReportsComponent,
     LineChartComponent,
     BarChartComponent,
-    SortableDirective
+    SortableDirective,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

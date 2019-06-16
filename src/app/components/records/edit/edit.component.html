@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-12 mt-3 mb-3">
-    <h4 class="mb-4" i18n="@@record.component.title">Add record</h4>
-    <form [formGroup]="recordForm" (ngSubmit)="onSubmit(recordForm.value)" novalidate class="needs-validation"
-      [ngClass]="{'was-validated': submitted}">
+    
+    <form [formGroup]="recordForm" novalidate class="needs-validation"
+      [ngClass]="{'was-validated': invalid}">
       <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">
         <h6 class="alert-heading" i18n="@@record.component.success">Record saved successfully</h6>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -63,7 +63,11 @@
             i18n-placeholder="@@record.component.form.notes.placeholder" placeholder="Notes" rows="5"></textarea>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary mb-2" i18n="@@btn.save">Save</button>
+      <button type="button" class="btn btn-primary mb-2" i18n="@@btn.save" (click)="onSubmit(recordForm.value)">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="submitted"></span>          
+          Save
+        </button>
     </form>
+    
   </div>
 </div>
