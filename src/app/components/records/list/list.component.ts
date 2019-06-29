@@ -1,11 +1,12 @@
 import { Component, ViewChildren, QueryList } from '@angular/core';
+import { BaseComponent } from '../../base/base.component';
 import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
-import { Pagination } from 'src/app/enums/pagination.enum';
+import { PaginationEnum } from 'src/app/enums/pagination.enum';
 import { Record } from 'src/app/models/record';
 import { RecordFilter } from 'src/app/models/record-filter';
 import { SortEvent, SortableDirective } from 'src/app/directives/sortable.directive';
-import { BaseComponent } from '../../base/base.component';
+
 
 export const compare = (v1, v2) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
 
@@ -28,8 +29,8 @@ export class ListComponent extends BaseComponent {
   }
 
   protected ngOnInitCustom(): void {
-    this.page = Number(this.getConfigValue(Pagination.PAGE));
-    this.pageSize = Number(this.getConfigValue(Pagination.PAGE_SIZE));
+    this.page = Number(this.getConfigValue(PaginationEnum.PAGE));
+    this.pageSize = Number(this.getConfigValue(PaginationEnum.PAGE_SIZE));
     this.stillLoading = true;
 
     //setTimeout(() => {
