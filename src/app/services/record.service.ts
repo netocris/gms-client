@@ -10,7 +10,7 @@ import { SortEvent } from '../directives/sortable.directive';
   providedIn: 'root'
 })
 export class RecordService extends BaseService {
-
+  
   private entityDoc: AngularFirestoreDocument<Record>;
   private entityCol: AngularFirestoreCollection<Record>;
 
@@ -75,6 +75,20 @@ export class RecordService extends BaseService {
 
   createRecord(record: Record) {
     return this.entityCol.add(record);
+  }
+
+  createRecords(records: Record[]) {
+
+    if(this.isEmptyArray(records)){
+      return;
+    }
+
+    records.forEach((item) => {
+      this.createRecord(item);
+    });
+    
+    // process file
+
   }
   
 }

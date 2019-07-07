@@ -4,7 +4,7 @@
     <form [formGroup]="recordForm" novalidate class="needs-validation"
       [ngClass]="{'was-validated': invalid}">
       <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success">
-        <h6 class="alert-heading" i18n="@@record.component.success">Record saved successfully</h6>
+        <small i18n="@@record.component.success">Record saved successfully</small>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -64,10 +64,42 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary mb-2" i18n="@@btn.save" (click)="onSubmit(recordForm.value)">
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="submitted"></span>          
-          Save
-        </button>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="submitted"></span>          
+        Save
+      </button>
     </form>
-    
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mt-3 mb-3">
+
+    <div class="row">
+      <div class="col-md-12 card-title font-size-sm">
+        <a data-toggle="collapse" href="#upload-area" class="text-dark float-right" aria-expanded="false"
+          aria-controls="upload-area" i18n="@@filter.upload.area">Upload data</a>
+      </div>
+    </div>
+
+    <div id="upload-area" class="collapse">
+      
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successUpload">
+          <small i18n="@@record.component.success.upload">File uploaded successfully</small>
+        </div>
+        <input 
+          type="file" 
+          style="display: none;" 
+          (change)="onFileSelected($event)"
+          #fileInput>
+        <button type="button" class="btn btn-outline-primary mb-2" i18n="@@btn.save" (click)="fileInput.click()">                        
+          Choose
+        </button>
+        <button type="button" class="btn btn-outline-primary mb-2" i18n="@@btn.save" (click)="onUpload()">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="submitted"></span>          
+          Upload
+        </button>
+      
+  </div>
   </div>
 </div>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
-import { Record } from 'src/app/models/record';
 import { BaseComponent } from '../../base/base.component';
+import { FileService } from 'src/app/services/file.service';
+import { Record } from 'src/app/models/record';
 
 @Component({
   selector: 'app-edit',
@@ -16,7 +17,10 @@ export class EditComponent extends BaseComponent {
   invalid: boolean = false;
   success: boolean = false;
 
-  constructor(private fb: FormBuilder, private recordService: RecordService) {
+  selectedFile: File = null;
+
+  constructor(private fb: FormBuilder, private recordService: RecordService,
+    private fileService: FileService) {
     super();
   }
 
@@ -75,6 +79,61 @@ export class EditComponent extends BaseComponent {
 
   }
 
+  onFileSelected(event): void {
+    this.selectedFile = <File>event.target.files[0];
+  }
+
+  onUpload(): void {
+
+    // process uploaded file
+    if(this.fileService.isCSVFile(this.selectedFile)){
+
+      const reader = new FileReader();
+      reader.readAsText(this.selectedFile);
+
+      reader.onload = (data) => {
+        let csvData = reader.result;  
+        let csvRecordsArray = (<string>csvData).split(/\r\n|\n/);
+
+        // ignore first 3 lines
+        csvRecordsArray = csvRecordsArray.slice(3, csvRecordsArray.length);
+
+        const headers: string[] = this.fileService.getHeaderArray(csvRecordsArray, '\t');
+
+        // ignore first line
+        csvRecordsArray = csvRecordsArray.slice(1, csvRecordsArray.length);
+
+        let dataArr: string[][] = this.fileService.getDataArray(csvRecordsArray, '\t', headers.length);
+
+        let recors: Record[] = [];
+
+        dataArr.forEach((item: any) => {
+          let entity: Record = {
+            _timestamp: this.parseDateString(item[0]).getTime(),
+            value: item[1],
+            notes: item[2]            
+          };
+          recors.push(entity); 
+        });
+
+        recors.forEach(item => console.log(item));
+
+      }
+
+      reader.onerror = function () {  
+        console.log('error is occured while reading file!');      
+      };
+
+    } else {
+      console.log('please import a valid csv file');
+      return;
+    }
+
+    // call service to save entity array
+    //this.recordService.createRecords(entities);
+
+  }
+
   private getCurrentDate(): Date {
     return new Date();
   }
@@ -96,6 +155,19 @@ export class EditComponent extends BaseComponent {
         second: cDate.getSeconds()
       }
     });
+  }
+
+  private parseDateString(dateStr: string): Date {      
+        
+    let values = dateStr.split(' ');
+    let dt = values[0];
+    let hr = values[1];
+    
+    let dt_: Date = new Date(parseInt(dt.split("/")[0]), parseInt(dt.split("/")[1]), parseInt(dt.split("/")[2]), 
+      parseInt(hr.split(":")[0]), parseInt(hr.split(":")[1]));
+    
+    return dt_;
+
   }
 
 }

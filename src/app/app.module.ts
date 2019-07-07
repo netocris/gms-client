@@ -28,6 +28,7 @@ import { SortableDirective } from './directives/sortable.directive';
 import { AuthService } from './services/auth/auth.service';
 import { ConfigService } from './services/config.service';
 import { RecordService } from './services/record.service';
+import { FileService } from './services/file.service';
 
 /* components */
 import { AppRoutingModule } from './app-routing.module';
@@ -86,7 +87,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     },
     AuthService,
     ConfigService,
-    RecordService
+    RecordService,
+    FileService
   ],
   bootstrap: [AppComponent]
 })
