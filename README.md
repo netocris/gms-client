@@ -38,3 +38,11 @@ A system for monitoring blood glucose levels
     ng serve --port=4201
 
     ng serve --configuration=pt --port=4201
+
+## check available dependencies updates
+
+    npm install -g npm-check-updates
+
+    ncu
+
+    ncu -u
