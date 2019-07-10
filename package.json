@@ -12,7 +12,9 @@
     "int:extract": "ng xi18n --output-path locale",
     "build-locale": "npm run build-locale:en && npm run build-locale:pt",
     "build-locale:en": "ng build --prod --i18n-locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf --output-path=dist/en --baseHref /en/",
-    "build-locale:pt": "ng build --prod --i18n-locale pt --i18n-format xlf --i18n-file src/locale/messages.pt.xlf --output-path=dist/pt --baseHref /pt/"
+    "build-locale:pt": "ng build --prod --i18n-locale pt --i18n-format xlf --i18n-file src/locale/messages.pt.xlf --output-path=dist/pt --baseHref /pt/",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -42,7 +44,14 @@
     "@angular/cli": "~8.1.1",
     "@angular/compiler-cli": "~8.1.1",
     "@angular/language-service": "~8.1.1",
+    "@babel/core": "^7.5.4",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/angular": "^5.1.9",
     "@types/node": "~12.6.2",
+    "babel-loader": "^8.0.6",
     "ts-node": "~8.3.0",
     "typescript": "~3.4.3"
   }
