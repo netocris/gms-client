@@ -14,7 +14,7 @@ export class ButtonComponent implements OnInit {
   disabled: boolean = false;
 
   @Output()
-  buttonEventEmmitter = new EventEmitter();
+  eventEmmitter = new EventEmitter();
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.buttonEventEmmitter.next();
+    this.eventEmmitter.next();
   }
 
 }

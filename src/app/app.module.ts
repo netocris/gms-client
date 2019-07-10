@@ -45,6 +45,9 @@ import { LineChartComponent } from './components/reports/line-chart/line-chart.c
 import { BarChartComponent } from './components/reports/bar-chart/bar-chart.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
+import { InputTextComponent } from './components/atoms/input-text/input-text.component';
+import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
+import { LinkComponent } from './components/atoms/link/link.component';
 
 
 @NgModule({
@@ -64,7 +67,10 @@ import { ButtonComponent } from './components/atoms/button/button.component';
     BarChartComponent,
     SortableDirective,
     SpinnerComponent,
-    ButtonComponent   
+    ButtonComponent,
+    InputTextComponent,
+    InputNumberComponent,
+    LinkComponent   
   ],
   imports: [
     BrowserModule,

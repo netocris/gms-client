@@ -23,11 +23,11 @@ storiesOf('Components|Button', module)
     }
   }))
   .add('with action', () => ({
-    template: `<app-button [valueModel]="valueModel" [disabled]="disabled" (buttonEventEmmitter)="buttonEventEmmitter($event)"></app-button>`,
+    template: `<app-button [valueModel]="valueModel" [disabled]="disabled" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
     props: {
       valueModel: 'Click',
       disabled: false,
-      buttonEventEmmitter: action('buttonEventEmmitter')
+      eventEmmitter: action('eventEmmitter')
     }
   }));
 
