@@ -12,13 +12,13 @@ storiesOf('Components|Link', module)
   .add('default', () => ({
     component: LinkComponent,
     props: {
-      valueModel: 'Click'
+      modelValue: 'Click'
     }
   }))
   .add('disabled', () => ({
-    template: `<app-link [valueModel]="valueModel" [disabled]="disabled"></app-link>`,
+    template: `<app-link [modelValue]="modelValue" [disabled]="disabled"></app-link>`,
     props: {
-      valueModel: 'Click',
+      modelValue: 'Click',
       disabled: true
     }
   }));
@@ -28,7 +28,7 @@ storiesOf('Components|Link', module)
   .add('customization', () => ({
     component: LinkComponent,
     props: {
-      valueModel: text('valueModel', 'Click'),
+      modelValue: text('modelValue', 'Click'),
       disabled: boolean('disabled', false)      
     }
   }));

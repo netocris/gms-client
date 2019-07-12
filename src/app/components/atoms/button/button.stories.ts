@@ -12,20 +12,20 @@ storiesOf('Components|Button', module)
   .add('default', () => ({
     component: ButtonComponent,
     props: {
-      valueModel: 'Click'
+      modelValue: 'Click'
     }
   }))
   .add('disabled', () => ({
-    template: `<app-button [valueModel]="valueModel" [disabled]="disabled"></app-button>`,
+    template: `<app-button [modelValue]="modelValue" [disabled]="disabled"></app-button>`,
     props: {
-      valueModel: 'Click',
+      modelValue: 'Click',
       disabled: true
     }
   }))
   .add('with action', () => ({
-    template: `<app-button [valueModel]="valueModel" [disabled]="disabled" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
+    template: `<app-button [modelValue]="modelValue" [disabled]="disabled" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
     props: {
-      valueModel: 'Click',
+      modelValue: 'Click',
       disabled: false,
       eventEmmitter: action('eventEmmitter')
     }
@@ -36,7 +36,7 @@ storiesOf('Components|Button', module)
   .add('customization', () => ({
     component: ButtonComponent,
     props: {
-      valueModel: text('valueModel', 'Click'),
+      modelValue: text('modelValue', 'Click'),
       disabled: boolean('disabled', false)      
     }
   }));

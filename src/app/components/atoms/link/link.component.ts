@@ -8,11 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LinkComponent implements OnInit {
 
   @Input()
-  valueModel: string = 'link';
+  modelValue: string = 'link';
+
+  @Input()
+  linkValue: string = '';
 
   @Input()
   disabled: boolean = false;
-  
+
   constructor() { }
 
   ngOnInit() {
