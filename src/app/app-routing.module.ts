@@ -1,19 +1,20 @@
+import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './services/auth/auth.guard';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { EditComponent } from './components/records/edit/edit.component';
-import { ListComponent } from './components/records/list/list.component';
-import { ReportsComponent } from './components/reports/reports.component';
+
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { EditRecordPageComponent } from './components/pages/edit-record-page/edit-record-page.component';
+import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
+import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'edit', component: EditComponent, canActivate: [AuthGuard] },
-  { path: 'list', component: ListComponent, canActivate: [AuthGuard] },
-  { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
-  { path: '**', pathMatch: 'full', component: NotFoundComponent }
+  { path: 'dashboard', component: DashboardPageComponent },
+  { path: 'edit', component: EditRecordPageComponent, canActivate: [AuthGuard] },
+  { path: 'list', component: ListRecordPageComponent, canActivate: [AuthGuard] },
+  { path: 'reports', component: ReportPageComponent, canActivate: [AuthGuard] },
+  { path: '**', pathMatch: 'full', component: NotFoundPageComponent }
 ];
 
 @NgModule({

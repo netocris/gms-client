@@ -1,0 +1,31 @@
+<!-- TODO: refact to Atomic Web Design -->
+<app-spinner *ngIf="stillLoading; else dashboardTpl"></app-spinner>
+
+<ng-template #dashboardTpl>
+
+  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Hemoglobina Glicada <strong>HbA1c</strong></h1>
+    <p class="lead">A dosagem da hemoglobina glicada, também chamada de hemoglobina glicosilada, hemoglobina A1c ou simplesmente HbA1c, é um exame de sangue muito utilizado para o acompanhamento dos pacientes diabéticos, por ser ele uma forma eficaz de avaliar os níveis médios da glicose sanguínea nos últimos 2 ou 3 meses.</p>
+    <small>fonte: <a href="https://www.mdsaude.com/endocrinologia/hemoglobina-glicada" target="_blank">mdsaude.com</a></small>
+  </div>
+  
+  <div class="card-deck mt-3 mb-3">
+    <div class="card mb-6">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Mean Glycemia</h4>
+      </div>
+      <div class="card-body">        
+        <h1 class="card-title">{{meanGlycemia}} mg/dl</h1>
+      </div>          
+    </div>  
+    <div class="card mb-6">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">HbA1c</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title">{{hbA1c | percent:'2.2-2':'pt'}}</h1>
+      </div>          
+    </div>
+  </div>
+
+</ng-template>

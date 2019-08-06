@@ -32,49 +32,63 @@ import { RecordService } from './services/record.service';
 /* components */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ListComponent } from './components/records/list/list.component';
-import { EditComponent } from './components/records/edit/edit.component';
-import { FilterComponent } from './components/records/list/filter/filter.component';
-import { PaginationComponent } from './components/records/list/pagination/pagination.component';
-import { ReportsComponent } from './components/reports/reports.component';
-import { LineChartComponent } from './components/reports/line-chart/line-chart.component';
-import { BarChartComponent } from './components/reports/bar-chart/bar-chart.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
+
+/* atoms */
 import { ButtonComponent } from './components/atoms/button/button.component';
+import { ImageComponent } from './components/atoms/image/image.component';
+import { LinkComponent } from './components/atoms/link/link.component';
 import { InputTextComponent } from './components/atoms/input-text/input-text.component';
 import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
-import { LinkComponent } from './components/atoms/link/link.component';
-import { NavbarComponent } from './components/organisms/navbar/navbar.component';
-import { ImageComponent } from './components/atoms/image/image.component';
+
+/* molecules */
+import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
+import { SpinnerComponent } from './components/molecules/spinner/spinner.component';
+import { PaginationComponent } from './components/molecules/pagination/pagination.component';
+
+/* organisms */
+import { HeaderComponent } from './components/organisms/header/header.component';
+import { FooterComponent } from './components/organisms/footer/footer.component';
+import { FilterComponent } from './components/organisms/filter/filter.component';
+
+/* templates */
+import { DashboardComponent } from './components/templates/dashboard/dashboard.component';
+import { EditRecordComponent } from './components/templates/edit-record/edit-record.component';
+import { ListRecordComponent } from './components/templates/list-record/list-record.component';
+import { ReportComponent } from './components/templates/report/report.component';
+
+/* pages */
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { EditRecordPageComponent } from './components/pages/edit-record-page/edit-record-page.component';
+import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
+import { ReportPageComponent } from './components/pages/report-page/report-page.component';
+import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NumericDirective,
-    NotFoundComponent,
-    NavBarComponent,
-    FooterComponent,
-    DashboardComponent,
-    ListComponent,
-    EditComponent,
-    FilterComponent,
-    PaginationComponent,
-    ReportsComponent,
-    LineChartComponent,
-    BarChartComponent,
-    SortableDirective,
-    SpinnerComponent,
+    SortableDirective,    
     ButtonComponent,
     InputTextComponent,
     InputNumberComponent,
-    LinkComponent,
-    NavbarComponent,
-    ImageComponent   
+    LinkComponent,    
+    ImageComponent,    
+    NotFoundComponent,
+    SpinnerComponent,
+    PaginationComponent,
+    HeaderComponent,
+    FooterComponent,
+    FilterComponent,    
+    DashboardComponent,
+    EditRecordComponent,
+    ListRecordComponent,
+    DashboardPageComponent,
+    EditRecordPageComponent,
+    ListRecordPageComponent,    
+    ReportComponent,
+    ReportPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

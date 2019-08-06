@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.eventEmmitter.next();
+    this.eventEmmitter.emit();
   }
 
 }

@@ -1,0 +1,27 @@
+button.calendar, button.calendar:active {
+    width: 2.75rem;    
+    background-image: url('../../../../assets/images/calendar.png') !important;    
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center;
+}
+
+/* override boostrap form validation css */
+.was-validated .form-control:invalid {
+    padding-right: 0 !important;
+    background-image: none;
+}
+
+/* override boostrap form validation css */
+.was-validated .form-control:valid {
+    padding-right: 0 !important;
+    background-image: none;
+    border-color: #ced4da;
+}
+
+.spinner-border-sm {
+    border-top-width: .0625em;
+    border-right-width: .0625em;
+    border-bottom-width: .0625em;
+    border-left-width: .0625em;
+}
