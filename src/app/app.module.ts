@@ -4,8 +4,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 
-import localePt from '@angular/common/locales/pt';
-registerLocaleData(localePt);
+//import localePt from '@angular/common/locales/pt';
+//registerLocaleData(localePt);
 
 import { environment } from '../environments/environment';
 
@@ -122,9 +122,9 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
       provide: APP_BASE_HREF,
       useValue: environment.contextPath
     },
-    {
+    /*{
       provide: LOCALE_ID, useValue: 'pt'
-    },
+    },*/
     AuthService,
     ConfigService,
     RecordService

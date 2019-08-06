@@ -11,11 +11,20 @@ import { LocaleEnum } from './enums/locale.enum copy';
 export class AppComponent {
   title = 'gms-client';
 
-  constructor(translateService: TranslateService, private configService: ConfigService){
+  constructor(private translateService: TranslateService, configService: ConfigService){
     /* this language will be used as a fallback when a translation isn't found in the current language */
     translateService.setDefaultLang(configService.getStringKey(LocaleEnum.LOCALE));
     /* this language to use, if the language isn't available, it will use the current loader to get them */
     translateService.use(configService.getStringKey(LocaleEnum.LOCALE));
+  }
+
+  /* 
+    ex: <button (click)="useLanguage('en')">en</button> 
+        <button (click)="useLanguage('pt')">pt</button>
+  
+  */
+  useLanguage(language: string): void {
+    this.translateService.use(language);
   }
 
 }
