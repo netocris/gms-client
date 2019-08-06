@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
@@ -6,9 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
-
-  @Input()
-  message: string = 'Page not found';
 
   constructor() { }
 

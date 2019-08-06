@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 
@@ -19,6 +19,15 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 /* charts.js */
 import { ChartsModule } from 'ng2-charts';
+
+/* ngx-translate */
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
+
+/* required for AOT compilation */
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 /* directives */
 import { NumericDirective } from './directives/numeric.directive';
@@ -63,7 +72,6 @@ import { ListRecordPageComponent } from './components/pages/list-record-page/lis
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +108,14 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     AngularFirestoreModule,
     AngularFireAuthModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {

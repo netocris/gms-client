@@ -20,6 +20,10 @@ A system for monitoring blood glucose levels
 
     npm install ng2-charts --save
 
+### ngx-translate
+
+    npm install @ngx-translate/core @ngx-translate/http-loader --save
+    
 ## Configure Bootstrap
 
     "styles": [
