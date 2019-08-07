@@ -4,7 +4,8 @@
             <div class="col-md-12 card-title font-size-sm">            
                 <app-toggle-link [url]="'#pagination-area'" 
                     [linkClass]="'text-dark float-right'"
-                    [linkValue]="'pagination.title' | translate"></app-toggle-link>            
+                    [linkValue]="'pagination.title' | translate">
+                </app-toggle-link>
             </div>
         </div>
         <div id="pagination-area" class="collapse">
@@ -15,7 +16,8 @@
                     [pageSize]="pageSize" 
                     [boundaryLinks]="true" 
                     aria-label="Default pagination"                     
-                    (pageChange)="pageEventEmitter($event)"></ngb-pagination>
+                    (pageChange)="pageEventEmitter($event)">
+                </ngb-pagination>
             </div>
         </div>
     </div>

@@ -1,22 +1,37 @@
 <!-- TODO refact this to go against Atom Web Design -->
 <div class="row">
   <div class="col-md-12">
+    
+    
     <div class="row">
       <div class="col-md-12 card-title font-size-sm">
-        <a data-toggle="collapse" href="#filter-area" class="text-dark float-right" aria-expanded="false"
-          aria-controls="filter-area" i18n="@@filter.label">Search</a>
+        <app-toggle-link [url]="'#filter-area'" 
+          [linkClass]="'text-dark float-right'"
+          [linkValue]="'filter.title' | translate">
+        </app-toggle-link>        
       </div>
     </div>
+
+
     <div id="filter-area" class="collapse">
       <div class="card card-body mb-3">
                 
           <div class="row justify-content-end" *ngIf="!advancedSearch; else advancedSearchTpl">            
             <div class="search-box">
-              <input type="text" class="search-txt" id="filter.value" [(ngModel)]="filter.value" 
-                  i18n-placeholder="@@filter.component.value.placeholder" placeholder="glucose"/>
+
+              <app-input-text [inputId]="filter.value" 
+                [inputValue]="filter.value" 
+                [inputClass]="'search-txt'">
+              </app-input-text>
+              <app-search-link [linkClass]="'search-btn'" ></app-search-link>
+
+
+              <!--<input type="text" class="search-txt" id="filter.value" [(ngModel)]="filter.value" 
+                  placeholder="glucose"/>
               <a class="search-btn" (click)="search()">
                 <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
+              </a>-->
+
             </div>
           </div>        
         

@@ -18,6 +18,9 @@ export class InputTextComponent implements OnInit {
   inputName: string = 'inputName';
 
   @Input()
+  inputId: string = '';
+
+  @Input()
   inputPlaceHolder: string = 'inputPlaceHolder';
 
   @Input()

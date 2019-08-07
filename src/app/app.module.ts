@@ -77,6 +77,7 @@ import { ListRecordPageComponent } from './components/pages/list-record-page/lis
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
+import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +113,7 @@ import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.
     ReportPageComponent,
     NotFoundPageComponent,
     ToggleLinkComponent,
+    SearchLinkComponent,
         
   ],
   imports: [
