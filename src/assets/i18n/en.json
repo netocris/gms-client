@@ -1,5 +1,29 @@
-{
+{    
+    "header": {
+        "app": "Glicose Monitoring System",
+        "signin": "Sign in",
+        "signout": "Sign out",
+        "record": {
+            "add": "Add Record",
+            "list": "Records"
+        },        
+        "reports": "Reports"
+    },
     "notfound": {
         "message": "Page not found"
+    },
+    "dashboard" : {        
+        "hbA1c": {
+            "title": "Glycated Hemoglobin HbA1c",
+            "acronym": "HbA1c",
+            "content": "Measurement of glycated hemoglobin (HbA1c) is a blood test widely used to monitor diabetic patients. It's an effective way to evaluate average blood glucose levels in the last 2 or 3 months.",
+            "font": {
+                "from": "from",
+                "deno": "mdsaude.com",
+                "url": "https://www.mdsaude.com/endocrinologia/hemoglobina-glicada"
+            }
+        },
+        "measure": "{{value}} mg/dl",
+        "average": "Average Blood Glucose"
     }
 }

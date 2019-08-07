@@ -18,13 +18,4 @@ export class AppComponent {
     translateService.use(configService.getStringKey(LocaleEnum.LOCALE));
   }
 
-  /* 
-    ex: <button (click)="useLanguage('en')">en</button> 
-        <button (click)="useLanguage('pt')">pt</button>
-  
-  */
-  useLanguage(language: string): void {
-    this.translateService.use(language);
-  }
-
 }

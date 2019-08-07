@@ -8,13 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LinkComponent implements OnInit {
 
   @Input()
-  modelValue: string = 'link';
+  linkValue: string = 'linkValue';
 
   @Input()
-  linkValue: string = '';
+  routerLink: string = '';
 
   @Input()
-  disabled: boolean = false;
+  linkClass: string = '';
 
   constructor() { }
 

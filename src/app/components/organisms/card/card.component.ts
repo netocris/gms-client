@@ -8,10 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
   
   @Input()
-  headerText: string = '';
+  title: string = '';
 
   @Input()
-  bodyText: string = '';
+  content: string = '';
 
   constructor() { }
 

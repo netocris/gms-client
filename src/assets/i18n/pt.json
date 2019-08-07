@@ -1,5 +1,29 @@
 {
+    "header": {
+        "app": "Glicose Monitoring System",
+        "signin": "Entrar",
+        "signout": "Sair",
+        "record": {
+            "add": "Adicionar Registo",
+            "list": "Registos"
+        },        
+        "reports": "Relatórios"
+    },
     "notfound": {
         "message": "Página não encontrada"
+    },
+    "dashboard" : {
+        "hbA1c": {
+            "title": "Hemoglobina Glicada HbA1c",
+            "acronym": "HbA1c",
+            "content": "A dosagem da hemoglobina glicada, também chamada de hemoglobina glicosilada, hemoglobina A1c ou simplesmente HbA1c, é um exame de sangue muito utilizado para o acompanhamento dos pacientes diabéticos, por ser ele uma forma eficaz de avaliar os níveis médios da glicose sanguínea nos últimos 2 ou 3 meses.",
+            "font": {
+                "from": "fonte",
+                "deno": "mdsaude.com",
+                "url": "https://www.mdsaude.com/endocrinologia/hemoglobina-glicada"
+            }    
+        },
+        "measure": "{{value}} mg/dl",
+        "average": "Média Glicose Sangue"        
     }
 }

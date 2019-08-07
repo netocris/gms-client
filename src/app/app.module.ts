@@ -46,6 +46,7 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { ImageComponent } from './components/atoms/image/image.component';
 import { LinkComponent } from './components/atoms/link/link.component';
+import { SimpleLinkComponent } from './components/atoms/simple-link/simple-link.component';
 import { InputTextComponent } from './components/atoms/input-text/input-text.component';
 import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
 
@@ -61,6 +62,7 @@ import { FooterComponent } from './components/organisms/footer/footer.component'
 import { FilterComponent } from './components/organisms/filter/filter.component';
 import { PaginationComponent } from './components/organisms/pagination/pagination.component';
 import { CardComponent } from './components/organisms/card/card.component';
+import { JumbotronComponent } from './components/organisms/jumbotron/jumbotron.component';
 
 /* templates */
 import { DashboardComponent } from './components/templates/dashboard/dashboard.component';
@@ -83,7 +85,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ButtonComponent,
     InputTextComponent,
     InputNumberComponent,
-    LinkComponent,    
+    LinkComponent, 
+    SimpleLinkComponent,   
     ImageComponent,
     
     NotFoundComponent,
@@ -96,7 +99,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     FilterComponent,    
     PaginationComponent,
     CardComponent,
-
+    JumbotronComponent,
+    
     DashboardComponent,
     EditRecordComponent,
     ListRecordComponent,
@@ -105,8 +109,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ListRecordPageComponent,    
     ReportComponent,
     ReportPageComponent,
-    NotFoundPageComponent    
-    
+    NotFoundPageComponent,
+        
   ],
   imports: [
     BrowserModule,

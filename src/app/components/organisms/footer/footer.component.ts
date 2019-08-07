@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,10 +10,25 @@ export class FooterComponent implements OnInit {
 
   year: number = 1800;
 
-  constructor() { }
+  langList = [
+    {
+      'code': 'pt',
+      'label': 'PT'
+    },
+    {
+      'code': 'en',
+      'label': 'EN'
+    }    
+  ];
+
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit() {
     this.year = new Date().getFullYear();
+  }
+
+  useLanguage(language: string): void {
+    this.translateService.use(language);
   }
 
 }
