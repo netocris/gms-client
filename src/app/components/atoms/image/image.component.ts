@@ -15,10 +15,7 @@ export class ImageComponent implements OnInit {
 
   @Input()
   alt: string = 'alt';
-  
-  @Input()
-  disabled: boolean = false;
-
+    
   constructor() { }
 
   ngOnInit() {

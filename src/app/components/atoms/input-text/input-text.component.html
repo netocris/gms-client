@@ -1,1 +1,9 @@
-<p>input-text works!</p>
+<input type="text" 
+    class="form-control" 
+    [name]="inputName"    
+    [ngClass]="inputClass"
+    [placeholder]="inputPlaceHolder"
+    [disabled]="disabled"
+    [required]="required"    
+    [(ngModel)="inputValue"
+    (ngModelChange)="onChange()"/>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-number',
@@ -8,14 +8,33 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputNumberComponent implements OnInit {
 
   @Input()
-  valueModel: string = 'input';
+  inputValue: number;
+
+  @Input()
+  inputClass: string = '';
+
+  @Input()
+  inputName: string = 'inputName';
+
+  @Input()
+  inputPlaceHolder: string = 'inputPlaceHolder';
 
   @Input()
   disabled: boolean = false;
+
+  @Input()
+  required: boolean = false;
+
+  @Output()
+  eventEmmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  onChange(): void {
+    this.eventEmmitter.emit(this.inputValue);
+  }  
 
 }

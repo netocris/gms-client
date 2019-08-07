@@ -1,7 +1,5 @@
 <app-spinner *ngIf="stillLoading; else dashboardTpl"></app-spinner>
-
 <ng-template #dashboardTpl>
-
   <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <app-jumbotron [title]="'dashboard.hbA1c.title' | translate" 
       [content]="'dashboard.hbA1c.content' | translate" 
@@ -9,8 +7,7 @@
       [fontUrl]="'dashboard.hbA1c.font.url' | translate" 
       [fontDeno]="'dashboard.hbA1c.font.deno' | translate">
     </app-jumbotron>    
-  </div>
-  
+  </div>  
   <div class="card-deck mt-3 mb-3">
     <div class="card mb-6">
       <app-card [title]="'dashboard.average' | translate" [content]="'dashboard.measure' | translate : {'value': meanGlycemia}"></app-card>
@@ -19,5 +16,4 @@
       <app-card [title]="'dashboard.hbA1c.acronym' | translate" [content]="hbA1c | percent:'2.2-2':'pt'"></app-card>      
     </div>
   </div>
-
 </ng-template>

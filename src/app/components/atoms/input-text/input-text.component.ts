@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-input-text',
@@ -8,14 +9,33 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputTextComponent implements OnInit {
 
   @Input()
-  valueModel: string = 'input';
+  inputValue: string = 'inputValue';
+
+  @Input()
+  inputClass: string = '';
+
+  @Input()
+  inputName: string = 'inputName';
+
+  @Input()
+  inputPlaceHolder: string = 'inputPlaceHolder';
 
   @Input()
   disabled: boolean = false;
+
+  @Input()
+  required: boolean = false;
+
+  @Output()
+  eventEmmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  onChange(): void {
+    this.eventEmmitter.emit(this.inputValue);
+  }  
 
 }

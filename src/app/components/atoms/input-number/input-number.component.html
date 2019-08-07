@@ -1,3 +1,9 @@
-<input type="text" 
+<input type="number" 
     class="form-control" 
-    placeholder="some text" />
+    [name]="inputName"    
+    [ngClass]="inputClass"
+    [placeholder]="inputPlaceHolder"
+    [disabled]="disabled"
+    [required]="required"    
+    [(ngModel)="inputValue"
+    (ngModelChange)="onChange()"/>

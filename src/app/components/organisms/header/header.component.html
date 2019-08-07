@@ -1,13 +1,11 @@
 <header>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">      
         <h5 class="my-0 mr-md-auto font-weight-normal">
             <app-link [linkValue]="'header.app' | translate"
                 [routerLink]="'/'"
                 [linkClass]="'p-2 text-dark'">
             </app-link>
-        </h5>
-          
+        </h5>          
         <nav class="my-2 my-md-0 mr-md-3">
             <app-link [linkValue]="'header.record.add' | translate"
                 [routerLink]="'/edit'"
@@ -21,14 +19,17 @@
                 [routerLink]="'/reports'"
                 [linkClass]="'p-2 text-dark'">
             </app-link>            
-        </nav>
-          
+        </nav>          
         <span *ngIf="isLoggedIn" class="my-2 my-md-0 mr-md-3 login-info">
             <app-image [src]="photo" [title]="displayName" [alt]="'user photo'"></app-image>        
-        </span>
-    
-        <app-button [buttonValue]="'header.signout' | translate" (eventEmmitter)="logout()" *ngIf="isLoggedIn"></app-button>
-        <app-button [buttonValue]="'header.signin' | translate" (eventEmmitter)="login()" *ngIf="!isLoggedIn"></app-button>
-               
+        </span>    
+        <app-button [buttonValue]="'header.signout' | translate" 
+            (eventEmmitter)="logout()" 
+            *ngIf="isLoggedIn">
+        </app-button>
+        <app-button [buttonValue]="'header.signin' | translate" 
+            (eventEmmitter)="login()" 
+            *ngIf="!isLoggedIn">
+        </app-button>               
     </div>
 </header>    
