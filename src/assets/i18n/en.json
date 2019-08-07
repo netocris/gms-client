@@ -25,5 +25,8 @@
         },
         "measure": "{{value}} mg/dl",
         "average": "Average Blood Glucose"
+    },
+    "pagination" : {
+        "title": "Pagination"
     }
 }

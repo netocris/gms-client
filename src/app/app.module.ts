@@ -76,6 +76,7 @@ import { EditRecordPageComponent } from './components/pages/edit-record-page/edi
 import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
+import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +111,7 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ReportComponent,
     ReportPageComponent,
     NotFoundPageComponent,
+    ToggleLinkComponent,
         
   ],
   imports: [

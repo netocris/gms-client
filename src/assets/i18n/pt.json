@@ -25,5 +25,8 @@
         },
         "measure": "{{value}} mg/dl",
         "average": "Média Glicose Sangue"        
+    },
+    "pagination" : {
+        "title": "Paginação"
     }
 }

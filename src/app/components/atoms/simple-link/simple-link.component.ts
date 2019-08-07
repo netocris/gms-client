@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./simple-link.component.css']
 })
 export class SimpleLinkComponent implements OnInit {
-
+  
   @Input()
-  url: string = ''
-
+  linkValue: string = 'linkValue';
+  
   @Input()
-  value: string = 'link';
+  url: string = ''  
   
   @Input()
   target: string = ''
