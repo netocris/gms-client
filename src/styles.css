@@ -36,3 +36,7 @@ body {
 ::-webkit-input-placeholder {
     font-size: 12px;
 }
+
+/*.card-deck .card {
+    min-width: 220px;
+}*/

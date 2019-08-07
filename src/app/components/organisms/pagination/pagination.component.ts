@@ -26,7 +26,7 @@ export class PaginationComponent implements OnInit {
 
   pageEventEmitter(page: number){
     this.page = page;
-    this.pageOutputEventEmitter.next(this.page);
+    this.pageOutputEventEmitter.emit(this.page);
   }
 
 }

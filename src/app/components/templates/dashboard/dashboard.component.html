@@ -11,20 +11,10 @@
   
   <div class="card-deck mt-3 mb-3">
     <div class="card mb-6">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Mean Glycemia</h4>
-      </div>
-      <div class="card-body">        
-        <h1 class="card-title">{{meanGlycemia}} mg/dl</h1>
-      </div>          
-    </div>  
+      <app-card [headerText]="'Mean Glycemia'" [bodyText]="meanGlycemia + 'mg/dl'"></app-card>      
+    </div>    
     <div class="card mb-6">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">HbA1c</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">{{hbA1c | percent:'2.2-2':'pt'}}</h1>
-      </div>          
+      <app-card [headerText]="'HbA1c'" [bodyText]="hbA1c | percent:'2.2-2':'pt'"></app-card>      
     </div>
   </div>
 

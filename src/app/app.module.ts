@@ -4,8 +4,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 
-//import localePt from '@angular/common/locales/pt';
-//registerLocaleData(localePt);
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt);
 
 import { environment } from '../environments/environment';
 
@@ -24,7 +24,7 @@ import { ChartsModule } from 'ng2-charts';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
 
-/* required for AOT compilation */
+/* ngx-translate: required for AOT compilation */
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -52,12 +52,15 @@ import { InputNumberComponent } from './components/atoms/input-number/input-numb
 /* molecules */
 import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
 import { SpinnerComponent } from './components/molecules/spinner/spinner.component';
-import { PaginationComponent } from './components/molecules/pagination/pagination.component';
+import { CardHeaderComponent } from './components/molecules/card-header/card-header.component';
+import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
 
 /* organisms */
 import { HeaderComponent } from './components/organisms/header/header.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { FilterComponent } from './components/organisms/filter/filter.component';
+import { PaginationComponent } from './components/organisms/pagination/pagination.component';
+import { CardComponent } from './components/organisms/card/card.component';
 
 /* templates */
 import { DashboardComponent } from './components/templates/dashboard/dashboard.component';
@@ -81,13 +84,19 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     InputTextComponent,
     InputNumberComponent,
     LinkComponent,    
-    ImageComponent,    
+    ImageComponent,
+    
     NotFoundComponent,
     SpinnerComponent,
-    PaginationComponent,
+    CardHeaderComponent,
+    CardBodyComponent,
+        
     HeaderComponent,
     FooterComponent,
     FilterComponent,    
+    PaginationComponent,
+    CardComponent,
+
     DashboardComponent,
     EditRecordComponent,
     ListRecordComponent,
@@ -96,7 +105,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ListRecordPageComponent,    
     ReportComponent,
     ReportPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent    
+    
   ],
   imports: [
     BrowserModule,
@@ -122,9 +132,9 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
       provide: APP_BASE_HREF,
       useValue: environment.contextPath
     },
-    /*{
+    {
       provide: LOCALE_ID, useValue: 'pt'
-    },*/
+    },
     AuthService,
     ConfigService,
     RecordService
