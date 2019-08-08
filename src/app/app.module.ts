@@ -45,16 +45,19 @@ import { AppComponent } from './app.component';
 /* atoms */
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { ImageComponent } from './components/atoms/image/image.component';
-import { LinkComponent } from './components/atoms/link/link.component';
-import { SimpleLinkComponent } from './components/atoms/simple-link/simple-link.component';
 import { InputTextComponent } from './components/atoms/input-text/input-text.component';
 import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
+import { LinkComponent } from './components/atoms/link/link.component';
+import { RouterLinkComponent } from './components/atoms/router-link/router-link.component';
+import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
+import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
 
 /* molecules */
 import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
 import { SpinnerComponent } from './components/molecules/spinner/spinner.component';
 import { CardHeaderComponent } from './components/molecules/card-header/card-header.component';
 import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
+import { SimpleSearchComponent } from './components/molecules/simple-search/simple-search.component';
 
 /* organisms */
 import { HeaderComponent } from './components/organisms/header/header.component';
@@ -76,8 +79,6 @@ import { EditRecordPageComponent } from './components/pages/edit-record-page/edi
 import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
-import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
-import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
 
 @NgModule({
   declarations: [
@@ -85,16 +86,19 @@ import { SearchLinkComponent } from './components/atoms/search-link/search-link.
     NumericDirective,
     SortableDirective,    
     ButtonComponent,
+    ImageComponent,
     InputTextComponent,
     InputNumberComponent,
-    LinkComponent, 
-    SimpleLinkComponent,   
-    ImageComponent,
-    
+    LinkComponent,
+    RouterLinkComponent,
+    ToggleLinkComponent,
+    SearchLinkComponent,
+            
     NotFoundComponent,
     SpinnerComponent,
     CardHeaderComponent,
     CardBodyComponent,
+    SimpleSearchComponent,
         
     HeaderComponent,
     FooterComponent,
@@ -111,9 +115,7 @@ import { SearchLinkComponent } from './components/atoms/search-link/search-link.
     ListRecordPageComponent,    
     ReportComponent,
     ReportPageComponent,
-    NotFoundPageComponent,
-    ToggleLinkComponent,
-    SearchLinkComponent,
+    NotFoundPageComponent            
         
   ],
   imports: [

@@ -1,4 +1,5 @@
 {
+    "norecordsfound": "Nenhum registo encontrado",
     "header": {
         "app": "Glicose Monitoring System",
         "signin": "Entrar",
@@ -31,5 +32,10 @@
     },
     "filter": {
         "title": "Pesquisa"
+    },
+    "listrecord": {
+        "date": "Data",
+        "glucose": "Glicose",
+        "notes": "Notas"
     }
 }

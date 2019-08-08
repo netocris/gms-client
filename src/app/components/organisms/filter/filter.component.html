@@ -1,7 +1,6 @@
 <!-- TODO refact this to go against Atom Web Design -->
 <div class="row">
-  <div class="col-md-12">
-    
+  <div class="col-md-12">    
     
     <div class="row">
       <div class="col-md-12 card-title font-size-sm">
@@ -12,28 +11,16 @@
       </div>
     </div>
 
-
     <div id="filter-area" class="collapse">
       <div class="card card-body mb-3">
-                
-          <div class="row justify-content-end" *ngIf="!advancedSearch; else advancedSearchTpl">            
-            <div class="search-box">
 
-              <app-input-text [inputId]="filter.value" 
-                [inputValue]="filter.value" 
-                [inputClass]="'search-txt'">
-              </app-input-text>
-              <app-search-link [linkClass]="'search-btn'" ></app-search-link>
-
-
-              <!--<input type="text" class="search-txt" id="filter.value" [(ngModel)]="filter.value" 
-                  placeholder="glucose"/>
-              <a class="search-btn" (click)="search()">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>-->
-
-            </div>
-          </div>        
+        <form class="form-inline md-form form-sm mt-2 justify-content-end" 
+          *ngIf="!advancedSearch; else advancedSearchTpl">
+          <app-simple-search [inputValueModel]="filterValue" 
+            [inputPlaceHolder]="'Search'"
+            (searchOutputEventEmitter)="searchOutputEvent($event)">
+          </app-simple-search>
+        </form>
         
         <!--<div class="row" *ngIf="!advancedSearch; else advancedSearchTpl">
           <div class="col-md-8">

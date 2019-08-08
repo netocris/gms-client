@@ -1,13 +1,13 @@
 <div class="px-md-4 font-size-sm" >
     <span class="p-2">
         @{{ year }}             
-        <app-simple-link [url]="'mailto:netocris@gmail.com'" [linkValue]="'netocris@gmail.com'"></app-simple-link>            
+        <app-link [url]="'mailto:netocris@gmail.com'" [linkValue]="'netocris@gmail.com'"></app-link>
     </span>
     <div class="pull-right">        
-        <app-link [linkValue]="lang.label"                    
+        <app-router-link [linkValue]="lang.label"
             (click)="useLanguage(lang.code)"
             [linkClass]="'p-1 text-dark font-size-sm'"
             *ngFor="let lang of langList">
-        </app-link>            
+        </app-router-link>            
     </div>
 </div>

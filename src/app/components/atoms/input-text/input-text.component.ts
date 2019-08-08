@@ -1,10 +1,9 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-text',
   templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.css']
+  styleUrls: ['./input-text.component.css']  
 })
 export class InputTextComponent implements OnInit {
 
@@ -13,13 +12,7 @@ export class InputTextComponent implements OnInit {
 
   @Input()
   inputClass: string = '';
-
-  @Input()
-  inputName: string = 'inputName';
-
-  @Input()
-  inputId: string = '';
-
+  
   @Input()
   inputPlaceHolder: string = 'inputPlaceHolder';
 
@@ -30,7 +23,7 @@ export class InputTextComponent implements OnInit {
   required: boolean = false;
 
   @Output()
-  eventEmmitter = new EventEmitter();
+  outputEventEmmitter = new EventEmitter();
 
   constructor() { }
 
@@ -38,7 +31,17 @@ export class InputTextComponent implements OnInit {
   }
 
   onChange(): void {
-    this.eventEmmitter.emit(this.inputValue);
+    console.log(this.inputValue);
+    if(this.isEmptyValue(this.inputValue)){
+      this.inputValue = null;
+    } else {
+      this.inputValue = this.inputValue.trim();
+    }
+    this.outputEventEmmitter.emit(this.inputValue);  
   }  
+
+  private isEmptyValue(value: string): boolean {
+    return value === undefined || value === null || value.split(' ').join('') === '';
+  }
 
 }

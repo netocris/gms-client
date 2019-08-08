@@ -1,10 +1,7 @@
-<input type="text" 
-    class="form-control" 
-    [name]="inputName"
-    [id]="inputId"    
+<input type="text"     
     [ngClass]="inputClass"
     [placeholder]="inputPlaceHolder"
     [disabled]="disabled"
     [required]="required"    
-    [(ngModel)="inputValue"
-    (ngModelChange)="onChange()"/>
+    (ngModelChange)="onChange()"
+    [(ngModel)]="inputValue"/>

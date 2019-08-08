@@ -4,7 +4,6 @@ import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
 import { PaginationEnum } from 'src/app/enums/pagination.enum';
 import { Record } from 'src/app/models/record';
-import { RecordFilter } from 'src/app/models/record-filter';
 import { SortEvent, SortableDirective } from 'src/app/directives/sortable.directive';
 
 export const compare = (v1, v2) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
@@ -42,9 +41,19 @@ export class ListRecordComponent extends BaseComponent {
     //}, 1000);
   }  
 
-  searchEventEmitter(filter: RecordFilter) {
-    if (filter) {
+  searchEventEmitter(value: string) {
+    console.log('ListRecordComponent.searchEventEmitter .::. value: ' + value);
+    
+    if (value) {
+      
       this.stillLoading = true;
+
+      const filter = {
+        _timestamp: '',
+        value: value,
+        notes: ''
+      };
+
       this.recordService.getRecordsByFilters(filter._timestamp, filter.value, filter.notes).subscribe((data => {
         if (data) {
           this.records = data;
@@ -52,6 +61,7 @@ export class ListRecordComponent extends BaseComponent {
         }
       }));
     }
+
   }
 
   onSort({column, direction}: SortEvent) {

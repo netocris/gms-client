@@ -9,12 +9,12 @@ export class LinkComponent implements OnInit {
 
   @Input()
   linkValue: string = 'linkValue';
-
+  
   @Input()
-  routerLink: string = '';
-
+  url: string = ''  
+  
   @Input()
-  linkClass: string = '';
+  target: string = ''
 
   constructor() { }
 

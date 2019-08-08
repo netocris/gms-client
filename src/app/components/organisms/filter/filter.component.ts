@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { RecordFilter } from 'src/app/models/record-filter';
+/*import { RecordFilter } from 'src/app/models/record-filter';*/
 
 @Component({
   selector: 'app-filter',
@@ -8,7 +8,8 @@ import { RecordFilter } from 'src/app/models/record-filter';
 })
 export class FilterComponent implements OnInit {
 
-  filter: RecordFilter;
+  /*filter: RecordFilter;*/
+  filterValue: string = '';
 
   advancedSearch: boolean = false;
 
@@ -18,19 +19,21 @@ export class FilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.filter = {
+    /*this.filter = {
       _timestamp: '',
       value: '',
       notes: ''
-    }
+    }*/
   }
 
   toggleSearch(){
     this.advancedSearch = !this.advancedSearch;
   }
 
-  search(): void {
-    this.searchOutputEventEmitter.next(this.filter);
+  searchOutputEvent(value: string): void {
+    this.filterValue = value;
+    console.log('FilterComponent.searchOutputEvent .::. value: ' + value);
+    this.searchOutputEventEmitter.next(this.filterValue);
   }
 
 }

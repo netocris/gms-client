@@ -1,4 +1,5 @@
 {    
+    "norecordsfound": "No records found",
     "header": {
         "app": "Glicose Monitoring System",
         "signin": "Sign in",
@@ -31,5 +32,10 @@
     },
     "filter": {
         "title": "Search"
+    },
+    "listrecord": {
+        "date": "Date",
+        "glucose": "Glucose",
+        "notes": "Notes"
     }
 }
