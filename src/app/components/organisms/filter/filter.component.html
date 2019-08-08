@@ -14,13 +14,12 @@
     <div id="filter-area" class="collapse">
       <div class="card card-body mb-3">
 
-        <form class="form-inline md-form form-sm mt-2 justify-content-end" 
-          *ngIf="!advancedSearch; else advancedSearchTpl">
+        <div class="form-inline justify-content-end" *ngIf="!advancedSearch; else advancedSearchTpl">        
           <app-simple-search [inputValueModel]="filterValue" 
             [inputPlaceHolder]="'Search'"
             (searchOutputEventEmitter)="searchOutputEvent($event)">
-          </app-simple-search>
-        </form>
+          </app-simple-search>        
+        </div>
         
         <!--<div class="row" *ngIf="!advancedSearch; else advancedSearchTpl">
           <div class="col-md-8">
