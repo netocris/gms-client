@@ -43,6 +43,10 @@ A system for monitoring blood glucose levels
 
     ng serve --configuration=pt --port=4201
 
+## run storybook
+
+    npm run storybook
+
 ## check available dependencies updates
 
     npm install -g npm-check-updates

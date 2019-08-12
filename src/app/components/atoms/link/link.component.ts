@@ -14,7 +14,7 @@ export class LinkComponent implements OnInit {
   url: string = ''  
   
   @Input()
-  target: string = ''
+  target: boolean = false;
 
   constructor() { }
 

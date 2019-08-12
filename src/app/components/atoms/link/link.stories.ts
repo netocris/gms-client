@@ -10,16 +10,24 @@ storiesOf('Components|Link', module)
     })
   )
   .add('default', () => ({
-    component: LinkComponent,
+    template: `<app-link [linkValue]="linkValue"></app-link>`,
     props: {
-      modelValue: 'Click'
+      linkValue: 'default'
     }
   }))
-  .add('disabled', () => ({
-    template: `<app-link [modelValue]="modelValue" [disabled]="disabled"></app-link>`,
+  .add('url', () => ({
+    template: `<app-link [linkValue]="linkValue" [url]="url"></app-link>`,
     props: {
-      modelValue: 'Click',
-      disabled: true
+      linkValue: 'google',
+      url: 'http://www.google.com'      
+    }
+  }))
+  .add('target', () => ({
+    template: `<app-link [linkValue]="linkValue" [url]="url" [target]="target"></app-link>`,
+    props: {
+      linkValue: 'google',
+      url: 'http://www.google.com',
+      target: true      
     }
   }));
 
@@ -28,7 +36,8 @@ storiesOf('Components|Link', module)
   .add('customization', () => ({
     component: LinkComponent,
     props: {
-      modelValue: text('modelValue', 'Click'),
-      disabled: boolean('disabled', false)      
+      linkValue: text('linkValue', 'google'),
+      url: text('url', 'http://www.google.com'),
+      target: boolean('target', false)      
     }
   }));
