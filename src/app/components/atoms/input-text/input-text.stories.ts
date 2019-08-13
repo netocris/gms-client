@@ -1,3 +1,22 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { action} from '@storybook/addon-actions';
-import { text, boolean, withKnobs } from '@storybook/addon-knobs';
+
+import { InputTextComponent } from './input-text.component';
+
+storiesOf('Atoms|Input Text', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [InputTextComponent]
+    })
+  )
+  .add('default', () => ({
+    template: `<app-input-text></app-input-text>`,
+    props: {      
+    }
+  }))  
+  .add('with action', () => ({
+    template: `<app-input-text></app-input-text>`,
+    props: {      
+      outputEventEmmitter: action('outputEventEmmitter')
+    }
+  }));

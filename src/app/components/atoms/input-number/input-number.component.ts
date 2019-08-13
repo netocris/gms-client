@@ -8,25 +8,25 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class InputNumberComponent implements OnInit {
 
   @Input()
-  inputValue: number;
+  value_: number;
 
   @Input()
-  inputClass: string = '';
+  name_: string = 'name_';
 
   @Input()
-  inputName: string = 'inputName';
+  class_: string = '';
 
   @Input()
-  inputPlaceHolder: string = 'inputPlaceHolder';
+  placeHolder_: string = 'placeHolder_';
 
   @Input()
-  disabled: boolean = false;
+  disabled_: boolean = false;
 
   @Input()
-  required: boolean = false;
+  required_: boolean = false;
 
   @Output()
-  eventEmmitter = new EventEmitter();
+  outputEventEmmitter = new EventEmitter();
 
   constructor() { }
 
@@ -34,7 +34,7 @@ export class InputNumberComponent implements OnInit {
   }
 
   onChange(): void {
-    this.eventEmmitter.emit(this.inputValue);
+    this.outputEventEmmitter.emit(this.value_);
   }  
 
 }

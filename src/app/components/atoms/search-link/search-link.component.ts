@@ -8,7 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class SearchLinkComponent implements OnInit {
 
   @Input()
-  linkClass: string = '';
+  class_: string = '';
 
   @Output()
   eventEmmitter = new EventEmitter();

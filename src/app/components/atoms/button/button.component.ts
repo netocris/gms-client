@@ -8,10 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input()
-  buttonValue: string = 'buttonValue';
+  value_: string = 'value_';
 
   @Input()
-  disabled: boolean = false;
+  disabled_: boolean = false;
 
   @Output()
   eventEmmitter = new EventEmitter();
@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.eventEmmitter.emit();
+    this.eventEmmitter.emit(this.value_);
   }
 
 }

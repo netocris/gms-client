@@ -25,8 +25,7 @@ export class SimpleSearchComponent implements OnInit {
     this.inputValueModel = value;
   }
 
-  search(): void {
-    console.log('SimpleSearchComponent.search .::. value: ' + this.inputValueModel);
+  search(): void {    
     this.searchOutputEventEmitter.emit(this.inputValueModel);
   }
 

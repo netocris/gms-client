@@ -4,9 +4,9 @@
     
     <div class="row">
       <div class="col-md-12 card-title font-size-sm">
-        <app-toggle-link [url]="'#filter-area'" 
-          [linkClass]="'text-dark float-right'"
-          [linkValue]="'filter.title' | translate">
+        <app-toggle-link [url_]="'#filter-area'" 
+          [class_]="'text-dark float-right'"
+          [value_]="'filter.title' | translate">
         </app-toggle-link>        
       </div>
     </div>
@@ -14,12 +14,13 @@
     <div id="filter-area" class="collapse">
       <div class="card card-body mb-3">
 
-        <div class="form-inline justify-content-end" *ngIf="!advancedSearch; else advancedSearchTpl">        
+        <!--<div class="form-inline justify-content-end">        -->
           <app-simple-search [inputValueModel]="filterValue" 
             [inputPlaceHolder]="'Search'"
-            (searchOutputEventEmitter)="searchOutputEvent($event)">
+            (searchOutputEventEmitter)="searchOutputEvent($event)"
+            *ngIf="!advancedSearch; else advancedSearchTpl">
           </app-simple-search>        
-        </div>
+        <!--</div>-->
         
         <!--<div class="row" *ngIf="!advancedSearch; else advancedSearchTpl">
           <div class="col-md-8">

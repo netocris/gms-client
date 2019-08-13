@@ -1,42 +1,43 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { action} from '@storybook/addon-actions';
 import { text, boolean, withKnobs } from '@storybook/addon-knobs';
+
 import { ButtonComponent } from './button.component';
 
-storiesOf('Components|Button', module)
+storiesOf('Atoms|Button', module)
   .addDecorator(
     moduleMetadata({
       declarations: [ButtonComponent]
     })
   )
   .add('default', () => ({
-    template: `<app-button [buttonValue]="buttonValue"></app-button>`,
+    template: `<app-button [value_]="value_"></app-button>`,
     props: {
-      buttonValue: 'default'
+      value_: 'Click me'
     }
   }))
   .add('disabled', () => ({
-    template: `<app-button [buttonValue]="buttonValue" [disabled]="disabled"></app-button>`,
+    template: `<app-button [value_]="value_" [disabled_]="disabled_"></app-button>`,
     props: {
-      buttonValue: 'disabled',
-      disabled: true
+      value_: 'Disabled',
+      disabled_: true
     }
   }))
   .add('with action', () => ({
-    template: `<app-button [buttonValue]="buttonValue" [disabled]="disabled" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
+    template: `<app-button [value_]="value_" [disabled_]="disabled_" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
     props: {
-      buttonValue: 'with action',
-      disabled: false,
+      value_: 'with action',
+      disabled_: false,
       eventEmmitter: action('eventEmmitter')
     }
   }));
 
-storiesOf('Components|Button', module)
+storiesOf('Atoms|Button', module)
   .addDecorator(withKnobs)
   .add('customization', () => ({
     component: ButtonComponent,
     props: {
-      buttonValue: text('buttonValue', 'Click'),
-      disabled: boolean('disabled', false)      
+      value_: text('value_', 'Click me'),
+      disabled_: boolean('disabled_', false)      
     }
   }));

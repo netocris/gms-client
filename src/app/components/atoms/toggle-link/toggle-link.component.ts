@@ -8,13 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ToggleLinkComponent implements OnInit {
 
   @Input()
-  linkValue: string = 'linkValue';
+  value_: string = 'value_';
   
   @Input()
-  url: string = '';  
+  url_: string = '';  
 
   @Input()
-  linkClass: string = '';
+  class_: string = '';
 
   constructor() { }
 

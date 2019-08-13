@@ -1,43 +1,46 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
-import { action} from '@storybook/addon-actions';
 import { text, boolean, withKnobs } from '@storybook/addon-knobs';
+
 import { LinkComponent } from './link.component';
 
-storiesOf('Components|Link', module)
+storiesOf('Atoms|Link', module)
   .addDecorator(
     moduleMetadata({
       declarations: [LinkComponent]
     })
   )
   .add('default', () => ({
-    template: `<app-link [linkValue]="linkValue"></app-link>`,
+    template: `<app-link [value_]="value_" [target_]="target_"></app-link>`,
     props: {
-      linkValue: 'default'
+      value_: 'Click me',
+      target_: true
     }
   }))
   .add('url', () => ({
-    template: `<app-link [linkValue]="linkValue" [url]="url"></app-link>`,
+    template: `<app-link [value_]="value_" [url_]="url_" [target_]="target_"></app-link>`,
     props: {
-      linkValue: 'google',
-      url: 'http://www.google.com'      
+      value_: 'Google',
+      url_: 'http://www.google.com',
+      target_: true
+
     }
   }))
   .add('target', () => ({
-    template: `<app-link [linkValue]="linkValue" [url]="url" [target]="target"></app-link>`,
+    template: `<app-link [value_]="value_" [url_]="url_" [target_]="target_"></app-link>`,
     props: {
-      linkValue: 'google',
-      url: 'http://www.google.com',
-      target: true      
+      value_: 'Google',
+      url_: 'http://www.google.com',
+      target_: true
     }
   }));
 
-storiesOf('Components|Link', module)
+storiesOf('Atoms|Link', module)
   .addDecorator(withKnobs)
   .add('customization', () => ({
     component: LinkComponent,
     props: {
-      linkValue: text('linkValue', 'google'),
-      url: text('url', 'http://www.google.com'),
-      target: boolean('target', false)      
+      value_: text('value_', 'Google'),
+      url_: text('url_', 'http://www.google.com'),
+      target_: boolean('target_', false)      
     }
   }));

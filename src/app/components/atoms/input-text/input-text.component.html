@@ -1,7 +1,8 @@
 <input type="text"     
-    [ngClass]="inputClass"
-    [placeholder]="inputPlaceHolder"
-    [disabled]="disabled"
-    [required]="required"    
-    (ngModelChange)="onChange()"
-    [(ngModel)]="inputValue"/>
+    [ngClass]="class_"
+    [name]="name_"
+    [placeholder]="placeHolder_"
+    [disabled]="disabled_"
+    [required]="required_"    
+    [(ngModel)]="value_"
+    (ngModelChange)="onChange()"/>
