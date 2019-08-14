@@ -51,6 +51,10 @@ import { LinkComponent } from './components/atoms/link/link.component';
 import { RouterLinkComponent } from './components/atoms/router-link/router-link.component';
 import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
 import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
+import { SpinnerButtonComponent } from './components/atoms/spinner-button/spinner-button.component';
+import { DismissButtonComponent } from './components/atoms/dismiss-button/dismiss-button.component';
+import { ErrorInfoComponent } from './components/atoms/error-info/error-info.component';
+import { HelpInfoComponent } from './components/atoms/help-info/help-info.component';
 
 /* molecules */
 import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
@@ -58,6 +62,7 @@ import { SpinnerComponent } from './components/molecules/spinner/spinner.compone
 import { CardHeaderComponent } from './components/molecules/card-header/card-header.component';
 import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
 import { SimpleSearchComponent } from './components/molecules/simple-search/simple-search.component';
+import { AlertDismissComponent } from './components/molecules/alert-dismiss/alert-dismiss.component';
 
 /* organisms */
 import { HeaderComponent } from './components/organisms/header/header.component';
@@ -93,20 +98,22 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     RouterLinkComponent,
     ToggleLinkComponent,
     SearchLinkComponent,
-            
+    SpinnerButtonComponent,
+    DismissButtonComponent,        
+    ErrorInfoComponent,
+    HelpInfoComponent,
     NotFoundComponent,
     SpinnerComponent,
     CardHeaderComponent,
     CardBodyComponent,
     SimpleSearchComponent,
-        
+    AlertDismissComponent,
     HeaderComponent,
     FooterComponent,
     FilterComponent,    
     PaginationComponent,
     CardComponent,
-    JumbotronComponent,
-    
+    JumbotronComponent,    
     DashboardComponent,
     EditRecordComponent,
     ListRecordComponent,
@@ -115,8 +122,7 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ListRecordPageComponent,    
     ReportComponent,
     ReportPageComponent,
-    NotFoundPageComponent            
-        
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

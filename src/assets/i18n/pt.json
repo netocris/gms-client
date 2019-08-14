@@ -1,5 +1,18 @@
 {
     "norecordsfound": "Nenhum registo encontrado",
+    "mandatory": "Campo obrigatório", 
+    "btn": {
+        "save": "Gravar"
+    },
+    "pagination" : {
+        "title": "Paginação"
+    },
+    "filter": {
+        "title": "Pesquisa"
+    },
+    "notfound": {
+        "message": "Página não encontrada"
+    },
     "header": {
         "app": "Glicose Monitoring System",
         "signin": "Entrar",
@@ -9,10 +22,7 @@
             "list": "Registos"
         },        
         "reports": "Relatórios"
-    },
-    "notfound": {
-        "message": "Página não encontrada"
-    },
+    },    
     "dashboard" : {
         "hbA1c": {
             "title": "Hemoglobina Glicada HbA1c",
@@ -26,16 +36,19 @@
         },
         "measure": "{{value}} mg/dl",
         "average": "Média Glicose Sangue"        
-    },
-    "pagination" : {
-        "title": "Paginação"
-    },
-    "filter": {
-        "title": "Pesquisa"
-    },
-    "listrecord": {
-        "date": "Data",
-        "glucose": "Glicose",
-        "notes": "Notas"
+    },    
+    "record": {
+        "list": {
+            "date": "Data",
+            "glucose": "Glicose",
+            "notes": "Notas"
+        },
+        "edit": {
+            "successfully": "Registo gravado com sucesso",
+            "value": {
+                "help": "Para um melhor controlo dos valores da glicose, estes deverão estar compreendidos entre [70 - 120] mg/dl após o pequeno almoço e abaixo dos 150 mg/dl"
+            }
+        }
     }
+    
 }

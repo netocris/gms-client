@@ -1,0 +1,8 @@
+<div class="alert alert-dismissible fade show" [ngClass]="class" role="alert">
+    {{heading}}    
+    <app-dismiss-button [class]="'close'"
+      [dataDismissAttr]="'alert'"
+      [ariaLabelAttr]="'Close'"
+      [ariaHiddenAttr]="'true'">
+    </app-dismiss-button>    
+</div>

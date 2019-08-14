@@ -1,5 +1,18 @@
 {    
     "norecordsfound": "No records found",
+    "mandatory": "Mandatory field", 
+    "btn": {
+        "save": "Save"
+    },
+    "pagination" : {
+        "title": "Pagination"
+    },
+    "filter": {
+        "title": "Search"
+    },
+    "notfound": {
+        "message": "Page not found"
+    },
     "header": {
         "app": "Glicose Monitoring System",
         "signin": "Sign in",
@@ -9,10 +22,7 @@
             "list": "Records"
         },        
         "reports": "Reports"
-    },
-    "notfound": {
-        "message": "Page not found"
-    },
+    },    
     "dashboard" : {        
         "hbA1c": {
             "title": "Glycated Hemoglobin HbA1c",
@@ -26,16 +36,18 @@
         },
         "measure": "{{value}} mg/dl",
         "average": "Average Blood Glucose"
-    },
-    "pagination" : {
-        "title": "Pagination"
-    },
-    "filter": {
-        "title": "Search"
-    },
-    "listrecord": {
-        "date": "Date",
-        "glucose": "Glucose",
-        "notes": "Notes"
+    },    
+    "record": {
+        "list": {
+            "date": "Date",
+            "glucose": "Glucose",
+            "notes": "Notes"
+        },
+        "edit": {
+            "successfully": "Record saved successfully",
+            "value": {
+                "help": "For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and below 150 mg/dl"
+            }
+        }
     }
 }
