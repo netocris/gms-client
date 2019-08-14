@@ -1,3 +1,6 @@
-<a href="url" [ngClass]="class" data-toggle="collapse" aria-expanded="false" aria-controls="pagination-area">
+<a [href]="url" [ngClass]="class" 
+    [attr.data-toggle]="dataToggleAttr" 
+    [attr.aria-expanded]="ariaExpandedAttr" 
+    [attr.aria-controls]="ariaControlsAttr">
     {{valueModel}}
 </a>

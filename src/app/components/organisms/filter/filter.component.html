@@ -5,36 +5,23 @@
     <div class="row">
       <div class="col-md-12 card-title font-size-sm">
         <app-toggle-link [url]="'#filter-area'" 
-          [class]="'text-dark float-right'"
+          [class]="'text-dark float-right'"          
+          [ariaControlsAttr]="'filter-area'"
           [valueModel]="'filter.title' | translate">
         </app-toggle-link>        
       </div>
     </div>
 
     <div id="filter-area" class="collapse">
-      <div class="card card-body mb-3">
-
-        <!--<div class="form-inline justify-content-end">        -->
+      <div class="card card-body mb-3">        
+        
+        <div class="form-inline justify-content-end">
           <app-simple-search [valueModel]="filterValue" 
             [placeHolder]="'Search'"
             (searchOutputEventEmitter)="searchOutputEvent($event)"
             *ngIf="!advancedSearch; else advancedSearchTpl">
-          </app-simple-search>        
-        <!--</div>-->
-        
-        <!--<div class="row" *ngIf="!advancedSearch; else advancedSearchTpl">
-          <div class="col-md-8">
-            <input type="text" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
-              i18n-placeholder="@@filter.component._timestamp.placeholder" placeholder="date" />
-          </div>          
-          <div class="col-md-2">
-            <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()"
-              i18n="@@btn.search">Search</button>
-          </div>
-          <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
-              <a class="text-dark link" (click)="toggleSearch();" i18n="@@records.list.filter.advancedsearch">Advanced Search</a>  
-          </div>
-        </div>-->
+          </app-simple-search>
+        </div>
 
         <ng-template #advancedSearchTpl>
           <div class="row">
@@ -54,7 +41,7 @@
               <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()">Search</button>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
-                <a class="text-dark link" (click)="toggleSearch();" i18n="@@records.list.filter.search">Search</a>  
+                <a class="text-dark link" (click)="toggleSearch();">Search</a>  
             </div>
           </div>
         </ng-template>

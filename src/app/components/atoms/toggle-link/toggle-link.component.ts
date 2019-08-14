@@ -16,6 +16,15 @@ export class ToggleLinkComponent implements OnInit {
   @Input()
   class: string = '';
 
+  @Input()
+  dataToggleAttr: string = 'collapse';
+
+  @Input()
+  ariaExpandedAttr: string = 'false';
+
+  @Input()
+  ariaControlsAttr: string = '';
+
   constructor() { }
 
   ngOnInit() {

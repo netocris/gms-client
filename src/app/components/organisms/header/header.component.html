@@ -23,10 +23,12 @@
         <app-image [src]="photo" [title]="displayName" [alt]="'user photo'"></app-image>        
     </span>    
     <app-button [valueModel]="'header.signout' | translate" 
+        [class]="'btn btn-outline-primary'"
         (eventEmmitter)="logout()" 
         *ngIf="isLoggedIn">
     </app-button>
     <app-button [valueModel]="'header.signin' | translate" 
+        [class]="'btn btn-outline-primary'"
         (eventEmmitter)="login()" 
         *ngIf="!isLoggedIn">
     </app-button>               

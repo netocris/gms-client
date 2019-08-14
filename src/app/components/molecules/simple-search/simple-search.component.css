@@ -25,6 +25,28 @@
   box-shadow: none;
 }*/
 
+:host ::ng-deep input[type=text] {
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  box-sizing: content-box;
+  background-color: transparent;
+  width: 240px;
+}
+
+:host ::ng-deep input[type=text]:hover {  
+  border-bottom: 1px solid #007bff;
+  box-shadow: none;
+}
+
+:host ::ng-deep input[type=text]:focus:not([readonly]) {  
+  border-bottom: 1px solid #007bff;
+  box-shadow: none;
+}
+
 .fa {
   color: #007bff;
   cursor: pointer;

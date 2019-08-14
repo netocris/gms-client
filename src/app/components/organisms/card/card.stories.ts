@@ -19,18 +19,22 @@ stories.addDecorator(
   })
 );
 
-stories.add('default', () => ({
-  template: `<app-card [title]="title" [content]="content"></app-card>`,
-  props: {
-    title: 'card title',
-    content: 'card content'
-  }
-}));
-
-stories.add('customization', () => ({
-  component: CardComponent,
-  props: {
-    title: text('title', 'card title'),
-    content: text('content', 'card content ...')
-  }
-}));
+stories
+  .add('default', () => ({
+    component: CardComponent,
+    props: {}
+  }))
+  .add('with text', () => ({  
+    template: `<app-card [title]="title" [content]="content"></app-card>`,
+    props: {
+      title: 'card custom title',
+      content: 'card custom content'
+    }
+  }))
+  .add('customization', () => ({
+    component: CardComponent,
+    props: {
+      title: text('title', 'card title'),
+      content: text('content', 'card content ...')
+    }
+  }));
