@@ -8,13 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImageComponent implements OnInit {
 
   @Input()
-  src_: string = 'assets/images/user.png';
+  src: string = '';
 
   @Input()
-  title_: string = 'the user image';
+  title: string = '';
 
   @Input()
-  alt_: string = 'user image';
+  alt: string = '';
     
   constructor() { }
 

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardBodyComponent implements OnInit {
 
   @Input()
-  modelValue: string = 'card body';
+  valueModel: string = 'card body';
 
   constructor() { }
 

@@ -1,7 +1,7 @@
 <div class="form-inline justify-content-end">
-<app-input-text [class_]="'form-control form-control-sm mr-3'"
-  [placeHolder_]="inputPlaceHolder"
-  [value_]="'inputValueModel'"
+<app-input-text [class]="'form-control form-control-sm mr-3'"
+  [placeHolder]="inputPlaceHolder"
+  [valueModel]="'inputValueModel'"
   (outputEventEmmitter)="searchOutputEvent($event)">
 </app-input-text>
 <i class="fa fa-search" aria-hidden="true" (click)="search()"></i>

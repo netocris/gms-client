@@ -11,14 +11,13 @@ storiesOf('Molecules|Card Header', module)
     })
   )
   .add('default', () => ({
-    template: `<app-card-header></app-card-header>`,
-    props: {      
-    }
+    tcomponent: CardHeaderComponent,
+    props: {}
   }))
   .add('text', () => ({
-    template: `<app-card-header [value_]="value_"></app-card-header>`,
+    template: `<app-card-header [valueModel]="valueModel"></app-card-header>`,
     props: {
-      value_: 'some text'
+      valueModel: 'some text'
     }
   }));
 
@@ -27,6 +26,6 @@ storiesOf('Molecules|Card Header', module)
   .add('customization', () => ({
     component: CardHeaderComponent,
     props: {
-      value_: text('value_', 'write some text')
+      valueModel: text('valueModel', 'write some text')
     }
   }));

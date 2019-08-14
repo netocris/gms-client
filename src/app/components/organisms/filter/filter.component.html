@@ -4,9 +4,9 @@
     
     <div class="row">
       <div class="col-md-12 card-title font-size-sm">
-        <app-toggle-link [url_]="'#filter-area'" 
-          [class_]="'text-dark float-right'"
-          [value_]="'filter.title' | translate">
+        <app-toggle-link [url]="'#filter-area'" 
+          [class]="'text-dark float-right'"
+          [valueModel]="'filter.title' | translate">
         </app-toggle-link>        
       </div>
     </div>
@@ -15,8 +15,8 @@
       <div class="card card-body mb-3">
 
         <!--<div class="form-inline justify-content-end">        -->
-          <app-simple-search [inputValueModel]="filterValue" 
-            [inputPlaceHolder]="'Search'"
+          <app-simple-search [valueModel]="filterValue" 
+            [placeHolder]="'Search'"
             (searchOutputEventEmitter)="searchOutputEvent($event)"
             *ngIf="!advancedSearch; else advancedSearchTpl">
           </app-simple-search>        
@@ -40,19 +40,18 @@
           <div class="row">
             <div class="col-md-3">
               <input type="text" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
-                i18n-placeholder="@@filter.component._timestamp.placeholder" placeholder="date" />
+                placeholder="date" />
             </div>
             <div class="col-md-3">
               <input type="text" class="form-control" id="filter.value" [(ngModel)]="filter.value"
-                i18n-placeholder="@@filter.component.value.placeholder" placeholder="glucose value" />
+                placeholder="glucose value" />
             </div>
             <div class="col-md-2">
               <input type="text" class="form-control" id="filter.notes" [(ngModel)]="filter.notes"
-                i18n-placeholder="@@filter.component.notes.placeholder" placeholder="notes" />
+                placeholder="notes" />
             </div>
             <div class="col-md-2">
-              <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()"
-                i18n="@@btn.search">Search</button>
+              <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()">Search</button>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
                 <a class="text-dark link" (click)="toggleSearch();" i18n="@@records.list.filter.search">Search</a>  

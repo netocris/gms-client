@@ -8,10 +8,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class SimpleSearchComponent implements OnInit {
 
   @Input()
-  inputValueModel: string = 'inputValueModel';
+  valueModel: string = 'valueModel';
   
   @Input()
-  inputPlaceHolder: string = '';
+  placeHolder: string = '';
 
   @Output()
   searchOutputEventEmitter = new EventEmitter();
@@ -22,11 +22,11 @@ export class SimpleSearchComponent implements OnInit {
   }
 
   searchOutputEvent(value: string): void {
-    this.inputValueModel = value;
+    this.valueModel = value;
   }
 
   search(): void {    
-    this.searchOutputEventEmitter.emit(this.inputValueModel);
+    this.searchOutputEventEmitter.emit(this.valueModel);
   }
 
 }

@@ -10,9 +10,8 @@ storiesOf('Atoms|Input Text', module)
     })
   )
   .add('default', () => ({
-    template: `<app-input-text></app-input-text>`,
-    props: {      
-    }
+    component: InputTextComponent,
+    props: {}
   }))  
   .add('with action', () => ({
     template: `<app-input-text></app-input-text>`,

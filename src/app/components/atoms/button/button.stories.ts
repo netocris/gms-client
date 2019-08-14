@@ -11,23 +11,18 @@ storiesOf('Atoms|Button', module)
     })
   )
   .add('default', () => ({
-    template: `<app-button [value_]="value_"></app-button>`,
-    props: {
-      value_: 'Click me'
-    }
+    component: ButtonComponent,
+    props: {}
   }))
   .add('disabled', () => ({
-    template: `<app-button [value_]="value_" [disabled_]="disabled_"></app-button>`,
-    props: {
-      value_: 'Disabled',
-      disabled_: true
+    template: `<app-button [disabled]="disabled"></app-button>`,
+    props: {      
+      disabled: true
     }
   }))
   .add('with action', () => ({
-    template: `<app-button [value_]="value_" [disabled_]="disabled_" (eventEmmitter)="eventEmmitter($event)"></app-button>`,
+    template: `<app-button (eventEmmitter)="eventEmmitter($event)"></app-button>`,
     props: {
-      value_: 'with action',
-      disabled_: false,
       eventEmmitter: action('eventEmmitter')
     }
   }));
@@ -37,7 +32,7 @@ storiesOf('Atoms|Button', module)
   .add('customization', () => ({
     component: ButtonComponent,
     props: {
-      value_: text('value_', 'Click me'),
-      disabled_: boolean('disabled_', false)      
+      valueModel: text('valueModel', 'valueModel'),
+      disabled: boolean('disabled', false)      
     }
   }));

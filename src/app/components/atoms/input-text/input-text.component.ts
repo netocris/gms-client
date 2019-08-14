@@ -8,22 +8,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class InputTextComponent implements OnInit {
 
   @Input()
-  value_: string = 'value';
+  valueModel: string = 'value';
 
   @Input()
-  name_: string = 'name';
+  name: string = 'name';
 
   @Input()
-  class_: string = '';
+  class: string = '';
   
   @Input()
-  placeHolder_: string = 'inputPlaceHolder';
+  placeHolder: string = 'inputPlaceHolder';
 
   @Input()
-  disabled_: boolean = false;
+  disabled: boolean = false;
 
   @Input()
-  required_: boolean = false;
+  required: boolean = false;
 
   @Output()
   outputEventEmmitter = new EventEmitter();
@@ -34,12 +34,12 @@ export class InputTextComponent implements OnInit {
   }
 
   onChange(): void {    
-    if(this.isEmptyValue(this.value_)){
-      this.value_ = null;
+    if(this.isEmptyValue(this.valueModel)){
+      this.valueModel = null;
     } else {
-      this.value_ = this.value_.trim();
+      this.valueModel = this.valueModel.trim();
     }
-    this.outputEventEmmitter.emit(this.value_);  
+    this.outputEventEmmitter.emit(this.valueModel);  
   }  
 
   private isEmptyValue(value: string): boolean {

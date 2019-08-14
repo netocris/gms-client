@@ -10,11 +10,8 @@ storiesOf('Atoms|Input Number', module)
     })
   )
   .add('default', () => ({
-    template: `<app-input-number [value_]="value_" [placeHolder_]="placeHolder_"></app-input-number>`,
-    props: {
-      value_: 100,
-      placeHolder_: 'input number'
-    }
+    component: InputNumberComponent,
+    props: {}
   }))
   .add('with action', () => ({
     template: `<app-input-number></app-input-number>`,

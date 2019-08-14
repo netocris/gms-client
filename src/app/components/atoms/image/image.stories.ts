@@ -10,8 +10,15 @@ storiesOf('Atoms|Image', module)
     })
   )
   .add('default', () => ({
-    template: `<app-image></app-image>`,
+    component: ImageComponent,
+    props: {}
+  }))
+  .add('user', () => ({
+    template: `<app-image [src]="src" [title]="title" [title]="title"></app-image>`,
     props: {
+      src: 'assets/images/user.png',
+      title: 'the user image',
+      alt: 'user image'
     }
   }));
 
@@ -20,8 +27,8 @@ storiesOf('Atoms|Image', module)
   .add('customization', () => ({
     component: ImageComponent,
     props: {
-      src_: text('src_', 'assets/images/user.png'),
-      title_: text('title_', 'the user image'),      
-      alt_: text('alt_', 'user image'),
+      src: text('src', 'assets/images/user.png'),
+      title: text('title', 'the user image'),      
+      alt: text('alt', 'user image'),
     }
   }));

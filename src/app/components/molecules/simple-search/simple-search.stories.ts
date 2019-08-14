@@ -13,8 +13,6 @@ storiesOf('Molecules|Simple Search', module)
     })
   )
   .add('default', () => ({
-    template: `<app-simple-search [inputValueModel]="inputValueModel"></app-simple-search>`,
-    props: {
-      inputValueModel: 'test'
-    }
+    component: SimpleSearchComponent,
+    props: {}
   }));

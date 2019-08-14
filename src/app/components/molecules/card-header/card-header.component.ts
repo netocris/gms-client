@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardHeaderComponent implements OnInit {
 
   @Input()
-  modelValue: string = 'card header';
+  valueModel: string = 'card header';
 
   constructor() { }
 

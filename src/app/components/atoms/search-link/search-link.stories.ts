@@ -10,9 +10,8 @@ storiesOf('Atoms|Search Link', module)
     })
   )
   .add('default', () => ({
-    template: `<app-search-link></app-search-link>`,
-    props: {      
-    }
+    component: SearchLinkComponent,
+    props: {}
   }))  
   .add('with action', () => ({
     template: `<app-search-link (eventEmmitter)="eventEmmitter($event)"></app-search-link>`,

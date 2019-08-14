@@ -8,13 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RouterLinkComponent implements OnInit {
 
   @Input()
-  value_: string = 'value_';
+  valueModel: string = 'valueModel';
 
   @Input()
-  routerLink_: string = '';
+  routerLink: string = '';
 
   @Input()
-  class_: string = '';
+  class: string = '';
 
   constructor() { }
 

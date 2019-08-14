@@ -1,6 +1,3 @@
-<button class="btn btn-outline-primary"
-    href="#" 
-    [disabled]="disabled_"
-    (click)="onClick()">
-    {{ value_ }}
+<button [ngClass]="class" href="#" [disabled]="disabled" (click)="onClick()">
+    {{valueModel}}
 </button>

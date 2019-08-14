@@ -11,14 +11,13 @@ storiesOf('Molecules|Card Body', module)
     })
   )
   .add('default', () => ({
-    template: `<app-card-body></app-card-body>`,
-    props: {      
-    }
+    component: CardBodyComponent,
+    props: {}
   }))
   .add('text', () => ({
-    template: `<app-card-body [value_]="value_"></app-card-body>`,
+    template: `<app-card-body [valueModel]="valueModel"></app-card-body>`,
     props: {
-      value_: 'some text'
+      valueModel: 'some text'
     }
   }));
 
@@ -27,6 +26,6 @@ storiesOf('Molecules|Card Body', module)
   .add('customization', () => ({
     component: CardBodyComponent,
     props: {
-      value_: text('value_', 'write some text')
+      valueModel: text('valueModel', 'write some text')
     }
   }));

@@ -8,13 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LinkComponent implements OnInit {
 
   @Input()
-  value_: string = 'value_';
+  valueModel: string = 'valueModel';
   
   @Input()
-  url_: string = ''  
+  url: string = ''  
   
   @Input()
-  target_: boolean = false;
+  target: boolean = false;
 
   constructor() { }
 

@@ -9,15 +9,13 @@ storiesOf('Atoms|Toggle Link', module)
     })
   )
   .add('default', () => ({
-    template: `<app-toggle-link [value_]="value_"></app-toggle-link>`,
-    props: {
-      value_: 'Click me'
-    }
+    component: ToggleLinkComponent,
+    props: {}
   }))
   .add('url', () => ({
-    template: `<app-toggle-link [value_]="value_" [url_]="url_"></app-toggle-link>`,
+    template: `<app-toggle-link [valueModel]="valueModel" [url]="url"></app-toggle-link>`,
     props: {
-      value_: 'Google',
-      url_: 'http://www.google.com'
+      valueModel: 'Google',
+      url: 'http://www.google.com'
     }
   }));
