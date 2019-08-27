@@ -37,6 +37,7 @@ import { SortableDirective } from './directives/sortable.directive';
 import { AuthService } from './services/auth/auth.service';
 import { ConfigService } from './services/config.service';
 import { RecordService } from './services/record.service';
+import { FileService } from './services/file.service';
 
 /* components */
 import { AppRoutingModule } from './app-routing.module';
@@ -153,7 +154,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     },
     AuthService,
     ConfigService,
-    RecordService
+    RecordService,
+    FileService
   ],
   bootstrap: [AppComponent]
 })

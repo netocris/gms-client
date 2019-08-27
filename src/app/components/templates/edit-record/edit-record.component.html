@@ -32,15 +32,15 @@
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
                         </div>
-                        <app-error-info [message]="'mandatory' | translate"
+                        <!--<app-error-info [message]="'mandatory' | translate"
                             [errors]="recordForm.controls._date?.errors"
                             [required]="recordForm.controls._date?.errors?.required">
-                        </app-error-info>
-                        <!--<div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
+                        </app-error-info>-->
+                        <div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
                             <div *ngIf="recordForm.controls._date.errors.required">
                                 Mandatory field
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
