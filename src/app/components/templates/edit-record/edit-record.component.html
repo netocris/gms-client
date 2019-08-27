@@ -13,6 +13,14 @@
 
             <div class="row">
                 <div class="col-md-12 mb-3">
+                    <app-form-input [parentForm]="recordForm"
+                        [id]="'value'"
+                        [label]="'record.edit.value.label' | translate"                        
+                        [placeholder]="'record.edit.value.placeholder' | translate"         
+                        [required]="true"               
+                        [helpMessage]="'record.edit.value.help' | translate">
+                    </app-form-input>
+                    <!--
                     <label for="value">Value</label>
                     <input type="text" class="form-control md-form" formControlName="value" id="value"
                         aria-describedby="valueHelp" placeholder="Glucose value" app-numeric required />                        
@@ -20,7 +28,7 @@
                     <app-error-info [message]="'mandatory' | translate"
                         [errors]="recordForm.controls.value?.errors"
                         [required]="recordForm.controls.value?.errors?.required">
-                    </app-error-info>
+                    </app-error-info>-->
                 </div>
             </div>
             <div class="row">

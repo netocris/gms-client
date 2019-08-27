@@ -19,10 +19,6 @@ button.calendar, button.calendar:active {
     border-color: #ced4da;
 }
 
-/*
-.spinner-border-sm {
-    border-top-width: .0625em;
-    border-right-width: .0625em;
-    border-bottom-width: .0625em;
-    border-left-width: .0625em;
-}*/
+:host ::ng-deep .was-validated .form-control:invalid~.invalid-feedback {
+    display: block !important;
+}

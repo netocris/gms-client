@@ -85,6 +85,7 @@ import { EditRecordPageComponent } from './components/pages/edit-record-page/edi
 import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
+import { FormInputComponent } from './components/organisms/form-input/form-input.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +124,8 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     ListRecordPageComponent,    
     ReportComponent,
     ReportPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    FormInputComponent
   ],
   imports: [
     BrowserModule,

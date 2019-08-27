@@ -46,6 +46,8 @@
         "edit": {
             "successfully": "Registo gravado com sucesso",
             "value": {
+                "label": "Valor",
+                "placeholder": "Valor da glicose",
                 "help": "Para um melhor controlo dos valores da glicose, estes deverão estar compreendidos entre [70 - 120] mg/dl após o pequeno almoço e abaixo dos 150 mg/dl"
             }
         }

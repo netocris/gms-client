@@ -1,0 +1,15 @@
+<div [formGroup]="parentForm">
+  <label [for]="id">{{label}}</label>
+  <input type="text" class="form-control md-form"     
+    [formControlName]="id" 
+    [id]="id"
+    [attr.aria-describedby]="id + 'Help'" 
+    [placeholder]="placeholder" 
+    [required]="required"
+    app-numeric />
+  <app-error-info [message]="'mandatory' | translate"
+      [errors]="'parentForm.controls.' + id + '?.errors'"
+      [required]="'parentForm.controls.' + id + '.errors.required'">
+  </app-error-info>
+  <app-help-info [message]="helpMessage"></app-help-info>    
+</div>
