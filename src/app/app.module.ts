@@ -46,16 +46,13 @@ import { AppComponent } from './app.component';
 /* atoms */
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { ImageComponent } from './components/atoms/image/image.component';
-import { InputTextComponent } from './components/atoms/input-text/input-text.component';
-import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
 import { LinkComponent } from './components/atoms/link/link.component';
 import { RouterLinkComponent } from './components/atoms/router-link/router-link.component';
 import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
 import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
 import { SpinnerButtonComponent } from './components/atoms/spinner-button/spinner-button.component';
 import { DismissButtonComponent } from './components/atoms/dismiss-button/dismiss-button.component';
-import { ErrorInfoComponent } from './components/atoms/error-info/error-info.component';
-import { HelpInfoComponent } from './components/atoms/help-info/help-info.component';
+import { InputTextComponent } from './components/atoms/input-text/input-text.component';
 
 /* molecules */
 import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
@@ -64,6 +61,7 @@ import { CardHeaderComponent } from './components/molecules/card-header/card-hea
 import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
 import { SimpleSearchComponent } from './components/molecules/simple-search/simple-search.component';
 import { AlertDismissComponent } from './components/molecules/alert-dismiss/alert-dismiss.component';
+import { InputNumberComponent } from './components/molecules/input-number/input-number.component';
 
 /* organisms */
 import { HeaderComponent } from './components/organisms/header/header.component';
@@ -72,6 +70,7 @@ import { FilterComponent } from './components/organisms/filter/filter.component'
 import { PaginationComponent } from './components/organisms/pagination/pagination.component';
 import { CardComponent } from './components/organisms/card/card.component';
 import { JumbotronComponent } from './components/organisms/jumbotron/jumbotron.component';
+import { RecordFormComponent } from './components/organisms/record-form/record-form.component';
 
 /* templates */
 import { DashboardComponent } from './components/templates/dashboard/dashboard.component';
@@ -85,47 +84,57 @@ import { EditRecordPageComponent } from './components/pages/edit-record-page/edi
 import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
 import { ReportPageComponent } from './components/pages/report-page/report-page.component';
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
-import { FormInputComponent } from './components/organisms/form-input/form-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    /* directives */
     NumericDirective,
-    SortableDirective,    
+    SortableDirective,
+
+    /* atoms */
     ButtonComponent,
-    ImageComponent,
-    InputTextComponent,
-    InputNumberComponent,
+    ImageComponent,    
     LinkComponent,
     RouterLinkComponent,
     ToggleLinkComponent,
     SearchLinkComponent,
     SpinnerButtonComponent,
-    DismissButtonComponent,        
-    ErrorInfoComponent,
-    HelpInfoComponent,
+    DismissButtonComponent,
+    InputTextComponent,
+    
+    /* molecules */
     NotFoundComponent,
     SpinnerComponent,
     CardHeaderComponent,
     CardBodyComponent,
     SimpleSearchComponent,
-    AlertDismissComponent,
+    AlertDismissComponent,    
+    InputNumberComponent,
+
+    /* organisms */
     HeaderComponent,
     FooterComponent,
     FilterComponent,    
     PaginationComponent,
     CardComponent,
-    JumbotronComponent,    
+    JumbotronComponent,
+    RecordFormComponent,   
+
+    /* templates */
     DashboardComponent,
     EditRecordComponent,
     ListRecordComponent,
+    ReportComponent,
+
+    /* pages */
     DashboardPageComponent,
     EditRecordPageComponent,
-    ListRecordPageComponent,    
-    ReportComponent,
+    ListRecordPageComponent,
     ReportPageComponent,
-    NotFoundPageComponent,
-    FormInputComponent
+    NotFoundPageComponent
+    
   ],
   imports: [
     BrowserModule,

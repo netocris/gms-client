@@ -1,5 +1,5 @@
 import { Component, ViewChildren, QueryList } from '@angular/core';
-import { BaseComponent } from '../../atoms/base/base.component';
+import { BaseComponent } from '../../base.component';
 import { ConfigService } from 'src/app/services/config.service';
 import { RecordService } from 'src/app/services/record.service';
 import { PaginationEnum } from 'src/app/enums/pagination.enum';

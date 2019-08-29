@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { BaseComponent } from '../../atoms/base/base.component';
+import { BaseComponent } from '../../base.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RecordService } from 'src/app/services/record.service';
 import { Record } from 'src/app/models/record';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-edit-record',
@@ -11,7 +12,7 @@ import { Record } from 'src/app/models/record';
 })
 export class EditRecordComponent extends BaseComponent {
 
-  recordForm: FormGroup;
+  fg: FormGroup;
   submitted: boolean = false;
   invalid: boolean = false;
   success: boolean = false;
@@ -33,45 +34,44 @@ export class EditRecordComponent extends BaseComponent {
       second: cDate.getSeconds()
     };
 
-    this.recordForm = this.fb.group({
+    this.fg = this.fb.group({
       value: ['', Validators.required],
-      _date: [_date, Validators.required],
-      _time: [_time, Validators.required],
+      dt: [_date, Validators.required],
+      tm: [_time, Validators.required],
       notes: ['']
     });
   }
 
-  onSubmit(record: any) {
-
+  onSubmit() {
+    console.log(JSON.stringify(this.fg.value));
+    
     this.submitted = true;
     this.invalid = false;
-    if (this.recordForm.invalid) {
+    if (this.fg.invalid) {
       this.submitted = false;
       this.invalid = true;
       return;
     }
-    
-    const _timestamp = new Date(record._date.year, record._date.month - 1, record._date.day,
-      record._time.hour, record._time.minute, record._time.second);
+
+    const record = this.fg.value;    
+    const _timestamp = new Date(record.dt.year, record.dt.month - 1, record.dt.day,
+      record.tm.hour, record.tm.minute, record.tm.second);
 
     const entity: Record = {
       value: record.value,
       notes: record.notes,
       _timestamp: _timestamp.getTime()
     };
-
-    //setTimeout(() => {
-      this.recordService.createRecord(entity)
-        .then(
-          resp => {
-            this.resetForm();
-            this.submitted = false;          
-            this.success = true;          
-          },
-          err => {
-            console.log(err);
-          });
-    //}, 500);
+    
+    this.recordService.createRecord(entity)
+      .then(res => {        
+        this.resetForm();
+        this.submitted = false;          
+        this.success = true;          
+      },
+      err => {
+        console.error(err);
+      });
 
   }
 
@@ -82,15 +82,15 @@ export class EditRecordComponent extends BaseComponent {
   private resetForm(): void {
 
     const cDate = this.getCurrentDate();
-    this.recordForm.reset({
+    this.fg.reset({
       value: '',
       notes: '',
-      _date: {
+      dt: {
         year: cDate.getFullYear(),
         month: cDate.getMonth() + 1,
         day: cDate.getDate()
       },
-      _time: {
+      tm: {
         hour: cDate.getHours(),
         minute: cDate.getMinutes(),
         second: cDate.getSeconds()

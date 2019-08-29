@@ -1,10 +1,10 @@
-<!-- TODO: refact to Atomic Web Design -->
 <div class="row">
     <div class="col-md-12 mt-3 mb-3">
-        
-        <form [formGroup]="recordForm" novalidate class="needs-validation"
-            [ngClass]="{'was-validated': invalid}">
-
+        <form [formGroup]="fg" class="needs-validation" [ngClass]="{ 'was-validated': invalid }" 
+            novalidate>
+            <app-record-form [fg]="fg" [submitted]="submitted" [success]="success"
+                (outputEventEmitter)="onSubmit()"></app-record-form>
+            <!-- 
             <app-alert-dismiss [heading]="'record.edit.successfully' | translate"
                 [class]="'alert-success'"
                 *ngIf="success">
@@ -13,22 +13,13 @@
 
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <app-form-input [parentForm]="recordForm"
+                    <app-input-number [_form]="recordForm"
                         [id]="'value'"
                         [label]="'record.edit.value.label' | translate"                        
                         [placeholder]="'record.edit.value.placeholder' | translate"         
-                        [required]="true"               
+                        [required]="true"                        
                         [helpMessage]="'record.edit.value.help' | translate">
-                    </app-form-input>
-                    <!--
-                    <label for="value">Value</label>
-                    <input type="text" class="form-control md-form" formControlName="value" id="value"
-                        aria-describedby="valueHelp" placeholder="Glucose value" app-numeric required />                        
-                    <app-help-info [message]="'record.edit.value.help' | translate"></app-help-info>                      
-                    <app-error-info [message]="'mandatory' | translate"
-                        [errors]="recordForm.controls.value?.errors"
-                        [required]="recordForm.controls.value?.errors?.required">
-                    </app-error-info>-->
+                    </app-input-number>                    
                 </div>
             </div>
             <div class="row">
@@ -40,10 +31,10 @@
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
                         </div>
-                        <!--<app-error-info [message]="'mandatory' | translate"
+                        <app-error-info [message]="'mandatory' | translate"
                             [errors]="recordForm.controls._date?.errors"
                             [required]="recordForm.controls._date?.errors?.required">
-                        </app-error-info>-->
+                        </app-error-info>
                         <div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
                             <div *ngIf="recordForm.controls._date.errors.required">
                                 Mandatory field
@@ -60,11 +51,11 @@
                         [errors]="recordForm.controls._time?.errors"
                         [required]="recordForm.controls._time?.errors?.required">
                     </app-error-info>
-                    <!--<div *ngIf="recordForm.controls._time.errors" class="invalid-feedback">
+                    <div *ngIf="recordForm.controls._time.errors" class="invalid-feedback">
                         <div *ngIf="recordForm.controls._time.errors.required">
                         Mandatory field
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -79,8 +70,8 @@
                 [spin]="submitted"
                 (eventEmmitter)="onSubmit(recordForm.value)">
             </app-spinner-button>
-           
+    
+            -->
         </form>
-        
     </div>
 </div>

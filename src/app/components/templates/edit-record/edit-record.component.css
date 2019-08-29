@@ -6,19 +6,21 @@ button.calendar, button.calendar:active {
     background-position: center;
 }
 
-/* override boostrap form validation css */
 .was-validated .form-control:invalid {
     padding-right: 0 !important;
     background-image: none;
 }
 
-/* override boostrap form validation css */
 .was-validated .form-control:valid {
     padding-right: 0 !important;
     background-image: none;
     border-color: #ced4da;
 }
 
-:host ::ng-deep .was-validated .form-control:invalid~.invalid-feedback {
+.was-validated .form-control:invalid~.invalid-feedback {
     display: block !important;
 }
+
+/*form.ng-invalid .form-control.ng-invalid + app-error-info .invalid-feedback {
+    display: block !important;
+}*/

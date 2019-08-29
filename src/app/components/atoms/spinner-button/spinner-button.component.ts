@@ -28,7 +28,7 @@ export class SpinnerButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.eventEmmitter.emit(this.valueModel);
+    this.eventEmmitter.emit();
   }
 
 }

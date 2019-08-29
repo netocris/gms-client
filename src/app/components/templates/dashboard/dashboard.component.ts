@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BaseComponent } from '../../atoms/base/base.component';
+import { Component } from '@angular/core';
+import { BaseComponent } from '../../base.component';
 
 @Component({
   selector: 'app-dashboard',
