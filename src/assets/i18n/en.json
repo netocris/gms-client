@@ -48,7 +48,11 @@
             "value": {
                 "label": "Value",
                 "placeholder": "Glucose value",
-                "help": "For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and below 150 mg/dl"
+                "helper": "For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and below 150 mg/dl"
+            },
+            "notes": {
+                "label": "Notes",
+                "placeholder": "Notes"                
             }
         }
     }

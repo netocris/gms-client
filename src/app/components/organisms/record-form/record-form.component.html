@@ -4,61 +4,86 @@
   </app-alert-dismiss>
 
   <div class="row">
-      <div class="col-md-12 mb-3">
-          <!--<app-input-number [fg]="fg"
-              [id]="'value'"
-              [label]="'record.edit.value.label' | translate"
-              [placeholder]="'record.edit.value.placeholder' | translate"         
-              [required]="true"                        
-              [helpMessage]="'record.edit.value.help' | translate">
-          </app-input-number>-->
-          <label for="value">{{'record.edit.value.label' | translate}}</label>
-            <input type="number" class="form-control md-form" formControlName="value" 
-              [placeholder]="'record.edit.value.placeholder' | translate" 
-              aria-describedby="valueHelp" required />
-            <small id="valueHelp" class="form-text text-muted">
-              {{'record.edit.value.help' | translate}}  
-            </small>
-            <div *ngIf="'fg.controls.value?.errors'" class="invalid-feedback">
-              <div *ngIf="'fg.controls.value?.errors.required'">
-                {{'mandatory' | translate}}
-              </div>
+      <div class="col-md-12 mb-3">          
+        <app-input-number-field [fg]="fg" 
+            [identifier]="'value'"
+            [label]="'record.edit.value.label' | translate"
+            [placeholder]="'record.edit.value.placeholder' | translate"
+            [helperText]="'record.edit.value.helper' | translate"
+            [showHelperText]="true"
+            [required]="true">
+        </app-input-number-field>
+        <!--
+        <label for="value">{{'record.edit.value.label' | translate}}</label>
+        <input type="number" class="form-control md-form" formControlName="value" 
+            [placeholder]="'record.edit.value.placeholder' | translate" 
+            aria-describedby="valueHelp" required />
+        <small id="valueHelp" class="form-text text-muted">
+            {{'record.edit.value.help' | translate}}  
+        </small>
+        <div *ngIf="'fg.controls.value?.errors'" class="invalid-feedback">
+            <div *ngIf="'fg.controls.value?.errors.required'">
+            {{'mandatory' | translate}}
             </div>
+        </div>
+        -->
       </div>
   </div>
 
   <div class="row">
       <div class="col-md-3 mb-3">
-          <label for="dt">Date</label>
-          <div class="input-group">
-              <input type="text" class="form-control" formControlName="dt" 
-                  placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
-              <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-              </div>              
-              <div class="invalid-feedback" *ngIf="'fg.controls.dt?.errors'" >
-                  <div *ngIf="'fg.controls.dt?.errors.required'">
-                      {{'mandatory' | translate}}
-                  </div>
-              </div>
-          </div>
+        <app-input-date-field [fg]="fg"
+            [identifier]="'dt'"
+            [label]="'record.edit.dt.label' | translate"
+            [placeholder]="'record.edit.dt.placeholder' | translate"
+            [required]="true">
+        </app-input-date-field>
+        <!--
+        <label for="dt">Date</label>
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="dt" 
+                placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>              
+            <div class="invalid-feedback" *ngIf="'fg.controls.dt?.errors'" >
+                <div *ngIf="'fg.controls.dt?.errors.required'">
+                    {{'mandatory' | translate}}
+                </div>
+            </div>
+        </div>
+        -->
       </div>
       <div class="col-md-3 mb-3">
-          <label for="tm">Hour</label>
-          <div class="input-group">
-              <ngb-timepicker formControlName="tm" [seconds]="true" [spinners]="false" required></ngb-timepicker>
-          </div>          
-          <div class="invalid-feedback" *ngIf="'fg.controls.tm?.errors'">
-              <div *ngIf="'fg.controls.tm?.errors.required'">
-                {{'mandatory' | translate}}
-              </div>
-          </div>
+        <app-input-time-field [fg]="fg"
+            [identifier]="'tm'"
+            [label]="'record.edit.tm.label' | translate"
+            [required]="true">
+        </app-input-time-field>
+        <!--
+        <label for="tm">Hour</label>
+        <div class="input-group">
+            <ngb-timepicker formControlName="tm" [seconds]="true" [spinners]="false" required></ngb-timepicker>
+        </div>          
+        <div class="invalid-feedback" *ngIf="'fg.controls.tm?.errors'">
+            <div *ngIf="'fg.controls.tm?.errors.required'">
+            {{'mandatory' | translate}}
+            </div>
+        </div>
+        -->
       </div>
   </div>
   <div class="row">
       <div class="col-md-12 mb-3">
-          <label for="notes">Notes</label>
-          <textarea class="form-control" formControlName="notes" id="notes" placeholder="Notes" rows="5"></textarea>
+        <app-input-textarea-field [fg]="fg" 
+            [identifier]="'notes'"
+            [label]="'record.edit.notes.label' | translate"
+            [placeholder]="'record.edit.notes.placeholder' | translate">
+        </app-input-textarea-field>
+        <!--
+        <label for="notes">Notes</label>
+        <textarea class="form-control" formControlName="notes" id="notes" placeholder="Notes" rows="5"></textarea>
+        -->
       </div>
   </div>
 

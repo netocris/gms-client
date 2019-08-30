@@ -1,0 +1,11 @@
+<div [formGroup]="fg">
+    <label for="tm">Hour</label>
+    <div class="input-group">
+        <ngb-timepicker formControlName="tm" [seconds]="true" [spinners]="false" required></ngb-timepicker>
+    </div>          
+    <div class="invalid-feedback" *ngIf="'fg.controls.tm?.errors'">
+        <div *ngIf="'fg.controls.tm?.errors.required'">
+        {{'mandatory' | translate}}
+        </div>
+    </div>
+</div>

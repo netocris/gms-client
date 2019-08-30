@@ -48,7 +48,19 @@
             "value": {
                 "label": "Valor",
                 "placeholder": "Valor da glicose",
-                "help": "Para um melhor controlo dos valores da glicose, estes deverão estar compreendidos entre [70 - 120] mg/dl após o pequeno almoço e abaixo dos 150 mg/dl"
+                "helper": "Para um melhor controlo dos valores da glicose, estes deverão estar compreendidos entre [70 - 120] mg/dl após o pequeno almoço e abaixo dos 150 mg/dl"
+            },
+            "notes": {
+                "label": "Notas",
+                "placeholder": "Notas"                
+            },
+            "dt": {
+                "label": "Data",
+                "placeholder": "yyyy-mm-dd"
+            },
+            "tm": {
+                "label": "Hora",
+                "placeholder": "HH:MM:SS"
             }
         }
     }

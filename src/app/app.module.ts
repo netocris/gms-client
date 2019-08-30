@@ -61,7 +61,10 @@ import { CardHeaderComponent } from './components/molecules/card-header/card-hea
 import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
 import { SimpleSearchComponent } from './components/molecules/simple-search/simple-search.component';
 import { AlertDismissComponent } from './components/molecules/alert-dismiss/alert-dismiss.component';
-import { InputNumberComponent } from './components/molecules/input-number/input-number.component';
+import { InputNumberFieldComponent } from './components/molecules/input-number-field/input-number-field.component';
+import { InputDateFieldComponent } from './components/molecules/input-date-field/input-date-field.component';
+import { InputTimeFieldComponent } from './components/molecules/input-time-field/input-time-field.component';
+import { InputTextareaFieldComponent } from './components/molecules/input-textarea-field/input-textarea-field.component';
 
 /* organisms */
 import { HeaderComponent } from './components/organisms/header/header.component';
@@ -110,8 +113,11 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     CardHeaderComponent,
     CardBodyComponent,
     SimpleSearchComponent,
-    AlertDismissComponent,    
-    InputNumberComponent,
+    AlertDismissComponent,
+    InputNumberFieldComponent,
+    InputDateFieldComponent,
+    InputTimeFieldComponent,
+    InputTextareaFieldComponent,
 
     /* organisms */
     HeaderComponent,
@@ -120,7 +126,7 @@ import { NotFoundPageComponent } from './components/pages/not-found-page/not-fou
     PaginationComponent,
     CardComponent,
     JumbotronComponent,
-    RecordFormComponent,   
+    RecordFormComponent,
 
     /* templates */
     DashboardComponent,

@@ -3,75 +3,7 @@
         <form [formGroup]="fg" class="needs-validation" [ngClass]="{ 'was-validated': invalid }" 
             novalidate>
             <app-record-form [fg]="fg" [submitted]="submitted" [success]="success"
-                (outputEventEmitter)="onSubmit()"></app-record-form>
-            <!-- 
-            <app-alert-dismiss [heading]="'record.edit.successfully' | translate"
-                [class]="'alert-success'"
-                *ngIf="success">
-            </app-alert-dismiss>
-           
-
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <app-input-number [_form]="recordForm"
-                        [id]="'value'"
-                        [label]="'record.edit.value.label' | translate"                        
-                        [placeholder]="'record.edit.value.placeholder' | translate"         
-                        [required]="true"                        
-                        [helpMessage]="'record.edit.value.help' | translate">
-                    </app-input-number>                    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <label for="_date">Date</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" formControlName="_date" id="_date"
-                            placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-                        </div>
-                        <app-error-info [message]="'mandatory' | translate"
-                            [errors]="recordForm.controls._date?.errors"
-                            [required]="recordForm.controls._date?.errors?.required">
-                        </app-error-info>
-                        <div *ngIf="recordForm.controls._date.errors" class="invalid-feedback">
-                            <div *ngIf="recordForm.controls._date.errors.required">
-                                Mandatory field
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="_time">Hour</label>
-                    <div class="input-group">
-                        <ngb-timepicker formControlName="_time" [seconds]="true" [spinners]="false" required></ngb-timepicker>
-                    </div>
-                    <app-error-info [message]="'mandatory' | translate"
-                        [errors]="recordForm.controls._time?.errors"
-                        [required]="recordForm.controls._time?.errors?.required">
-                    </app-error-info>
-                    <div *ngIf="recordForm.controls._time.errors" class="invalid-feedback">
-                        <div *ngIf="recordForm.controls._time.errors.required">
-                        Mandatory field
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <label for="notes">Notes</label>
-                    <textarea class="form-control" formControlName="notes" id="notes" placeholder="Notes" rows="5"></textarea>
-                </div>
-            </div>
-
-            <app-spinner-button [class]="'btn btn-outline-primary mb-2'"
-                [valueModel]="'btn.save' | translate"
-                [spin]="submitted"
-                (eventEmmitter)="onSubmit(recordForm.value)">
-            </app-spinner-button>
-    
-            -->
+                (outputEventEmitter)="onSubmit()"></app-record-form>            
         </form>
     </div>
 </div>
