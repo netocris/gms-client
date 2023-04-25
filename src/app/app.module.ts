@@ -48,6 +48,7 @@ import { ButtonComponent } from './components/atoms/button/button.component';
 import { InputTextComponent } from './components/atoms/input-text/input-text.component';
 import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
 import { LinkComponent } from './components/atoms/link/link.component';
+import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { LinkComponent } from './components/atoms/link/link.component';
     ButtonComponent,
     InputTextComponent,
     InputNumberComponent,
-    LinkComponent   
+    LinkComponent,
+    NavbarComponent   
   ],
   imports: [
     BrowserModule,
@@ -83,6 +85,10 @@ import { LinkComponent } from './components/atoms/link/link.component';
     AngularFireAuthModule,
     NgbModule,
     ChartsModule
+  ],
+  exports: [
+    LinkComponent,
+    ButtonComponent
   ],
   providers: [
     {

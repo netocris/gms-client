@@ -12,10 +12,15 @@ export class LinkComponent implements OnInit {
 
   @Input()
   disabled: boolean = false;
+
+  @Input()
+  link: string = '/';
   
-  constructor() { }
+  constructor() {    
+  }
 
   ngOnInit() {
+    console.log('valueModel: ' + this.valueModel);
   }
 
 }
