@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 
@@ -20,6 +20,15 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 /* charts.js */
 import { ChartsModule } from 'ng2-charts';
 
+/* ngx-translate */
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
+
+/* ngx-translate: required for AOT compilation */
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
+
 /* directives */
 import { NumericDirective } from './directives/numeric.directive';
 import { SortableDirective } from './directives/sortable.directive';
@@ -28,51 +37,120 @@ import { SortableDirective } from './directives/sortable.directive';
 import { AuthService } from './services/auth/auth.service';
 import { ConfigService } from './services/config.service';
 import { RecordService } from './services/record.service';
+import { FileService } from './services/file.service';
 
 /* components */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ListComponent } from './components/records/list/list.component';
-import { EditComponent } from './components/records/edit/edit.component';
-import { FilterComponent } from './components/records/list/filter/filter.component';
-import { PaginationComponent } from './components/records/list/pagination/pagination.component';
-import { ReportsComponent } from './components/reports/reports.component';
-import { LineChartComponent } from './components/reports/line-chart/line-chart.component';
-import { BarChartComponent } from './components/reports/bar-chart/bar-chart.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { ButtonComponent } from './components/atoms/button/button.component';
-import { InputTextComponent } from './components/atoms/input-text/input-text.component';
-import { InputNumberComponent } from './components/atoms/input-number/input-number.component';
-import { LinkComponent } from './components/atoms/link/link.component';
-import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 
+/* atoms */
+import { ButtonComponent } from './components/atoms/button/button.component';
+import { ImageComponent } from './components/atoms/image/image.component';
+import { LinkComponent } from './components/atoms/link/link.component';
+<<<<<<< HEAD
+import { NavbarComponent } from './components/organisms/navbar/navbar.component';
+=======
+import { RouterLinkComponent } from './components/atoms/router-link/router-link.component';
+import { ToggleLinkComponent } from './components/atoms/toggle-link/toggle-link.component';
+import { SearchLinkComponent } from './components/atoms/search-link/search-link.component';
+import { SpinnerButtonComponent } from './components/atoms/spinner-button/spinner-button.component';
+import { DismissButtonComponent } from './components/atoms/dismiss-button/dismiss-button.component';
+import { InputTextComponent } from './components/atoms/input-text/input-text.component';
+
+/* molecules */
+import { NotFoundComponent } from './components/molecules/not-found/not-found.component';
+import { SpinnerComponent } from './components/molecules/spinner/spinner.component';
+import { CardHeaderComponent } from './components/molecules/card-header/card-header.component';
+import { CardBodyComponent } from './components/molecules/card-body/card-body.component';
+import { SimpleSearchComponent } from './components/molecules/simple-search/simple-search.component';
+import { AlertDismissComponent } from './components/molecules/alert-dismiss/alert-dismiss.component';
+import { InputNumberFieldComponent } from './components/molecules/input-number-field/input-number-field.component';
+import { InputDateFieldComponent } from './components/molecules/input-date-field/input-date-field.component';
+import { InputTimeFieldComponent } from './components/molecules/input-time-field/input-time-field.component';
+import { InputTextareaFieldComponent } from './components/molecules/input-textarea-field/input-textarea-field.component';
+>>>>>>> 8247e726f86363e4cec8f082e605f0767c739f94
+
+/* organisms */
+import { HeaderComponent } from './components/organisms/header/header.component';
+import { FooterComponent } from './components/organisms/footer/footer.component';
+import { FilterComponent } from './components/organisms/filter/filter.component';
+import { PaginationComponent } from './components/organisms/pagination/pagination.component';
+import { CardComponent } from './components/organisms/card/card.component';
+import { JumbotronComponent } from './components/organisms/jumbotron/jumbotron.component';
+import { RecordFormComponent } from './components/organisms/record-form/record-form.component';
+
+/* templates */
+import { DashboardComponent } from './components/templates/dashboard/dashboard.component';
+import { EditRecordComponent } from './components/templates/edit-record/edit-record.component';
+import { ListRecordComponent } from './components/templates/list-record/list-record.component';
+import { ReportComponent } from './components/templates/report/report.component';
+
+/* pages */
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { EditRecordPageComponent } from './components/pages/edit-record-page/edit-record-page.component';
+import { ListRecordPageComponent } from './components/pages/list-record-page/list-record-page.component';
+import { ReportPageComponent } from './components/pages/report-page/report-page.component';
+import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    /* directives */
     NumericDirective,
-    NotFoundComponent,
-    NavBarComponent,
-    FooterComponent,
-    DashboardComponent,
-    ListComponent,
-    EditComponent,
-    FilterComponent,
-    PaginationComponent,
-    ReportsComponent,
-    LineChartComponent,
-    BarChartComponent,
     SortableDirective,
-    SpinnerComponent,
+
+    /* atoms */
     ButtonComponent,
+    ImageComponent,    
+    LinkComponent,
+    RouterLinkComponent,
+    ToggleLinkComponent,
+    SearchLinkComponent,
+    SpinnerButtonComponent,
+    DismissButtonComponent,
     InputTextComponent,
+<<<<<<< HEAD
     InputNumberComponent,
     LinkComponent,
     NavbarComponent   
+=======
+    
+    /* molecules */
+    NotFoundComponent,
+    SpinnerComponent,
+    CardHeaderComponent,
+    CardBodyComponent,
+    SimpleSearchComponent,
+    AlertDismissComponent,
+    InputNumberFieldComponent,
+    InputDateFieldComponent,
+    InputTimeFieldComponent,
+    InputTextareaFieldComponent,
+
+    /* organisms */
+    HeaderComponent,
+    FooterComponent,
+    FilterComponent,    
+    PaginationComponent,
+    CardComponent,
+    JumbotronComponent,
+    RecordFormComponent,
+
+    /* templates */
+    DashboardComponent,
+    EditRecordComponent,
+    ListRecordComponent,
+    ReportComponent,
+
+    /* pages */
+    DashboardPageComponent,
+    EditRecordPageComponent,
+    ListRecordPageComponent,
+    ReportPageComponent,
+    NotFoundPageComponent
+    
+>>>>>>> 8247e726f86363e4cec8f082e605f0767c739f94
   ],
   imports: [
     BrowserModule,
@@ -84,7 +162,14 @@ import { NavbarComponent } from './components/organisms/navbar/navbar.component'
     AngularFirestoreModule,
     AngularFireAuthModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     LinkComponent,
@@ -100,7 +185,8 @@ import { NavbarComponent } from './components/organisms/navbar/navbar.component'
     },
     AuthService,
     ConfigService,
-    RecordService
+    RecordService,
+    FileService
   ],
   bootstrap: [AppComponent]
 })

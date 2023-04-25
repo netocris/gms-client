@@ -1,0 +1,15 @@
+<div [formGroup]="fg">
+    <label for="dt">Date</label>
+    <div class="input-group">
+        <input type="text" class="form-control" formControlName="dt" 
+            placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" required />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        </div>              
+        <div class="invalid-feedback" *ngIf="'fg.controls.dt?.errors'" >
+            <div *ngIf="'fg.controls.dt?.errors.required'">
+                {{'mandatory' | translate}}
+            </div>
+        </div>
+    </div>
+</div>

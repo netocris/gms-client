@@ -6,9 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-  
+
   @Input()
-  valueModel: string = 'button';
+  valueModel: string = 'valueModel';
+
+  @Input()
+  class: string = '';
 
   @Input()
   disabled: boolean = false;
@@ -22,7 +25,7 @@ export class ButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.eventEmmitter.next();
+    this.eventEmmitter.emit(this.valueModel);
   }
 
 }

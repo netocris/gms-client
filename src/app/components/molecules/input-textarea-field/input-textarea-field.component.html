@@ -1,0 +1,17 @@
+<div [formGroup]="fg">
+  <label [for]="identifier">{{label}}</label>
+  <textarea class="form-control" 
+    [formControlName]="identifier" 
+    [placeholder]="placeholder" 
+    [rows]="rows"
+    [required]="required">
+  </textarea>
+  <small id="identifier + 'Help'" class="form-text text-muted">
+    {{helperText}}
+  </small>
+  <div *ngIf="'fg.controls.' + identifier + '?.errors'" class="invalid-feedback">
+    <div *ngIf="'fg.controls.' + identifier + '?.errors.required'">
+      {{'mandatory' | translate}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+{
+    "norecordsfound": "Nenhum registo encontrado",
+    "mandatory": "Campo obrigatório", 
+    "btn": {
+        "save": "Gravar"
+    },
+    "pagination" : {
+        "title": "Paginação"
+    },
+    "filter": {
+        "title": "Pesquisa"
+    },
+    "notfound": {
+        "message": "Página não encontrada"
+    },
+    "header": {
+        "app": "Glicose Monitoring System",
+        "signin": "Entrar",
+        "signout": "Sair",
+        "record": {
+            "add": "Adicionar Registo",
+            "list": "Registos"
+        },        
+        "reports": "Relatórios"
+    },    
+    "dashboard" : {
+        "hbA1c": {
+            "title": "Hemoglobina Glicada HbA1c",
+            "acronym": "HbA1c",
+            "content": "A dosagem da hemoglobina glicada, também chamada de hemoglobina glicosilada, hemoglobina A1c ou simplesmente HbA1c, é um exame de sangue muito utilizado para o acompanhamento dos pacientes diabéticos, por ser ele uma forma eficaz de avaliar os níveis médios da glicose sanguínea nos últimos 2 ou 3 meses.",
+            "font": {
+                "from": "fonte",
+                "deno": "mdsaude.com",
+                "url": "https://www.mdsaude.com/endocrinologia/hemoglobina-glicada"
+            }    
+        },
+        "measure": "{{value}} mg/dl",
+        "average": "Média Glicose Sangue"        
+    },    
+    "record": {
+        "list": {
+            "date": "Data",
+            "glucose": "Glicose",
+            "notes": "Notas"
+        },
+        "edit": {
+            "successfully": "Registo gravado com sucesso",
+            "value": {
+                "label": "Valor",
+                "placeholder": "Valor da glicose",
+                "helper": "Para um melhor controlo dos valores da glicose, estes deverão estar compreendidos entre [70 - 120] mg/dl após o pequeno almoço e abaixo dos 150 mg/dl"
+            },
+            "notes": {
+                "label": "Notas",
+                "placeholder": "Notas"                
+            },
+            "dt": {
+                "label": "Data",
+                "placeholder": "yyyy-mm-dd"
+            },
+            "tm": {
+                "label": "Hora",
+                "placeholder": "HH:MM:SS"
+            }
+        }
+    }
+    
+}

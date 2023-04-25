@@ -1,0 +1,16 @@
+<div [formGroup]="fg">
+  <label [for]="identifier">{{label}}</label>
+  <input type="number" class="form-control md-form" 
+    [formControlName]="identifier" 
+    [placeholder]="placeholder" 
+    [attr.aria-describedby]="identifier + 'Help'" 
+    [required]="required" />  
+  <small id="identifier + 'Help'" class="form-text text-muted">
+    {{helperText}}
+  </small>
+  <div *ngIf="'fg.controls.' + identifier + '?.errors'" class="invalid-feedback">
+    <div *ngIf="'fg.controls.' + identifier + '?.errors.required'">
+      {{'mandatory' | translate}}
+    </div>
+  </div>
+</div>

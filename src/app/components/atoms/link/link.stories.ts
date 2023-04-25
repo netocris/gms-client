@@ -1,9 +1,9 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
-import { action} from '@storybook/addon-actions';
 import { text, boolean, withKnobs } from '@storybook/addon-knobs';
+
 import { LinkComponent } from './link.component';
 
-storiesOf('Components|Link', module)
+storiesOf('Atoms|Link', module)
   .addDecorator(
     moduleMetadata({
       declarations: [LinkComponent]
@@ -11,24 +11,32 @@ storiesOf('Components|Link', module)
   )
   .add('default', () => ({
     component: LinkComponent,
+    props: {}
+  }))
+  .add('url', () => ({
+    template: `<app-link [valueModel]="valueModel" [url]="url" [target]="target"></app-link>`,
     props: {
-      valueModel: 'Click'
+      valueModel: 'Google',
+      url: 'http://www.google.com',
+      target: true
     }
   }))
-  .add('disabled', () => ({
-    template: `<app-link [valueModel]="valueModel" [disabled]="disabled"></app-link>`,
+  .add('target', () => ({
+    template: `<app-link [valueModel]="valueModel" [url]="url" [target]="target"></app-link>`,
     props: {
-      valueModel: 'Click',
-      disabled: true
+      valueModel: 'Google',
+      url: 'http://www.google.com',
+      target: true
     }
   }));
 
-storiesOf('Components|Link', module)
+storiesOf('Atoms|Link', module)
   .addDecorator(withKnobs)
   .add('customization', () => ({
     component: LinkComponent,
     props: {
-      valueModel: text('valueModel', 'Click'),
-      disabled: boolean('disabled', false)      
+      valueModel: text('valueModel', 'Google'),
+      url: text('url', 'http://www.google.com'),
+      target: boolean('target', false)      
     }
   }));

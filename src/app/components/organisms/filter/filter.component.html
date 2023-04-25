@@ -1,0 +1,52 @@
+<!-- TODO refact this to go against Atom Web Design -->
+<div class="row">
+  <div class="col-md-12">    
+    
+    <div class="row">
+      <div class="col-md-12 card-title font-size-sm">
+        <app-toggle-link [url]="'#filter-area'" 
+          [class]="'text-dark float-right'"          
+          [ariaControlsAttr]="'filter-area'"
+          [valueModel]="'filter.title' | translate">
+        </app-toggle-link>        
+      </div>
+    </div>
+
+    <div id="filter-area" class="collapse">
+      <div class="card card-body mb-3">        
+        
+        <div class="form-inline justify-content-end">
+          <app-simple-search [valueModel]="filterValue" 
+            [placeHolder]="'Search'"
+            (searchOutputEventEmitter)="searchOutputEvent($event)"
+            *ngIf="!advancedSearch; else advancedSearchTpl">
+          </app-simple-search>
+        </div>
+
+        <ng-template #advancedSearchTpl>
+          <div class="row">
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="filter._timestamp" [(ngModel)]="filter._timestamp"
+                placeholder="date" />
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="filter.value" [(ngModel)]="filter.value"
+                placeholder="glucose value" />
+            </div>
+            <div class="col-md-2">
+              <input type="text" class="form-control" id="filter.notes" [(ngModel)]="filter.notes"
+                placeholder="notes" />
+            </div>
+            <div class="col-md-2">
+              <button type="btn" class="btn btn-outline-primary btn-block" (click)="search()">Search</button>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-end float-right">
+                <a class="text-dark link" (click)="toggleSearch();">Search</a>  
+            </div>
+          </div>
+        </ng-template>
+        
+      </div>
+    </div>
+  </div>
+</div>

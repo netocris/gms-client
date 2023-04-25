@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-12 mt-3 mb-3">
+        <form [formGroup]="fg" class="needs-validation" [ngClass]="{ 'was-validated': invalid }" 
+            novalidate>
+            <app-record-form [fg]="fg" [submitted]="submitted" [success]="success"
+                (outputEventEmitter)="onSubmit()"></app-record-form>            
+        </form>
+    </div>
+</div>

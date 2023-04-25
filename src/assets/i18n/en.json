@@ -1,0 +1,59 @@
+{    
+    "norecordsfound": "No records found",
+    "mandatory": "Mandatory field", 
+    "btn": {
+        "save": "Save"
+    },
+    "pagination" : {
+        "title": "Pagination"
+    },
+    "filter": {
+        "title": "Search"
+    },
+    "notfound": {
+        "message": "Page not found"
+    },
+    "header": {
+        "app": "Glicose Monitoring System",
+        "signin": "Sign in",
+        "signout": "Sign out",
+        "record": {
+            "add": "Add Record",
+            "list": "Records"
+        },        
+        "reports": "Reports"
+    },    
+    "dashboard" : {        
+        "hbA1c": {
+            "title": "Glycated Hemoglobin HbA1c",
+            "acronym": "HbA1c",
+            "content": "Measurement of glycated hemoglobin (HbA1c) is a blood test widely used to monitor diabetic patients. It's an effective way to evaluate average blood glucose levels in the last 2 or 3 months.",
+            "font": {
+                "from": "from",
+                "deno": "mdsaude.com",
+                "url": "https://www.mdsaude.com/endocrinologia/hemoglobina-glicada"
+            }
+        },
+        "measure": "{{value}} mg/dl",
+        "average": "Average Blood Glucose"
+    },    
+    "record": {
+        "list": {
+            "date": "Date",
+            "glucose": "Glucose",
+            "notes": "Notes"
+        },
+        "edit": {
+            "successfully": "Record saved successfully",
+            "value": {
+                "label": "Value",
+                "placeholder": "Glucose value",
+                "helper": "For good control blood glucose values ​​should be within the range [70 - 120] mg/dl before breakfast and below 150 mg/dl"
+            },
+            "notes": {
+                "label": "Notes",
+                "placeholder": "Notes"                
+            }
+        }
+    }
+}

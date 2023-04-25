@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-link',
@@ -8,9 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LinkComponent implements OnInit {
 
   @Input()
-  valueModel: string = 'link';
-
+  valueModel: string = 'valueModel';
+  
   @Input()
+<<<<<<< HEAD
   disabled: boolean = false;
 
   @Input()
@@ -18,6 +19,14 @@ export class LinkComponent implements OnInit {
   
   constructor() {    
   }
+=======
+  url: string = ''  
+  
+  @Input()
+  target: boolean = false;
+
+  constructor() { }
+>>>>>>> 8247e726f86363e4cec8f082e605f0767c739f94
 
   ngOnInit() {
     console.log('valueModel: ' + this.valueModel);

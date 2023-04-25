@@ -1,0 +1,6 @@
+<app-input-text [class]="'form-control form-control-sm mr-3'"
+  [placeHolder]="placeHolder"
+  [valueModel]="valueModel"
+  (outputEventEmmitter)="searchOutputEvent($event)">
+</app-input-text>
+<i class="fa fa-search" aria-hidden="true" (click)="search()"></i>

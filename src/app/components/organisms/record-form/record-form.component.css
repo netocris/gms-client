@@ -1,0 +1,15 @@
+/*
+.was-validated .form-control:invalid {
+  padding-right: 0 !important;
+  background-image: none;
+}
+
+.was-validated .form-control:valid {
+  padding-right: 0 !important;
+  background-image: none;
+  border-color: #ced4da;
+}
+
+.was-validated .form-control:invalid~.invalid-feedback {
+  display: block !important;
+}*/
